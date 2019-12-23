@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'pictau-icons';
+  src:  url('../icons/pictau-icons.eot?gn8zww');
+  src:  url('../icons/pictau-icons.eot?gn8zww#iefix') format('embedded-opentype'),
+    url('../icons/pictau-icons.ttf?gn8zww') format('truetype'),
+    url('../icons/pictau-icons.woff?gn8zww') format('woff'),
+    url('../icons/pictau-icons.svg?gn8zww#pictau-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-pct-custom-"], [class*=" icon-pct-custom-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pictau-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pct-custom-drone-line:before {
+  content: "\e900";
+}
+.icon-pct-custom-shipping:before {
+  content: "\e9da";
+}
+.icon-pct-custom-target:before {
+  content: "\ea48";
+}
+.icon-pct-custom-champion:before {
+  content: "\ea73";
+}
+.icon-pct-custom-family:before {
+  content: "\eadb";
+}
+.icon-pct-custom-shop:before {
+  content: "\eb18";
+}
+.icon-pct-custom-empresa:before {
+  content: "\eb2f";
+}
+.icon-pct-custom-ciberriesgo:before {
+  content: "\eb46";
+}
+.icon-pct-custom-adn:before {
+  content: "\eb65";
+}
+.icon-pct-custom-doctor:before {
+  content: "\eb7d";
+}
+.icon-pct-custom-presentacion:before {
+  content: "\eba2";
+}
+.icon-pct-custom-ingeniero:before {
+  content: "\ebcc";
+}
+.icon-pct-custom-equipo:before {
+  content: "\ebe0";
+}
+.icon-pct-custom-corbatas:before {
+  content: "\ebf4";
+}
+.icon-pct-custom-profesional:before {
+  content: "\ebfa";
+}
+.icon-pct-custom-download:before {
+  content: "\ecea";
+}
+.icon-pct-custom-building:before {
+  content: "\ed08";
+}
+.icon-pct-custom-download-2:before {
+  content: "\ee64";
+}
+.icon-pct-custom-viejo:before {
+  content: "\ee88";
+}
+.icon-pct-custom-download-3:before {
+  content: "\ee9c";
+}
+.icon-pct-custom-cuestionario:before {
+  content: "\ee9d";
+}
+.icon-pct-custom-condicionado:before {
+  content: "\eea7";
+}
+.icon-pct-custom-huella:before {
+  content: "\eebf";
+}
+.icon-pct-custom-house:before {
+  content: "\ef30";
+}
+.icon-pct-custom-faro:before {
+  content: "\ef78";
+}

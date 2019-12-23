@@ -1,0 +1,105 @@
+/*------------------------------------------------------------------------------------------------------*\
+
+						OREY CUSTOM LOGIN STYLES
+
+\*------------------------------------------------------------------------------------------------------*/
+:root {
+	--main-color: #002C90;
+	--secondary-color: #FC1A57;
+	--cta-color: #ff1053;
+	--main-gradient: linear-gradient(135deg, #1893EC, #1893EC, #261095);
+	--blue-gradient: linear-gradient(135deg, #1893EC, #1893EC, #261095);
+}
+
+
+body.login {
+	background: var(--blue-gradient);
+}
+
+h1 {
+	/*background-color: #ffffff;*/
+}
+
+
+h1 a {
+	background-repeat: no-repeat;
+    color: #444;
+    height: 100px !important;
+    font-size: 20px;
+    line-height: 1.3em;
+    margin: 0 auto 25px;
+    padding: 0;
+    text-decoration: none;
+    width: 84px;
+    text-indent: -9999px;
+    outline: 0;
+    display: block;
+    box-sizing: border-box;
+    width: auto !important;
+    padding: 20px !important;
+}
+
+
+
+p {
+	font-size: 16px !important;
+	line-height: 16px !important;
+}
+
+a {
+	color: #fff;
+	transition: color .3s ease;
+}
+
+a:hover {
+	color: var(--secondary-color) !important;
+}
+
+.message,
+.login form {
+	border-radius: 5px;
+}
+
+.login .message{
+	border-left: 4px solid #FC5B2A;
+	text-align: center;
+}
+
+.login #backtoblog a,
+.login #nav a,
+.login h1 a{
+	color: #FFF;
+}
+
+.login #nav {
+	text-align: center;
+}
+
+input#wp-submit{
+
+	background: var(--blue-gradient);
+
+    border-color: transparent;
+/*    -webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);*/
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 15px 20px;
+    height: auto;
+}
+
+input#wp-submit:hover {
+	background: var(--main-gradient);
+}
+
+
+p#backtoblog{
+	display: none;
+}
+
+.wp-core-ui .button-primary {
+	box-shadow: none;
+	text-shadow: none;
+}

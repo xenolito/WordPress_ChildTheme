@@ -1,0 +1,17 @@
+#npm debuggin logs
+*.log
+
+
+#project dependencies
+node_modules
+public
+
+#OSX hidden folders
+.DS_Store
+#temp files
+*.tmp
+*-
+
+#sftp extension and vscode stuff
+*.code-workspace
+.vscode

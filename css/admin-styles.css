@@ -1,0 +1,46 @@
+/*------------------------------------------------------------------------------------------------------*\
+
+						STYLES for PICTAU LANDING template
+
+\*------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						VC STYLES OVERRIDE
+
+\*------------------------------------------------------------------------------------------------------*/
+
+.vc_edit_form_elements .textarea_raw_html {
+    font-family: "Courier New";
+    color: #000 !important;
+    font-size: 16px !important;
+    word-break: break-word !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+.cmb2-postbox button.handlediv,
+.cmb2-postbox button.handlediv .toggle-indicator,
+.cmb2-postbox h2 {
+	background-color: #3D6CFB;
+	color: #fff;
+}
+
+.cmb2-postbox h2 {
+	line-height: 1.5 !important;
+}
+
+
+table.wp-list-table #posts,
+table.wp-list-table #slug {
+	width: auto;
+}
+
+table.wp-list-table #posts {
+	width: 100px;
+}
+
+table.wp-list-table .column-posts {
+	text-align: left;
+}
