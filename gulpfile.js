@@ -16,8 +16,9 @@ const cssnano = require("cssnano");
 const replace = require("gulp-replace");
 const bsync = require("browser-sync").create(); // create a browser-sync instance...
 
-const childThemeFolder = "puentejuderia";
-const childThemeName = "PuenteJuderia";
+const childThemeFolder = "sejimenez";
+const childThemeName = "sejimenz";
+const wp_folderName = "sejimenez2k20";
 
 /*const childThemeFolder =
   args.childfolder == "undefined" ? "child_theme" : args.childfolder;
@@ -30,7 +31,7 @@ const sourcePaths = {
   css: baseSourcePath + "css/**/*.scss",
   js: baseSourcePath + "js/**/*.js",
   html: baseSourcePath + "**/*.html",
-  php: baseSourcePath + "**/*.php"
+  php: baseSourcePath + "*.php"
 };
 
 const cssSourceOrder = [
@@ -44,9 +45,9 @@ const cssSourceOrder = [
 
 const jsSourceOrder = [baseSourcePath + "js/custom_theme_scripts.js"];
 
-const localhost = "http://localhost/puentejuderia/";
+const localhost = "http://localhost/" + wp_folderName + "/";
 const baseDestPath = "/Volumes/IO/Google Drive/HTDOCS/";
-const destWP = baseDestPath + "puentejuderia/";
+const destWP = baseDestPath + wp_folderName + "/";
 const destChildTheme = destWP + "wp-content/themes/" + childThemeFolder + "/";
 
 /*function addjQuery() {
