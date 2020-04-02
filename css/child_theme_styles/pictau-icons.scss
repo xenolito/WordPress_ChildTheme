@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'pictau-icons';
-  src:  url('../icons/pictau-icons.eot?gn8zww');
-  src:  url('../icons/pictau-icons.eot?gn8zww#iefix') format('embedded-opentype'),
-    url('../icons/pictau-icons.ttf?gn8zww') format('truetype'),
-    url('../icons/pictau-icons.woff?gn8zww') format('woff'),
-    url('../icons/pictau-icons.svg?gn8zww#pictau-icons') format('svg');
+  font-family: "pictau-icons";
+  src: url("../icons/pictau-icons.eot?gn8zww");
+  src: url("../icons/pictau-icons.eot?gn8zww#iefix") format("embedded-opentype"),
+    url("../icons/pictau-icons.ttf?gn8zww") format("truetype"),
+    url("../icons/pictau-icons.woff?gn8zww") format("woff"),
+    url("../icons/pictau-icons.svg?gn8zww#pictau-icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-pct-custom-"], [class*=" icon-pct-custom-"] {
+[class^="icon-pct-custom-"],
+[class*=" icon-pct-custom-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'pictau-icons' !important;
+  font-family: "pictau-icons" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

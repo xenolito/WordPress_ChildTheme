@@ -1,4 +1,12 @@
-// To create childtheme folder:   gulp setup --childfolder pinkpanther --childname PINKPANTHER
+// HOW TO SETUP:
+/**
+ * 1) set the following values below:
+ *    - childThemeFolder  --> Theme folder name
+ *    - childThemeName    --> The childtheme's name, will be setup on style.css childtheme
+ *    - wp_folderName     --> The folder containing the wordPress CMS
+ *
+ * 2) exec on terminal gulp setup --> Will create the needed folders+files on wordpress and childtheme
+ * */
 
 // Initialize modules
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
@@ -17,7 +25,7 @@ const replace = require("gulp-replace");
 const bsync = require("browser-sync").create(); // create a browser-sync instance...
 
 const childThemeFolder = "sejimenez";
-const childThemeName = "sejimenz";
+const childThemeName = "sejimenez";
 const wp_folderName = "sejimenez2k20";
 
 /*const childThemeFolder =
@@ -136,7 +144,7 @@ function directories(done) {
     .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS
     .pipe(dest(destChildTheme)); // put final CSS in dist folder
 
-  src("mu_plugins/*.php", { base: "." }).pipe(dest(destChildTheme + "../../")); // 2) copy mu_plugins/ needed for PICTAU's WPO.
+  src("mu-plugins/*.php", { base: "." }).pipe(dest(destChildTheme + "../../")); // 2) copy mu-plugins/ needed for PICTAU's WPO.
   src("screenshot.png", { base: "." }).pipe(dest(destChildTheme)); // 3) copy screenshot png for child theme.
   src("*.php", { base: "." }).pipe(dest(destChildTheme)); // 4) copy all php files to child theme folder.
   done();

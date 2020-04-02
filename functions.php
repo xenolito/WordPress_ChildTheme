@@ -4,10 +4,11 @@ function oceanwp_child_enqueue_parent_style() {
 	$theme   = wp_get_theme( 'OceanWP' );
 	$version = $theme->get( 'Version' );
 	// Load the stylesheet
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'oceanwp-style' ), $version );
+	wp_enqueue_style( 'pictau-child', get_stylesheet_directory_uri() . '/style.css', array( 'oceanwp-style' ), $version );
 
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );/* custom PHP functions below this line */
+
 
 /*------------------------------------------------------------------------------------------------------*\
 
@@ -16,15 +17,16 @@ add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );/* cust
 \*------------------------------------------------------------------------------------------------------*/
 
 function custom_wp_mail_from_name( $original_email_from ) {
-	return 'PUENTE DE LA JUDERÍA';
+	return 'SEJIMENEZ';
 }
 
 function custom_wp_email_address( $original_email_address ) {
-    return 'contacto@puentedelajuderia.com';
+    return 'contacto@sejimenez.com';
 }
 
 add_filter( 'wp_mail_from', 'custom_wp_email_address' );
 add_filter( 'wp_mail_from_name', 'custom_wp_mail_from_name' );
+
 
 
 
@@ -160,7 +162,6 @@ function cf7_events() {
 }
 
 add_action( 'wp_footer', 'cf7_events' );
-
 
 
 
