@@ -4,7 +4,7 @@ function oceanwp_child_enqueue_parent_style() {
 	$theme   = wp_get_theme( 'OceanWP' );
 	$version = $theme->get( 'Version' );
 	// Load the stylesheet
-	wp_enqueue_style( 'pictau-child', get_stylesheet_directory_uri() . '/style.css', array( 'oceanwp-style' ), $version );
+	wp_enqueue_style( 'pictau-child', get_stylesheet_directory_uri() . '/style.css', array( 'osh-styles' ), $version );
 
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );/* custom PHP functions below this line */
@@ -24,9 +24,9 @@ function custom_wp_email_address( $original_email_address ) {
     return 'contacto@sejimenez.com';
 }
 
+
 add_filter( 'wp_mail_from', 'custom_wp_email_address' );
 add_filter( 'wp_mail_from_name', 'custom_wp_mail_from_name' );
-
 
 
 

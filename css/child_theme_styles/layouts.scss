@@ -1,3 +1,40 @@
 .current-menu-item a.menu-link {
   color: var(--primary-color) !important;
 }
+
+#site-header {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+#site-header #site-header-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#site-header-sticky-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+#site-header-sticky-wrapper header {
+  background-color: transparent;
+}
+
+#site-header-sticky-wrapper.is-sticky header {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.skip-link.screen-reader-text {
+  display: none !important;
+}
+
+#site-header-sticky-wrapper {
+  /*display: none !important;*/
+  height: 0 !important;
+}
+
+.page-header {
+  padding-top: var(--header-height) !important;
+}
