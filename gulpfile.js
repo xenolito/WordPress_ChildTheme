@@ -23,6 +23,8 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const replace = require("gulp-replace");
 const bsync = require("browser-sync").create(); // create a browser-sync instance...
+const notify = require("gulp-notify");
+const plumber = require("gulp-plumber");
 
 const childThemeFolder = "sejimenez";
 const childThemeName = "sejimenez";
@@ -39,7 +41,7 @@ const sourcePaths = {
   css: baseSourcePath + "css/**/*.scss",
   js: baseSourcePath + "js/**/*.js",
   html: baseSourcePath + "**/*.html",
-  php: baseSourcePath + "*.php"
+  php: baseSourcePath + "*.php",
 };
 
 const cssSourceOrder = [
@@ -48,7 +50,7 @@ const cssSourceOrder = [
   baseSourcePath + "css/child_theme_styles/globals.scss",
   baseSourcePath + "css/child_theme_styles/layouts.scss",
   baseSourcePath + "css/child_theme_styles/style.scss",
-  baseSourcePath + "css/child_theme_styles/**/*.scss"
+  baseSourcePath + "css/child_theme_styles/**/*.scss",
 ];
 
 const jsSourceOrder = [baseSourcePath + "js/custom_theme_scripts.js"];
@@ -64,16 +66,23 @@ const destChildTheme = destWP + "wp-content/themes/" + childThemeFolder + "/";
   );
 }*/
 
+function customPlumber() {
+  return plumber({
+    errorHandler: notify.onError("ERROR: <%= error.message  %>"),
+  });
+}
+
 // Sass task: compiles the style.scss file into style.css
 function scssTask() {
   return src(cssSourceOrder)
     .pipe(sourcemaps.init({ loadMaps: true, largFile: true })) // initialize sourcemaps first
+    .pipe(customPlumber())
     .pipe(concat("style.css"))
     .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS
     .pipe(
       postcss([
         autoprefixer("last 2 versions"),
-        cssnano({ preset: ["default", { discardComments: true }] })
+        cssnano({ preset: ["default", { discardComments: true }] }),
       ])
     ) // PostCSS plugins
     .pipe(sourcemaps.write(".")) // write sourcemaps file in current directory
@@ -83,6 +92,7 @@ function scssTask() {
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
   return src(jsSourceOrder)
+    .pipe(customPlumber())
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(concat("custom_theme_scripts.min.js"))
     .pipe(uglify())
@@ -113,9 +123,9 @@ function browSync(done) {
     injectChanges: true,
     watch: true,
     proxy: {
-      target: localhost
+      target: localhost,
       //ws: true
-    }
+    },
     //files: [destPath.css, destPath.js]
   });
 
