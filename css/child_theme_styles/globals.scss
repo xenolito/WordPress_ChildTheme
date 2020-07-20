@@ -1,12 +1,163 @@
 :root {
-  --primary-color: #57a9fb;
-  --header-height: 100px;
+  --header-height: 113px;
+  --header-mobile-height: 74px;
+  --button-small-border-radius: 15px;
+  --button-small-padding: 3px 10px;
+  --button-border-radius: 50px;
+  --box-border-radius: 10px;
+  --default-font-family: Dosis, Helvetica, Arial, sans-serif;
+  --default-heading-font-family: Dosis, Helvetica, Arial, sans-serif;
+  --button-padding: 14px 24px;
+  --fontawesome: "Font Awesome 5 Free";
+  --def-box-shadow: 0 0px 18px 0 rgba(8, 72, 68, 0.1),
+    0 0px 4px 0 rgba(8, 72, 68, 0.15) !important;
+  --def-vert-box-shadow: 0 4px 18px 0 rgba(8, 72, 68, 0.1),
+    0 2px 4px 0 rgba(8, 72, 68, 0.1) !important;
+  --default-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  --def-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  --max-content-width: 1200px;
+  --section-padding: calc(80px + 4.5vw);
 }
 
+html,
 body {
-  background-color: #ccc;
+  background-color: var(--bg-color);
+  font-size: 16px !important;
 }
 
 a:focus {
   outline: 0 !important;
+}
+
+p,
+.elementor-text-editor {
+  letter-spacing: 0.5px !important;
+  font-size: 18px !important;
+  line-height: 26px;
+}
+
+p a {
+  text-decoration: underline !important;
+}
+
+p.pct-subheading,
+.pct-subheading {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  font-weight: 500;
+  display: inline-block;
+  padding-bottom: 1.4rem;
+}
+
+.pct-p-landing p {
+  font-size: 1.3em !important;
+  line-height: 1.4em !important;
+}
+
+.pct-p-smaller,
+.pct-p-smaller p {
+  font-size: 1.1em !important;
+  line-height: 1.3em !important;
+}
+
+h1 {
+  font-size: calc(2rem + 2vw);
+  line-height: calc(2rem + 2vw);
+  font-family: var(--default-heading-font-family);
+}
+
+.heading-xbold {
+  font-weight: 700 !important;
+  /*text-transform: capitalize;*/
+}
+
+h2 {
+  color: var(--header-text-color);
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+#main #content h2 {
+  padding-top: 2rem;
+  text-transform: uppercase;
+}
+
+#main #content section.pct-hero-section h2 {
+  padding-top: 0;
+}
+
+#main #content .single-page-article .entry > h3 {
+  padding-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+section:not(.pct-footer-layout) h3.elementor-heading-title,
+section:not(.pct-footer-layout) h4.elementor-heading-title {
+  font-family: var(--default-headeing-font-family);
+  font-size: 56px !important;
+  line-height: 60px !important;
+  font-weight: 600 !important;
+}
+
+section:not(.pct-footer-layout) h5.elementor-heading-title {
+  font-family: var(--default-heading-font-family);
+  font-size: 22px !important;
+  line-height: 24px !important;
+  font-weight: 300 !important;
+}
+
+@media only screen and (max-width: 570px) {
+  section:not(.pct-footer-layout) h3.elementor-heading-title,
+  section:not(.pct-footer-layout) h4.elementor-heading-title {
+    font-family: var(--default-heading-font-family);
+    font-size: 40px !important;
+    line-height: 44px !important;
+  }
+
+  section:not(.pct-footer-layout) h5.elementor-heading-title {
+    font-family: var(--default-heading-family);
+    font-size: 24px !important;
+    line-height: 26px !important;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ICONS
+\*------------------------------------------------------------------------------------------------------*/
+.pct-icon-bg-rounded-white [class*="fa-"] {
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+[class*="pct-contact-email"]:before {
+  content: "\f0e0";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+[class*="pct-contact-tel"]:before {
+  content: "\f879";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+#site-navigation .site-search-toggle .icon-magnifier:before {
+  font-family: var(--fontawesome) !important;
+  content: "\f002" !important;
+}
+
+#searchform-header-replace-close:before {
+  font-family: var(--fontawesome) !important;
+  content: "\f057" !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ELEMENTOR WIDGETS
+\*------------------------------------------------------------------------------------------------------*/
+
+.elementor-price-table {
+  border-radius: var(--box-border-radius);
+  overflow: hidden;
 }

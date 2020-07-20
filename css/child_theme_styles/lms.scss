@@ -1,0 +1,248 @@
+/*------------------------------------------------------------------------------------------------------*
+                        LMS -- LEARNDASH
+\*------------------------------------------------------------------------------------------------------*/
+body.learndash-cpt {
+  font-size: 18px;
+}
+
+.learndash-wrapper .ld-tabs {
+  margin: 0;
+}
+
+body.sfwd-courses-template .ld-course-status,
+body.sfwd-courses-template .ld-item-list {
+  max-width: var(--max-content-width) !important;
+  margin: auto !important;
+  float: unset !important;
+}
+
+body.sfwd-courses-template .ld-item-list {
+  margin-top: 60px !important;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 4.5vw;
+  /* padding-bottom: 3rem; */
+  margin-top: 2rem !important;
+  border-radius: var(--box-border-radius);
+  border: 1px solid #eee;
+}
+
+@media only screen and (max-width: 1200px) {
+  body.sfwd-courses-template .ld-course-status {
+    margin: 0 4.5vw !important;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        LEARNDASH COURSE GRID
+\*------------------------------------------------------------------------------------------------------*/
+#ld_course_list .ld-course-list-items.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 950px) {
+  #ld_course_list .ld-course-list-items.row {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ld_course_list .ld-course-list-items.row .ld_course_grid {
+  max-width: unset;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#ld_course_list article {
+  border-radius: var(--box-border-radius);
+  border: 0;
+  box-shadow: var(--def-box-shadow);
+  height: 100%;
+}
+
+#ld_course_list article > a {
+  display: block;
+  position: relative;
+  max-height: 320px;
+  overflow: hidden;
+  border-top-left-radius: var(--box-border-radius);
+  border-top-right-radius: var(--box-border-radius);
+}
+
+#ld_course_list article > a:hover img {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+/*
+#ld_course_list article > a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+*/
+
+#ld_course_list article > a img {
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+#ld_course_list article > a h3 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  text-shadow: var(--def-text-shadow);
+  font-family: Oswald, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: calc(6px + 2.5vw);
+  line-height: calc(16px + 2.5vw);
+  padding: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 950px) {
+  #ld_course_list article > a h3 {
+    font-size: calc(6px + 5.5vw);
+    line-height: calc(16px + 5.5vw);
+    padding: 3rem;
+  }
+}
+
+#ld_course_list article .caption {
+  padding: 3rem;
+}
+
+#ld_course_list article .caption .entry-content {
+  margin: 0 !important;
+}
+
+.ld-course-list-items .ld_course_grid .ld_course_grid_button {
+  display: flex;
+}
+
+.ld-course-list-items .ld_course_grid .ld_course_grid_button a {
+  width: auto;
+  margin: auto !important;
+  margin-top: 2rem !important;
+}
+
+.ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_price {
+  top: 30px;
+  background-color: var(--cta-color);
+  text-transform: uppercase;
+  padding: 5px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ld-course-list-items
+  .ld_course_grid
+  .thumbnail.course
+  .ld_course_grid_price:before {
+  border-top: 4px solid var(--cta-color-darker);
+  border-right: 4px solid var(--cta-color-darker);
+}
+
+.learndash-wrapper .ld-item-list.ld-course-list .ld-section-heading h2,
+.learndash-wrapper .ld-item-list.ld-lesson-list .ld-section-heading h2 {
+  font-size: 2em;
+}
+
+.ld-course-status .ld-status {
+  font-size: 1rem !important;
+  line-height: 1rem !important;
+  font-family: var(--default-font-family) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 8px 16px !important;
+  border-radius: 6px;
+  /*border-radius: var(--button-border-radius);*/
+}
+
+.ld-course-status .ld-status.ld-status-waiting {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/*ld-status-waiting ld-tertiary-background*/
+
+/*------------------------------------------------------------------------------------------------------*
+            BOTONES
+\*------------------------------------------------------------------------------------------------------*/
+.learndash-wrapper .btn-join:hover,
+.learndash-wrapper #btn-join:hover {
+  opacity: 1;
+}
+
+.pct-home-course-bottom-btns .elementor-widget-shortcode {
+  display: flex;
+  justify-content: center;
+}
+
+#btn-join.btn-join {
+  width: auto;
+}
+
+#btn-join.btn-join:hover {
+  background-color: var(--woo-bt-ok-color) !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            SECTION BOTONES FINAL HOME CURSO
+\*------------------------------------------------------------------------------------------------------*/
+
+.pct-home-course-bottom-btns {
+  margin-top: -100px !important;
+  padding-bottom: 100px !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            FIXING AUTO BR TAG INSERTED WITH SHORTCODE
+\*------------------------------------------------------------------------------------------------------*/
+
+body.sfwd-courses-template .elementor-headline br {
+  display: none !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            HIDING COURSES LIST ON COURSE LANDING FOR STUDENT
+\*------------------------------------------------------------------------------------------------------*/
+
+body.sfwd-courses-template .ld-course-list {
+  display: none;
+}
+
+body.woocommerce-account .ld-profile-edit-link {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .learndash-wrapper #ld-profile .ld-section-heading .ld-expand-button {
+    margin: 10px 0;
+    max-width: 160px;
+  }
+}
+
+.learndash-wrapper .ld-item-list .ld-section-heading .ld-search-prompt {
+  align-items: center;
+}
+
+.learndash-wrapper
+  .ld-item-list
+  .ld-item-search
+  .ld-item-search-wrapper:before {
+  right: 180px;
+}

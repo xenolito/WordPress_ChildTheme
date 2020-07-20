@@ -1,0 +1,96 @@
+#site-header input[type="search"] {
+  color: #fff;
+}
+
+#site-header input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ANIMATIONS
+\*------------------------------------------------------------------------------------------------------*/
+@-moz-keyframes heartbeat-loader {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+@-webkit-keyframes heartbeat-loader {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+@keyframes heartbeat-loader {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  14% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  28% {
+    transform: rotate(45deg) scale(1);
+  }
+  42% {
+    transform: rotate(45deg) scale(1.3);
+  }
+  70% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.heartbeat-loader:not(:required) {
+  animation: heartbeat-loader 1300ms ease 0s infinite normal;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 36px;
+  height: 36px;
+  transform: rotate(45deg) scale(1);
+  transform-origin: 50% 50%;
+}
+.heartbeat-loader:not(:required):after,
+.heartbeat-loader:not(:required):before {
+  position: absolute;
+  content: "";
+  background: var(--site-header-color);
+}
+.heartbeat-loader:not(:required):before {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  top: 12px;
+  left: 0;
+  width: 36px;
+  height: 24px;
+}
+.heartbeat-loader:not(:required):after {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  top: 0;
+  left: 12px;
+  width: 24px;
+  height: 12px;
+}
