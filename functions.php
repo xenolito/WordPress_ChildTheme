@@ -13,7 +13,6 @@ add_action( 'wp_enqueue_scripts', 'remove_default_stylesheet', 20 );
 function remove_default_stylesheet() {
 	wp_deregister_style( 'elementor-icons' );
 	//wp_deregister_style( 'simple-line-icons' ); // used by oceanwp like search magnifier and home icon on header breadcrumb...
-
 }
 /*------------------------------------------------------------------------------------------------------*\
 
@@ -22,11 +21,11 @@ function remove_default_stylesheet() {
 \*------------------------------------------------------------------------------------------------------*/
 
 function custom_wp_mail_from_name( $original_email_from ) {
-	return 'SEJIMENEZ';
+	return 'EXCESS';
 }
 
 function custom_wp_email_address( $original_email_address ) {
-    return 'info@sejimenez.com';
+    return 'contacto@excessclientes.es';
 }
 
 
