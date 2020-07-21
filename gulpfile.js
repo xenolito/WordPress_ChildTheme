@@ -1,13 +1,3 @@
-// HOW TO SETUP:
-/**
- * 1) set the following values below:
- *    - childThemeFolder  --> Theme folder name
- *    - childThemeName    --> The childtheme's name, will be setup on style.css childtheme
- *    - wp_folderName     --> The folder containing the wordPress CMS
- *
- * 2) exec on terminal gulp setup --> Will create the needed folders+files on wordpress and childtheme
- * */
-
 // Initialize modules
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require("gulp");
