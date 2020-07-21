@@ -13,5 +13,5 @@ This wil create al needed folders and childtheme files on target WordPress folde
 
 ### 2) run --> `gulp`
 
-    After setup have been run, a configuration file is created (configSetup.json).
-    Since then, only `gulp` is needed to launch a local server with watch files.
+After setup have been run, a configuration file is created `configSetup.json`.
+Since then, only `gulp` is needed to launch a local server with watch files.
