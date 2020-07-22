@@ -72,6 +72,11 @@ async function wpConfigSetup(done) {
     },
     {
       type: "input",
+      name: "wp_parent_theme_name",
+      message: "Enter the WP PARENT THEME name",
+    },
+    {
+      type: "input",
       name: "childThemeFolder",
       message: "Enter the Child Theme folder name",
     },
@@ -88,6 +93,7 @@ async function wpConfigSetup(done) {
 
 function setUserValues(values) {
   setupOBJ.wp_folder = values["wp_folder"];
+  setupOBJ.wp_parent_theme_name = values["wp_parent_theme_name"];
   setupOBJ.childThemeFolder = values["childThemeFolder"];
   setupOBJ.childThemeName = values["childThemeName"];
   setupOBJ.localhost = "http://localhost/" + setupOBJ.wp_folder + "/";
@@ -106,7 +112,8 @@ function setUserValues(values) {
 function directories(done) {
   src("css/*.css").pipe(dest(setupOBJ.destChildTheme + "css/")); // 1: just copy special css files to theme css dir.
   src("**/child_theme_config.scss")
-    .pipe(replace(/\@@(.*?)\@@/, setupOBJ.childThemeName))
+    .pipe(replace(/\@@(.*?)\@@/g, setupOBJ.childThemeName))
+    .pipe(replace(/\###(.*?)\###/g, setupOBJ.wp_parent_theme_name))
     .pipe(concat("style.css"))
     .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS
     .pipe(dest(setupOBJ.destChildTheme)); // put final CSS in dist folder

@@ -19,5 +19,5 @@ Since then, only `gulp` is needed to launch a local server with watch files.
 
 ### TODO
 
-- Setup a prompt for parent theme name, so we can set our child theme's style.css pointing to the parent.
 - A way to prompt and setup the path to "httpdocs"
+- Add some config values to wp-congig.php
