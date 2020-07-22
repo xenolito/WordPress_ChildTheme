@@ -4,10 +4,11 @@
 
 ### 1) run -> `gulp setup`
 
-You'll be propmted for the following configuration values.
---> The folder containing the _WordPress CMS_
---> The _child theme_ folder name
---> The childtheme's _name_
+You'll be propmted for the following configuration values:
+
+- The folder containing the _WordPress CMS_
+- The _child theme_ folder name
+- The childtheme's _name_
 
 This wil create al needed folders and childtheme files on target WordPress folder.
 
