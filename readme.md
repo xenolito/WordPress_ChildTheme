@@ -1,8 +1,18 @@
 # WordPress Child Theme Scaffolding
 
+## BEFORE RUNNING SETUP
+
+### 1) YOU'LL NEED:
+
+Before running the setup process, you'll need the following already installed/running
+
+- A working WordPress installation on a local server (httpdocs folder will be required).
+- A Parent Theme installed on `themes` folder.
+- A Child Theme folder created on `themes`folder.
+
 ## HOW TO SETUP:
 
-### 1) run -> `gulp setup`
+### 2) run -> `gulp setup`
 
 You'll be propmted for the following configuration values:
 
@@ -12,12 +22,11 @@ You'll be propmted for the following configuration values:
 
 This wil create al needed folders and childtheme files on target WordPress folder.
 
-### 2) run --> `gulp`
+### 3) run --> `gulp`
 
 After setup have been run, a configuration file is created `configSetup.json`.
 Since then, only `gulp` is needed to launch a local server with watch files.
 
 ### TODO
 
-- A way to prompt and setup the path to "httpdocs"
-- Add some config values to wp-congig.php
+- Add some config values to wp-config.php
