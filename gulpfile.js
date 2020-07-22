@@ -7,6 +7,7 @@ const { argv } = require("yargs");
 //const args = require("yargs").argv;
 
 const {
+  initSetWPpaths,
   configsetup,
   directories,
   setupOBJ,
@@ -47,4 +48,4 @@ exports.default = series(
 );
 
 //exports.setup = series(wpConfigSetup, directories);
-exports.setup = series(configsetup, directories);
+exports.setup = series(initSetWPpaths, configsetup, directories);

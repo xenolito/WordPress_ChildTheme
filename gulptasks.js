@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { prompt } = require("enquirer");
 const { src, dest, watch, series, parallel } = require("gulp");
 const replace = require("gulp-replace");
@@ -63,12 +64,27 @@ function customPlumber() {
 
 const notify = require("gulp-notify");
 
+async function initSetWPpaths(done) {
+  const response = await prompt({
+    type: "input",
+    name: "httpdocs_path",
+    message: "Enter the path to the HTTPDOCS folder where WP is located",
+    initial: "/Volumes/IO/Google Drive/HTDOCS",
+    validate: checkifDirExists,
+  });
+
+  setupOBJ.httpdocs_path = response["httpdocs_path"] + "/"; // guardamos el valor para la validacion del directorio de WordPress (siguiente pregunta)
+  console.log("WP base path set to: " + setupOBJ.httpdocs_path);
+  done();
+}
+
 async function wpConfigSetup(done) {
   const response = await prompt([
     {
       type: "input",
       name: "wp_folder",
       message: "Enter the WordPress folder name",
+      validate: checkifWPfolderExists,
     },
     {
       type: "input",
@@ -79,6 +95,7 @@ async function wpConfigSetup(done) {
       type: "input",
       name: "childThemeFolder",
       message: "Enter the Child Theme folder name",
+      validate: checkChildFolder,
     },
     {
       type: "input",
@@ -91,13 +108,53 @@ async function wpConfigSetup(done) {
   done();
 }
 
+function checkifWPfolderExists(str) {
+  let valid;
+  const httpdocsPath = setupOBJ.httpdocs_path;
+  try {
+    valid = fs.existsSync(httpdocsPath + str)
+      ? true
+      : "El directorio no existe";
+    setupOBJ.wp_folder = str; // guardamos el valor para validar el directorio del tema hijo.
+  } catch (err) {
+    console.log("ERROR");
+  }
+  return valid;
+}
+
+function checkifDirExists(str) {
+  let valid;
+  try {
+    valid = fs.existsSync(str) ? true : "El directorio no existe";
+  } catch (err) {
+    console.log("ERROR");
+  }
+  return valid;
+}
+
+function checkChildFolder(str) {
+  let valid;
+  const httpdocsPath = setupOBJ.httpdocs_path;
+  const pathToCheck =
+    setupOBJ.httpdocs_path + setupOBJ.wp_folder + "/wp-content/themes/" + str;
+
+  try {
+    valid = fs.existsSync(pathToCheck)
+      ? true
+      : "El directorio del tema hijo NO EXISTE";
+  } catch (err) {
+    console.log("ERROR");
+  }
+  return valid;
+}
+
 function setUserValues(values) {
   setupOBJ.wp_folder = values["wp_folder"];
   setupOBJ.wp_parent_theme_name = values["wp_parent_theme_name"];
   setupOBJ.childThemeFolder = values["childThemeFolder"];
   setupOBJ.childThemeName = values["childThemeName"];
   setupOBJ.localhost = "http://localhost/" + setupOBJ.wp_folder + "/";
-  setupOBJ.baseDestPath = "/Volumes/IO/Google Drive/HTDOCS/";
+  setupOBJ.baseDestPath = setupOBJ.httpdocs_path;
   setupOBJ.destWP = setupOBJ.baseDestPath + setupOBJ.wp_folder + "/";
   setupOBJ.destChildTheme =
     setupOBJ.destWP + "wp-content/themes/" + setupOBJ.childThemeFolder + "/";
@@ -184,6 +241,7 @@ function browSync(done) {
 }
 
 exports.configsetup = wpConfigSetup;
+exports.initSetWPpaths = initSetWPpaths;
 exports.directories = directories;
 exports.sourcePaths = sourcePaths;
 exports.setupOBJ = setupOBJ;
