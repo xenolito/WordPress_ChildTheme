@@ -29,5 +29,4 @@ Since then, only `gulp` is needed to launch a local server with watch files.
 
 ### TODO
 
-- Add some config values to wp-config.php
 - Add to functions.php the "WP EMAIL FROM CUSTOMIZATION" section.

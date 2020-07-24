@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { prompt } = require("enquirer");
 const { src, dest, watch, series, parallel } = require("gulp");
-const replace = require("gulp-replace");
+const replace = require("gulp-replace"); // replaces strings in files
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
@@ -180,7 +180,39 @@ function directories(done) {
   ); // 2: copy mu-plugins/ needed for PICTAU's WPO.
   src("screenshot.png", { base: "." }).pipe(dest(setupOBJ.destChildTheme)); // 3: copy screenshot png for child theme.
   src("*.php", { base: "." }).pipe(dest(setupOBJ.destChildTheme)); // 4: copy all php files to child theme folder.
+
+  console.log(
+    "Path to wp-config.php ==> " + setupOBJ.httpdocs_path + setupOBJ.wp_folder
+  );
+
+  const wpconfdest = setupOBJ.httpdocs_path + setupOBJ.wp_folder + "/";
+
+  src(wpconfdest + "wp-config.php")
+    .pipe(replace("/**#@-*/", wpconfigSetup)) //BUSCAMOS EN wp-config.php el string '/**#@-*/' para incluír nuestra configuración. Parece que este string es común a todos los idiomas en Wordpress.org
+    .pipe(dest(wpconfdest));
+
   done();
+}
+
+// Add some custom config values to wp-config.php
+function wpconfigSetup(match) {
+  let str = "/* AUTOMATIC ADDED BY GULP TASK @xenolito */";
+
+  str += "\n\n/* MEMORY LIMITS*/\n\n";
+  str += "define('WP_MEMORY_LIMIT', '3000M');\n\n";
+  str += "define( 'WP_MAX_MEMORY_LIMIT', '256M' );\n\n";
+  str += "set_time_limit(300);\n\n";
+  str += "/* Cambiamos directorio Uploads  */\n\n";
+  str += "define( 'UPLOADS', ''.'xen_media' );\n\n";
+  str += "ini_set('display_errors', 'Off');\n\n";
+  str += "ini_set('error_reporting', E_ALL );\n\n";
+  str += "define('WP_DEBUG', false);\n\n";
+  str += "define('WP_DEBUG_DISPLAY', false);\n\n";
+  str += "define('WP_DEBUG_LOG', false);\n\n";
+  str += "/* END AUTOMATIC ADDED BY GULP TASK @xenolito */\n\n";
+  //str += match + "\n\n";
+
+  return str;
 }
 
 function scssTask() {
