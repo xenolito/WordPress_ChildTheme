@@ -12,6 +12,10 @@ public
 *.tmp
 *-
 
+#gulp built files on setup process
+css/child_theme_styles/child_theme_config.scss
+functions.php
+
 #sftp extension and vscode stuff
 *.code-workspace
 .vscode

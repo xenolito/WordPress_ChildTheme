@@ -180,13 +180,13 @@ function setUserValues(values) {
 
 // Crates default folder/scaffolding structure
 function directories(done) {
-  src("css/*.css").pipe(dest(setupOBJ.destChildTheme + "css/")); // 1: just copy special css files to theme css dir.
-  src("**/child_theme_config.scss")
+  src("css/*.css").pipe(dest(setupOBJ.destChildTheme + "css/")); // 1: just copy special css files (admin-styles.css + custom-login-styles.css) to theme css dir.
+
+  src("./templates/child_theme_config.scss") // get child theme scss config in "templates" folder and do all prompts substitutions...
     .pipe(replace(/\@@(.*?)\@@/g, setupOBJ.childThemeName))
     .pipe(replace(/\###(.*?)\###/g, setupOBJ.wp_parent_theme_name))
-    .pipe(concat("style.css"))
-    .pipe(sass().on("error", sass.logError)) // compile SCSS to CSS
-    .pipe(dest(setupOBJ.destChildTheme)); // put final CSS in dist folder
+    .pipe(dest("./css/child_theme_styles")); // copy child theme .scss file to "css/child_theme_styles" folder for later transform and concanetation...
+  //.pipe(dest(setupOBJ.destChildTheme)); // put final CSS in dist folder
 
   src("mu-plugins/*.php", { base: "." }).pipe(
     dest(setupOBJ.destChildTheme + "../../")
@@ -204,7 +204,7 @@ function directories(done) {
     .pipe(replace("/**#@-*/", wpconfigSetup)) //BUSCAMOS EN wp-config.php el string '/**#@-*/' para incluír nuestra configuración. Parece que este string es común a todos los idiomas en las distribuciones de Wordpress.org
     .pipe(dest(wpconfdest));
 
-  src("./functions.php")
+  src("./templates/functions.php")
     .pipe(
       breplace({
         wpmailfrom_name: {
@@ -219,6 +219,7 @@ function directories(done) {
         },
       })
     )
+    .pipe(dest("./"))
     .pipe(dest(setupOBJ.destChildTheme));
 
   done();
