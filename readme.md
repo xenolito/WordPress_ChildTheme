@@ -19,6 +19,8 @@ You'll be propmted for the following configuration values:
 - The folder containing the _WordPress CMS_
 - The _child theme_ folder name
 - The childtheme's _name_
+- The default WP MAIL FROM `name`
+- The default WP MAIL FROM `email`
 
 This wil create al needed folders and childtheme files on target WordPress folder.
 
