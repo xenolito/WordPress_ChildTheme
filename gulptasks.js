@@ -201,7 +201,7 @@ function directories(done) {
   const wpconfdest = setupOBJ.httpdocs_path + setupOBJ.wp_folder + "/";
 
   src(wpconfdest + "wp-config.php")
-    .pipe(replace("/**#@-*/", wpconfigSetup)) //BUSCAMOS EN wp-config.php el string '/**#@-*/' para incluír nuestra configuración. Parece que este string es común a todos los idiomas en las distribuciones de Wordpress.org
+    .pipe(replace("/**#@-*/", wpconfigSetup)) //Search in wp-config.php the string '/**#@-*/' to include our server vars config. It looks like this string is a constant for all wordpress.org files language distributions.
     .pipe(dest(wpconfdest));
 
   src("./templates/functions.php")
