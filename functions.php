@@ -19,15 +19,17 @@ function remove_default_stylesheet() {
 						WP MAIL FROM CUSTOMIZATION
 
 \*------------------------------------------------------------------------------------------------------*/
-
+<!-- build:wpmailfrom_name -->
 function custom_wp_mail_from_name( $original_email_from ) {
-	return 'EXCESS';
+	return 'PICTAU';
 }
+<!-- endbuild -->
 
+<!-- build:wpmailfrom_email -->
 function custom_wp_email_address( $original_email_address ) {
-    return 'contacto@excessclientes.es';
+    return 'contacto@pictau.com';
 }
-
+<!-- endbuild -->
 
 add_filter( 'wp_mail_from', 'custom_wp_email_address' );
 add_filter( 'wp_mail_from_name', 'custom_wp_mail_from_name' );

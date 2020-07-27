@@ -2,6 +2,7 @@ const fs = require("fs");
 const { prompt } = require("enquirer");
 const { src, dest, watch, series, parallel } = require("gulp");
 const replace = require("gulp-replace"); // replaces strings in files
+const breplace = require("gulp-html-replace"); // replaces <!-- bulid: <name<--> <!-- endbuild --> format for html, php, etc. files.
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
@@ -102,6 +103,16 @@ async function wpConfigSetup(done) {
       name: "childThemeName",
       message: "Enter the Child Theme Name",
     },
+    {
+      type: "input",
+      name: "wp_mailfrom_name",
+      message: 'Enter your CUSTOMER\'s NAME for "wp mail from"',
+    },
+    {
+      type: "input",
+      name: "wp_mailfrom_email",
+      message: 'Ener your CUSTOMER\'s EMAIL for "wp mail from"',
+    },
   ]);
 
   setUserValues(response);
@@ -158,6 +169,8 @@ function setUserValues(values) {
   setupOBJ.destWP = setupOBJ.baseDestPath + setupOBJ.wp_folder + "/";
   setupOBJ.destChildTheme =
     setupOBJ.destWP + "wp-content/themes/" + setupOBJ.childThemeFolder + "/";
+  setupOBJ.wp_mailfrom_name = values["wp_mailfrom_name"];
+  setupOBJ.wp_mailfrom_email = values["wp_mailfrom_email"];
 
   /*  Guardamos las variables en un archivo json llamado configSetup.json */
   return file("configSetup.json", JSON.stringify(setupOBJ), { src: true }).pipe(
@@ -188,8 +201,25 @@ function directories(done) {
   const wpconfdest = setupOBJ.httpdocs_path + setupOBJ.wp_folder + "/";
 
   src(wpconfdest + "wp-config.php")
-    .pipe(replace("/**#@-*/", wpconfigSetup)) //BUSCAMOS EN wp-config.php el string '/**#@-*/' para incluír nuestra configuración. Parece que este string es común a todos los idiomas en Wordpress.org
+    .pipe(replace("/**#@-*/", wpconfigSetup)) //BUSCAMOS EN wp-config.php el string '/**#@-*/' para incluír nuestra configuración. Parece que este string es común a todos los idiomas en las distribuciones de Wordpress.org
     .pipe(dest(wpconfdest));
+
+  src("./functions.php")
+    .pipe(
+      breplace({
+        wpmailfrom_name: {
+          src: setupOBJ.wp_mailfrom_name,
+          tpl:
+            "function custom_wp_mail_from_name( $original_email_from ) {return '%s';}",
+        },
+        wpmailfrom_email: {
+          src: setupOBJ.wp_mailfrom_email,
+          tpl:
+            "function custom_wp_email_address( $original_email_address ) { return '%s'; }",
+        },
+      })
+    )
+    .pipe(dest(setupOBJ.destChildTheme));
 
   done();
 }

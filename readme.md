@@ -26,7 +26,3 @@ This wil create al needed folders and childtheme files on target WordPress folde
 
 After setup have been run, a configuration file is created `configSetup.json`.
 Since then, only `gulp` is needed to launch a local server with watch files.
-
-### TODO
-
-- Add to functions.php the "WP EMAIL FROM CUSTOMIZATION" section.
