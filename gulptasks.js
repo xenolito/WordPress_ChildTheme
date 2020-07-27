@@ -286,18 +286,11 @@ function browSync(done) {
     "LOCALHOST FOR BROWSERSYNC on setupOBJ.localhost= " + setupOBJ.localhost
   );
   bsync.init({
-    /*open: "external",
-    proxy:
-      "http://localhost/exseluwa/landing-intermediarios-de-credito-sunset/",
-    port: 80*/
-
     injectChanges: true,
     watch: true,
     proxy: {
       target: configData.localhost,
-      //ws: true
     },
-    //files: [destPath.css, destPath.js]
   });
 
   done();

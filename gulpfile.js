@@ -3,9 +3,6 @@
 const { src, dest, watch, series, parallel } = require("gulp");
 const { argv } = require("yargs");
 
-// Importing all the Gulp-related packages we want to use
-//const args = require("yargs").argv;
-
 const {
   initSetWPpaths,
   configsetup,
@@ -19,12 +16,6 @@ const {
   browSync,
   loadConfigData,
 } = require("./gulptasks.js");
-
-/*const childThemeFolder =
-  args.childfolder == "undefined" ? "child_theme" : args.childfolder;
-const childThemeName =
-  args.childname == "undefined" ? "CHILD THEME" : args.childname;
-*/
 
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
@@ -47,5 +38,4 @@ exports.default = series(
   watchTask
 );
 
-//exports.setup = series(wpConfigSetup, directories);
 exports.setup = series(initSetWPpaths, configsetup, directories);
