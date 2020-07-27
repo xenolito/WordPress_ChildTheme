@@ -15,6 +15,7 @@ public
 #gulp built files on setup process
 css/child_theme_styles/child_theme_config.scss
 functions.php
+configSetup.json
 
 #sftp extension and vscode stuff
 *.code-workspace

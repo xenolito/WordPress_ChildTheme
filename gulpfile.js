@@ -7,7 +7,6 @@ const {
   initSetWPpaths,
   configsetup,
   directories,
-  setupOBJ,
   sourcePaths,
   scssTask,
   jsTask,
