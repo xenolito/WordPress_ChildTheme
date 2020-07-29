@@ -5,7 +5,7 @@
   --button-small-padding: 3px 10px;
   --button-border-radius: 50px;
   --box-border-radius: 10px;
-  --default-font-family: Dosis, Helvetica, Arial, sans-serif;
+  --default-font-family: Quicksand, Helvetica, Arial, sans-serif;
   --default-heading-font-family: Dosis, Helvetica, Arial, sans-serif;
   --button-padding: 14px 24px;
   --fontawesome: "Font Awesome 5 Free";
@@ -23,6 +23,7 @@ html,
 body {
   background-color: var(--bg-color);
   font-size: 16px !important;
+  font-family: var(--default-font-family);
 }
 
 a:focus {
