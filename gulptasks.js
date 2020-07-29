@@ -191,6 +191,9 @@ function directories(done) {
   src("mu-plugins/*.php", { base: "." }).pipe(
     dest(setupOBJ.destChildTheme + "../../")
   ); // 2: copy mu-plugins/ needed for PICTAU's WPO.
+  src("js/custom_theme_scripts.js")
+    .pipe(concat("custom_theme_scripts.min.js"))
+    .pipe(dest(setupOBJ.destChildTheme + "/js/")); // 3: copy custom_theme_scripts.js unminified to child theme folder, will be minimized later on watch task...
   src("screenshot.png", { base: "." }).pipe(dest(setupOBJ.destChildTheme)); // 3: copy screenshot png for child theme.
   src("*.php", { base: "." }).pipe(dest(setupOBJ.destChildTheme)); // 4: copy all php files to child theme folder.
 

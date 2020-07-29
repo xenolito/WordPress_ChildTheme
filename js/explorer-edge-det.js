@@ -1,1 +1,0 @@
-!function(n){window.IEversion=function(){var n=window.navigator.userAgent,r=n.indexOf("MSIE ");if(r>0)return parseInt(n.substring(r+5,n.indexOf(".",r)),10);if(n.indexOf("Trident/")>0){var i=n.indexOf("rv:");return parseInt(n.substring(i+3,n.indexOf(".",i)),10)}var e=n.indexOf("Edge/");return e>0&&parseInt(n.substring(e+5,n.indexOf(".",e)),10)}()}();
