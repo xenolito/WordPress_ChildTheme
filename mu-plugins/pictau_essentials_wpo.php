@@ -192,14 +192,14 @@ function dequeue_jquery_migrate( &$scripts){
 
 \*------------------------------------------------------------------------------------------------------*/
 
-function remove_update_notifications($value) {
+function pct_remove_update_notifications($value) {
     if ( isset( $value ) && is_object( $value ) ) {
         unset($value->response[ 'revslider/revslider.php' ]);
     }
     return $value;
 }
 
-add_filter('site_transient_update_plugins', 'remove_update_notifications');
+add_filter('site_transient_update_plugins', 'pct_remove_update_notifications');
 
 
 /*------------------------------------------------------------------------------------------------------*\
