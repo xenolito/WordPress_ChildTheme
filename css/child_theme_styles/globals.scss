@@ -6,6 +6,7 @@
   --button-border-radius: 50px;
   --box-border-radius: 10px;
   --default-font-family: Quicksand, Helvetica, Arial, sans-serif;
+  --defautl-alt-font-family: Poppins, Helvetica, Arial, sans-serif;
   --default-heading-font-family: Dosis, Helvetica, Arial, sans-serif;
   --button-padding: 14px 24px;
   --fontawesome: "Font Awesome 5 Free";
@@ -28,8 +29,4 @@ body {
 
 a:focus {
   outline: 0 !important;
-}
-
-p a {
-  text-decoration: underline;
 }

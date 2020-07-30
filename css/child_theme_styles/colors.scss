@@ -1,0 +1,74 @@
+:root {
+  --main-color: #0091ef;
+}
+
+.style-dark .link-hover,
+.style-dark.style-override .link-hover,
+.style-light .style-dark .link-hover,
+.style-dark a:not(.btn-text-skin):hover,
+.style-dark.style-override a:not(.btn-text-skin):hover,
+.style-light .style-dark a:not(.btn-text-skin):hover,
+.style-dark a:not(.btn-text-skin):focus,
+.style-dark.style-override a:not(.btn-text-skin):focus,
+.style-light .style-dark a:not(.btn-text-skin):focus,
+.style-dark a.active,
+.style-dark.style-override a.active,
+.style-light .style-dark a.active,
+.style-dark .tmb .t-entry-text .t-entry-title a:hover,
+.style-dark.style-override .tmb .t-entry-text .t-entry-title a:hover,
+.style-light .style-dark .tmb .t-entry-text .t-entry-title a:hover,
+.style-dark .tmb .t-entry-text .t-entry-title a:focus,
+.style-dark.style-override .tmb .t-entry-text .t-entry-title a:focus,
+.style-light .style-dark .tmb .t-entry-text .t-entry-title a:focus,
+.style-dark .tmb .t-entry p.t-entry-comments .extras a:hover i,
+.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a:hover i,
+.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a:hover i,
+.style-dark .tmb .t-entry p.t-entry-comments .extras a.active i,
+.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a.active i,
+.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a.active i,
+.style-dark .tmb .t-entry p.t-entry-comments .extras a:focus i,
+.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a:focus i,
+.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a:focus i,
+.style-dark .widget_nav_menu li.active > a,
+.style-dark.style-override .widget_nav_menu li.active > a,
+.style-light .style-dark .widget_nav_menu li.active > a,
+.style-dark div[class*="sharer-"].share-button label:hover,
+.style-dark.style-override div[class*="sharer-"].share-button label:hover,
+.style-light .style-dark div[class*="sharer-"].share-button label:hover,
+.style-dark div[class*="sharer-"].share-button label:focus,
+.style-dark.style-override div[class*="sharer-"].share-button label:focus,
+.style-light .style-dark div[class*="sharer-"].share-button label:focus {
+  color: var(--main-color) !important;
+}
+
+::selection,
+.style-accent-bg {
+  background-color: var(--main-color);
+  color: #fff !important;
+}
+
+.border-accent-color {
+  border-color: var(--main-color) !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            BOTONES
+\*------------------------------------------------------------------------------------------------------*/
+.btn-accent:not(.btn-hover-nobg):not(.icon-animated):hover,
+.btn-accent:not(.btn-hover-nobg):not(.icon-animated):focus,
+.btn-accent:active {
+  background-color: #0000 !important; /*trasnparent*/
+  border-color: var(--main-color) !important;
+}
+
+.btn-accent:not(.btn-flat):not(.btn-hover-nobg):not(.icon-animated):not(.btn-text-skin):hover,
+.btn-accent:not(.btn-flat):not(.btn-hover-nobg):not(.icon-animated):not(.btn-text-skin):focus,
+.btn-accent:active {
+  color: var(--main-color) !important;
+}
+
+.btn-accent {
+  color: #fff !important;
+  background-color: var(--main-color) !important;
+  border-color: var(--main-color) !important;
+}
