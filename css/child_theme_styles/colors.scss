@@ -1,5 +1,7 @@
 :root {
   --main-color: #0091ef;
+  --primary-color-darker: #343434;
+  --cta-color: #ff1743;
 }
 
 .style-dark .link-hover,
@@ -71,4 +73,40 @@
   color: #fff !important;
   background-color: var(--main-color) !important;
   border-color: var(--main-color) !important;
+}
+
+.style-dark button {
+  color: var(--main-color) !important;
+  background-color: #fff !important;
+}
+
+.style-dark button:hover {
+  color: #fff !important;
+  background-color: var(--primary-color-darker) !important;
+}
+
+.style-dark button:hover i {
+  color: #fff !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            COLORS BY BACKGROUND
+\*------------------------------------------------------------------------------------------------------*/
+
+.style-dark p,
+.style-dark h1,
+.style-dark h2,
+.style-dark h3,
+.style-dark .wpcf7 [id*="legalinput"] + label,
+.style-dark .wpcf7 [id*="legalinput"] + label a {
+  color: #fff;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            CONTACT FORM 7
+\*------------------------------------------------------------------------------------------------------*/
+
+.style-dark .wpcf7-response-output,
+.style-dark .wpcf7 .pct-msg-sent-ok p {
+  color: #fff !important;
 }

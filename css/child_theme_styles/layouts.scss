@@ -2,6 +2,35 @@
   padding: 16px 36px;
 }
 
+.pct-section {
+  padding: 4.5vw;
+}
+
+.pct-p-big {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+@media only screen and (max-width: 959px) {
+  .heading-text {
+    text-align: center;
+  }
+  .pct-p-big {
+    text-align: center;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            HEADERS
+\*------------------------------------------------------------------------------------------------------*/
+.heading-text.el-text > *:last-child {
+  margin-bottom: 1.5vw !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            FOOTER
+\*------------------------------------------------------------------------------------------------------*/
+
 footer .footer-last p {
   font-family: var(--defautl-alt-font-family);
   font-size: 0.85rem !important;

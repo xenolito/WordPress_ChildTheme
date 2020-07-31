@@ -1,15 +1,37 @@
 /*------------------------------------------------------------------------------------------------------*
-            RESET THEME FORM SETTINGS
+            RESET THEME FORM SETTINGS FOR SPECIFIC THEME
 \*------------------------------------------------------------------------------------------------------*/
 #opl-login-form .input-wrap .input-lg {
   font-size: 1rem !important;
 }
 
-form input:focus:invalid,
-form textarea:focus:invalid,
-form select:focus:invalid {
+.wpcf7 form input:focus:invalid,
+.wpcf7 form textarea:focus:invalid,
+.wpcf7 form select:focus:invalid {
   color: var(--cta-color);
   border-color: var(--cta-color);
+}
+
+.wpcf7 input:not([type="submit"]),
+.wpcf7 textarea,
+.wpcf7 select {
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  color: #151515;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1px;
+}
+
+.wpcf7 .wpcf7-mail-sent-ok,
+.wpcf7 .wpcf7-validation-errors,
+.wpcf7 span.wpcf7-not-valid-tip {
+  margin: 0;
+}
+
+.wpcf7-form-control-wrap {
+  margin: 0;
 }
 
 /*------------------------------------------------------------------------------------------------------*\
@@ -125,6 +147,7 @@ form select:focus:invalid {
 .wpcf7 textarea {
   font-family: var(--base-font-family);
   font-size: 1rem;
+  width: 100%;
 }
 
 .modal .wpcf7 input:not([type="submit"]),
@@ -144,29 +167,11 @@ form select:focus:invalid {
   max-width: 500px;
 }
 
-@media only screen and (max-width: 480px) {
-  .lead-form-container,
-  .pct-form-container,
-  body.single-seguro .cta-microsite {
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
-  }
-}
-
-.pct-form-container h5 {
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-}
-
-.pct-form-container h3 {
-  padding-top: 1rem;
-}
-
 .screen-reader-response {
   display: none !important;
 }
 
-input:not([type="checkbox"]),
+.wpcf7 input:not([type="checkbox"]),
 textarea {
   -webkit-appearance: none !important;
 }
@@ -175,7 +180,7 @@ textarea {
   text-align: center;
 }
 
-span.wpcf7-list-item {
+.wpcf7 span.wpcf7-list-item {
   margin: auto;
 }
 
@@ -193,13 +198,13 @@ span.wpcf7-list-item {
   text-decoration: none !important;
 }
 
-.pct-form-element {
+.wpcf7 .pct-form-element {
   padding-bottom: 1rem;
 }
 
-.input,
-.textarea,
-.pct-form-element {
+.wpcf7 .input,
+.wpcf7 .textarea,
+.wpcf7 .pct-form-element {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -208,9 +213,9 @@ span.wpcf7-list-item {
   text-align: left;
 }
 
-.textarea,
-.pct-form-element.pct-legal,
-div.wpcf7-response-output {
+.wpcf7 .textarea,
+.wpcf7 .pct-form-element.pct-legal,
+.wpcf7 div.wpcf7-response-output {
   width: 100%;
   display: block;
 }
@@ -228,11 +233,11 @@ div.wpcf7-response-output {
   font-size: 1em;
   line-height: 1.5em;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.5rem !important;
 }
 
-.pct-legal,
-.pct-legal a {
+.wpcf7 .pct-legal,
+.wpcf7 .pct-legal a {
   font-size: 14px;
   line-height: 14px;
   box-sizing: border-box;
@@ -240,10 +245,9 @@ div.wpcf7-response-output {
 }
 
 .wpcf7-form-control-wrap,
-label[for="cv_file"] {
+.wpcf7 label[for="cv_file"] {
   width: 100%;
   position: relative;
-  margin: 0.5em auto !important;
 }
 
 .wpcf7-form-control-wrap {
@@ -265,7 +269,7 @@ label[for="cv_file"] {
 
 \*------------------------------------------------------------------------------------------------------*/
 
-form.placeholder_as_label label.persist-label {
+.wpcf7 form.placeholder_as_label label.persist-label {
   position: absolute;
   color: #b4b4b4;
   font-weight: 500 !important;
@@ -277,26 +281,21 @@ form.placeholder_as_label label.persist-label {
   transform-origin: left bottom;
   transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
   width: calc(100% - 2em);
+  z-index: 10;
 }
 
-form.placeholder_as_label input[type="text"].placeholder-to-label,
-form.placeholder_as_label input[type="email"].placeholder-to-label,
-form.placeholder_as_label input[type="url"].placeholder-to-label,
-form.placeholder_as_label textarea.placeholder-to-label {
+.wpcf7 form.placeholder_as_label input[type="text"].placeholder-to-label,
+.wpcf7 form.placeholder_as_label input[type="email"].placeholder-to-label,
+.wpcf7 form.placeholder_as_label input[type="url"].placeholder-to-label,
+.wpcf7 form.placeholder_as_label textarea.placeholder-to-label {
   margin-bottom: 0.8rem !important;
   padding-top: 1.5em !important;
   transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.placeholder_as_label .persist-label.show-as-label {
+.wpcf7 .placeholder_as_label .persist-label.show-as-label {
   transform: scale3d(0.75, 0.75, 1) translate3d(0.3em, 0px, 0px);
   top: 0.1rem;
-}
-
-.bg-main-gradient .placeholder_as_label .persist-label.show-as-label,
-.bg-second-gradient .placeholder_as_label .persist-label.show-as-label,
-.bg-third-gradient .placeholder_as_label .persist-label.show-as-label {
-  color: #fff !important;
 }
 
 /*------------------------------------------------------------------------------------------------------*\
@@ -304,13 +303,13 @@ form.placeholder_as_label textarea.placeholder-to-label {
 						CONTACT FORM 7 CHECKBOX LEGAL STYLES
 
 \*------------------------------------------------------------------------------------------------------*/
-[id*="legalinput"] {
+.wpcf7 [id*="legalinput"] {
   background-color: #ff0000;
 }
 
-[id*="legalinput"] + label:before,
-[id*="legalinput"] + label:after {
-  font-family: var(--fontawesome);
+.wpcf7 [id*="legalinput"] + label:before,
+.wpcf7 [id*="legalinput"] + label:after {
+  font-family: var(--pictauicons);
   font-size: 20px;
   line-height: 20px;
   border-radius: 3px;
@@ -319,14 +318,14 @@ form.placeholder_as_label textarea.placeholder-to-label {
   top: 0px;
   left: 0;
 }
-[id*="legalinput"] + label:before {
+.wpcf7 [id*="legalinput"] + label:before {
   content: "\f111"; /*unchecked*/
 
   font-weight: 900;
   border-radius: 50%;
   color: #fff;
 }
-[id*="legalinput"] + label:after {
+.wpcf7 [id*="legalinput"] + label:after {
   /*content: "\f00c";*/ /*checked*/
   content: "\f058";
   /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
@@ -339,17 +338,10 @@ form.placeholder_as_label textarea.placeholder-to-label {
   color: var(--primary-color-darker);
 }
 
-[id*="legalinput"]:checked + label:after {
+.wpcf7 [id*="legalinput"]:checked + label:after {
   /*max-width: 25px;*/
   /*opacity: 1;*/
   transform: scale3d(1, 1, 1);
-}
-
-.wpcf7 .placeholder_as_label input[type="email"],
-.wpcf7 .placeholder_as_label input[type="text"],
-.wpcf7 .placeholder_as_label input[type="url"],
-.wpcf7 .placeholder_as_label textarea {
-  border-radius: var(--box-border-radius);
 }
 
 .wpcf7 .legal-content {
@@ -374,41 +366,40 @@ form.placeholder_as_label textarea.placeholder-to-label {
   padding: 0;
 }
 
-.pct-form-pasti {
+.wpcf7 .pct-form-pasti {
   max-width: 400px;
   margin: auto;
 }
 
-.pct-form-standalone .pct-form-pasti {
-  margin: unset;
-}
-
-.wpcf7 input[type="text"],
-.wpcf7 input[type="email"],
-.wpcf7 input[type="number"],
-.wpcf7 input[type="phone"],
-.wpcf7 input[type="url"],
 .wpcf7 textarea,
-form textarea {
-  font-size: 16px !important;
-  border-radius: 30px !important;
-  background-color: #fff !important;
-}
-
-.wpcf7 textarea,
-form textarea {
+.wpcf7 form textarea {
   padding: 15px 20px;
 }
 
 .wpcf7 button,
 .wpcf7 input[type="submit"] {
+  display: inline-block;
   position: relative;
   border: 0;
-  /*padding: 9px 12px !important;*/
   min-width: 160px;
   min-height: 44px;
   z-index: 1;
-  margin-top: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  font-style: normal !important;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  outline: none;
+  white-space: pre-wrap;
+  -webkit-text-stroke: 0px;
+  color: #fff;
+  background-color: #fff;
+  font-weight: 600 !important;
+  font-family: var(--default-font-family) !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .wpcf7 .submit_on_email button,
@@ -431,7 +422,7 @@ form textarea {
   position: absolute;
   justify-content: center;
   align-content: center;
-  font-size: 1em;
+  font-size: 1.4em;
   left: 50%;
   top: 50%;
   opacity: 0;
@@ -456,16 +447,23 @@ form textarea {
   display: none;
 }
 
+.wpcf7 button[id="submit"] i,
+.wpcf7 button[id="submit"] i:before {
+  width: 24px;
+  height: 24px;
+}
+
 .wpcf7 button[id="submit"].active i.showIcon,
 .wpcf7 input[type="submit"].active i.showIcon {
   opacity: 1;
+  color: var(--primary-color-darker);
 }
 
 .wpcf7 button[id="submit"].active,
 .wpcf7 input[type="submit"].active {
   /*background: transparent;*/
-  min-width: inherit;
-
+  min-width: 44px;
+  border-radius: 0;
   /*animation-name: roundIt;
   animation-duration: 0.3s;
   animation-timing-function: ease-in;
@@ -506,14 +504,14 @@ form textarea {
 @keyframes roundIt {
   to {
     /*font-size: 0 !important;*/
-    width: 34px;
+    width: 44px;
     min-width: inherit;
+    border-radius: 50%;
   }
 }
 
 .wpcf7 .wpcf7-response-output {
-  margin: 0;
-  margin-top: 2rem;
+  margin: 0 !important;
   font-size: 14px !important;
   line-height: 16px !important;
   border-radius: var(--box-border-radius);
@@ -526,6 +524,34 @@ form textarea {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+}
+
+.wpcf7-response-output.wpcf7-validation-errors:after {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin-right: 0.5em;
+  letter-spacing: 24px;
+  text-indent: 23px;
+
+  background-color: #0000004d;
+  content: "\f12a";
+  font-weight: 600;
+  font-family: var(--pictauicons);
+  color: #fff;
+  text-indent: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .wpcf7 .pct-msg-sent-ok {
@@ -572,7 +598,7 @@ form textarea {
   display: block;
   opacity: 1;
   /*overflow: hidden;*/
-  max-height: 500px;
+  /*max-height: 500px;*/
   /*transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1), max-height 0.3s ease;*/
 }
 
@@ -651,10 +677,19 @@ form textarea {
   height: auto;
   position: absolute;
   top: 50%;
+
   left: 0;
   transform: translate3d(0, -50%, 0px);
   animation: ico-fadein 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   font-size: 0;
+}
+
+.wpcf7 .wpcf7-form-control-wrap:not(.legal-check) span[role="alert"] {
+  margin-top: -5px;
+}
+
+.wpcf7 .wpcf7-form-control-wrap.legal-check span[role="alert"] {
+  top: 17px;
 }
 
 /*.wpcf7 input[type="text"]:not(:placeholder-shown) + span[role="alert"] {
@@ -667,7 +702,7 @@ form textarea {
   display: inline-block;
   content: "\f12a";
   font-weight: 600;
-  font-family: var(--fontawesome);
+  font-family: var(--pictauicons);
   color: #fff;
   text-indent: 0;
   padding: 0;
@@ -721,7 +756,7 @@ form textarea {
   position: relative;
 }
 
-[id*="legalinput"] + label {
+.wpcf7 [id*="legalinput"] + label {
   display: inline-block;
   position: relative;
   padding-left: 40px;
@@ -730,20 +765,20 @@ form textarea {
   letter-spacing: 0.5px;
 }
 
-[id*="legalinput"] + label:after,
-[id*="legalinput"] + label:before {
+.wpcf7 [id*="legalinput"] + label:after,
+.wpcf7 [id*="legalinput"] + label:before {
   font-size: 24px;
   line-height: 0px;
   border-radius: 50%;
 }
 
-[id*="legalinput"] + label:after {
+.wpcf7 [id*="legalinput"] + label:after {
   position: absolute;
   top: 0;
   transform: translate3d(0px, 16px, 0) scale3d(0, 0, 1) !important;
 }
 
-[id*="legalinput"]:checked + label:after {
+.wpcf7 [id*="legalinput"]:checked + label:after {
   transform: translate3d(-0.5px, 16px, 0) scale3d(1.1, 1.1, 1) !important;
 }
 
@@ -776,11 +811,11 @@ form textarea {
   top: 16px;
 }
 
-[id*="legalinput"] + label {
+.wpcf7 [id*="legalinput"] + label {
   margin-bottom: 0;
 }
 
-[id*="legalinput"] + label:before {
+.wpcf7 [id*="legalinput"] + label:before {
   content: "\f111";
   font-weight: 900;
   border-radius: 50%;
@@ -792,7 +827,7 @@ form textarea {
 
 @keyframes ico-fadein {
   to {
-    transform: translate3d(-26px, -50%, 0);
+    transform: translate3d(-30px, -50%, 0);
     opacity: 1;
   }
 }
