@@ -16,7 +16,7 @@
 .wpcf7 textarea,
 .wpcf7 select {
   margin: 0;
-  border-radius: 0;
+  border-radius: var(--box-border-radius);
   border: 0;
   color: #151515;
   -webkit-font-smoothing: antialiased;
@@ -463,7 +463,6 @@ div.wpcf7-response-output {
 .wpcf7 input[type="submit"].active {
   /*background: transparent;*/
   min-width: 44px;
-  border-radius: 0;
   /*animation-name: roundIt;
   animation-duration: 0.3s;
   animation-timing-function: ease-in;

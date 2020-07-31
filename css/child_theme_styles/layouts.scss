@@ -40,3 +40,15 @@ footer .footer-last p {
 footer .site-info a {
   text-decoration: none;
 }
+
+/*------------------------------------------------------------------------------------------------------*
+            BOTONES
+\*------------------------------------------------------------------------------------------------------*/
+.btn,
+.no-touch .onepage-pagination .cd-label {
+  border-radius: var(--box-border-radius) !important;
+}
+
+button {
+  border-radius: var(--box-border-radius);
+}
