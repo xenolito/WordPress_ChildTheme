@@ -104,7 +104,6 @@
         );
 
         window.fto = setTimeout(function () {
-          clearTimeout(window.fto);
           let form = bt.closest("form");
           form.submit();
         }, 750);
