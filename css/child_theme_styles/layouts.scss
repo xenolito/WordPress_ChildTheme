@@ -2,6 +2,12 @@
   padding: 16px 36px;
 }
 
+@media (max-width: 959px) {
+  .menu-container .logo-container {
+    padding: 16px 36px !important;
+  }
+}
+
 .pct-section {
   padding: 4.5vw;
 }
@@ -21,6 +27,15 @@
 }
 
 /*------------------------------------------------------------------------------------------------------*
+            SECTIONS AND ROWS
+\*------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 450px) {
+  .main-container .row-container .row-parent {
+    padding: 1.5rem;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
             HEADERS
 \*------------------------------------------------------------------------------------------------------*/
 .heading-text.el-text > *:last-child {
@@ -30,15 +45,61 @@
 /*------------------------------------------------------------------------------------------------------*
             FOOTER
 \*------------------------------------------------------------------------------------------------------*/
+footer .footer-center {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
-footer .footer-last p {
+footer .pct-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: var(--defautl-alt-font-family);
   font-size: 0.85rem !important;
   letter-spacing: 1px;
 }
 
+@media only screen and (max-width: 959px) {
+  footer .pct-copy {
+    padding: 0 4.5vw;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  footer .pct-copy {
+    flex-direction: column;
+  }
+
+  footer .pct-copy-content {
+    padding-bottom: 1rem;
+  }
+}
+
 footer .site-info a {
   text-decoration: none;
+}
+
+footer .pct-footer-social ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+footer .pct-footer-social ul li {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: unset !important;
+  padding: 0 6px;
+}
+
+footer .pct-footer-social ul li a i:before {
+  display: inline-block;
+  transform: scale3d(1, 1, 1) !important;
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+footer .pct-footer-social ul li a:hover i:before {
+  transform: scale3d(1.2, 1.2, 1) !important;
 }
 
 /*------------------------------------------------------------------------------------------------------*
@@ -51,4 +112,50 @@ footer .site-info a {
 
 button {
   border-radius: var(--box-border-radius);
+}
+
+@media only screen and (max-width: 450px) {
+  .fix-mob-form-error {
+    display: block;
+    height: 150px;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            FORMS
+\*------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 450px) {
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ICON SCROLL DOWN TO NEXT SECTION
+\*------------------------------------------------------------------------------------------------------*/
+.icon-scroll-down {
+  display: inline-block;
+}
+
+.icon-scroll-down a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ico-next-section-size);
+  height: var(--ico-next-section-size);
+  line-height: var(--ico-next-section-size);
+  vertical-align: middle;
+  border: 0;
+  transition: all 0.1s cubic-bezier(0.2, 1, 0.3, 1);
+  box-sizing: initial;
+  border-radius: var(--ico-next-section-size);
+  margin-top: var(--ico-next-section-size);
+}
+
+.icon-scroll-down a i {
+  font-size: calc(var(--ico-next-section-size) / 2);
+  line-height: calc(var(--ico-next-section-size) / 2);
+}
+
+.style-dark .icon-scroll-down a {
+  background-color: #fff;
+  color: var(--main-color);
 }

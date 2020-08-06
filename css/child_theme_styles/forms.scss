@@ -601,6 +601,12 @@ div.wpcf7-response-output {
   /*transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1), max-height 0.3s ease;*/
 }
 
+@media only screen and (max-width: 450px) {
+  .wpcf7 .pct-form-pasti {
+    padding: 0 4.5vw;
+  }
+}
+
 .wpcf7 .sent .pct-form-pasti {
   /*
   opacity: 0;

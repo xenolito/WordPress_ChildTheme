@@ -54,6 +54,24 @@
 }
 
 /*------------------------------------------------------------------------------------------------------*
+            LAYOUT MENU
+\*------------------------------------------------------------------------------------------------------*/
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .lines,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .lines:before,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .lines:after,
+.mobile-menu-button-light .lines,
+.mobile-menu-button-light .lines:before,
+.mobile-menu-button-light .lines:after {
+  background: var(--main-color);
+}
+
+/*------------------------------------------------------------------------------------------------------*
             BOTONES
 \*------------------------------------------------------------------------------------------------------*/
 .btn-accent:not(.btn-hover-nobg):not(.icon-animated):hover,
