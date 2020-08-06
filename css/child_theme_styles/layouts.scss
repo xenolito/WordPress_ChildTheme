@@ -153,9 +153,24 @@ button {
 .icon-scroll-down a i {
   font-size: calc(var(--ico-next-section-size) / 2);
   line-height: calc(var(--ico-next-section-size) / 2);
+  animation: icon-cta 2s linear infinite;
 }
 
 .style-dark .icon-scroll-down a {
   background-color: #fff;
   color: var(--main-color);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ANIMATIONS
+\*------------------------------------------------------------------------------------------------------*/
+
+@keyframes form-submit-cog {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(150%, 0, 0);
+  }
 }
