@@ -4,7 +4,8 @@
   --button-small-border-radius: 15px;
   --button-small-padding: 3px 10px;
   --button-border-radius: 50px;
-  --box-border-radius: 4px;
+  --box-border-radius: 16px;
+
   --default-font-family: Quicksand, Helvetica, Arial, sans-serif;
   --defautl-alt-font-family: Poppins, Helvetica, Arial, sans-serif;
   --default-heading-font-family: Dosis, Helvetica, Arial, sans-serif;
@@ -20,6 +21,8 @@
   --section-padding: calc(80px + 4.5vw);
 
   --ico-next-section-size: calc(2.5rem + 1vw);
+  --ico-next-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  --ico-next-shadow-hover: 0px 0px 50px 0px rgba(0, 0, 0, 0.6);
 }
 
 html,
@@ -39,7 +42,7 @@ h1.fontsize-338686 {
   line-height: 5.2rem !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   h1.fontsize-338686 {
     font-size: calc(2rem + 1.5vw) !important;
     line-height: calc(2.6rem + 1.5vw) !important;
@@ -60,4 +63,13 @@ h2.h4 {
 
 .pct-iblock {
   display: inline-block !important;
+}
+
+.pct-block {
+  display: block !important;
+}
+
+body:not(.home) h2 {
+  color: var(--main-color);
+  padding-top: 2rem;
 }

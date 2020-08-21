@@ -290,6 +290,44 @@ function my_deregister_javascript() {
 }
 
 
+/*------------------------------------------------------------------------------------------------------*\
+
+						RETRIEVE LOGGED IN USER ROLE
+
+\*------------------------------------------------------------------------------------------------------*/
+
+function get_user_role() {
+	if( is_user_logged_in() ) {
+		$user = wp_get_current_user();
+		$role = ( array ) $user->roles;
+		return $role[0];
+	}
+	else {
+		return false;
+	}
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						ADD CLASS TO BODY (usr-ga-excluded) TO IDENTIFY USER ROLES (This will be used to exclude logged in admins, editors... anyone except subscriber or customer) TO BE EXCLUDED FROM  GA tracking)
+
+\*------------------------------------------------------------------------------------------------------*/
+
+
+add_filter('body_class','addUserRole_BodyClass');
+
+function addUserRole_BodyClass( $classes ) {
+	$user_role = get_user_role();
+
+
+	if($user_role && $user_role !== 'subscriber' && $user_role !== 'customer') {
+		$classes[] = 'usr-ga-excluded';
+	}
+	// return the $classes array
+	return $classes;
+}
 
 
 ?>

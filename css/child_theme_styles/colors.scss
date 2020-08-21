@@ -1,7 +1,22 @@
 :root {
   --main-color: #0091ef;
   --primary-color-darker: #343434;
+  --def-txt-color: #5d5e60;
+  --bg-deg-dark: radial-gradient(
+    circle at left top,
+    #0cb4ce 9%,
+    #006cff 48%,
+    #6442ff 91%
+  );
+
+  --bg-deg-light: radial-gradient(
+    circle at left top,
+    #fff 9%,
+    #fff 50%,
+    #e9f0fa 91%
+  );
   --cta-color: #ff1743;
+  --cta-color2: #fcca3f;
 }
 
 .style-dark .link-hover,
@@ -71,6 +86,75 @@ body:not(.menu-force-opacity)
   background: var(--main-color);
 }
 
+body:not(.menu-force-opacity)
+  .style-dark-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li
+  > a {
+  color: #fff !important;
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li.active
+  > a,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li
+  a.active,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li.current-menu-parent
+  > a,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li.current-menu-ancestor
+  > a,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li.current-menu-item:not(.menu-item-type-custom)
+  > a,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li
+  > a:hover,
+body:not(.menu-force-opacity)
+  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
+  .menu-horizontal-inner
+  > .nav
+  > .menu-smart
+  > li
+  > a:focus,
+.menu-light .menu-smart a:hover,
+.menu-light .menu-smart a:focus {
+  color: #343434 !important;
+}
+/*
+body:not(.menu-force-opacity) .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent .menu-horizontal-inner > .nav > .menu-smart > li > a:hover, body:not(.menu-force-opacity) .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent .menu-horizontal-inner > .nav > .menu-smart > li > a:focus {
+    color: #343434 !important;
+}
+*/
 /*------------------------------------------------------------------------------------------------------*
             BOTONES
 \*------------------------------------------------------------------------------------------------------*/
@@ -120,6 +204,16 @@ body:not(.menu-force-opacity)
   color: #fff;
 }
 
+.style-light h1 {
+  color: var(--main-color);
+}
+
+.style-light h2,
+.style-light h3,
+.style-light p {
+  color: var(--def-txt-color);
+}
+
 /*------------------------------------------------------------------------------------------------------*
             CONTACT FORM 7
 \*------------------------------------------------------------------------------------------------------*/
@@ -127,4 +221,18 @@ body:not(.menu-force-opacity)
 .style-dark .wpcf7-response-output,
 .style-dark .wpcf7 .pct-msg-sent-ok p {
   color: #fff !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+          SECTIONS
+\*------------------------------------------------------------------------------------------------------*/
+
+.pct-bg-dark .block-bg-overlay {
+  background: var(--bg-deg-dark) !important;
+  opacity: 1 !important;
+}
+
+.pct-bg-light .block-bg-overlay {
+  background: var(--bg-deg-light) !important;
+  opacity: 1 !important;
 }
