@@ -32,6 +32,3 @@ Since then, only `gulp` is needed to launch a local server with watch files.
 ### 4) TO DO
 
 - Setup process: Add some critical plugins and folders (like "wp maintenance mode").
-
-Necesito borrar estol..
-y esto también
