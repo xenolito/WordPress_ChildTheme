@@ -203,6 +203,11 @@ header .menu-item-button a:hover {
 
 [class*="pct-2cols-img"] .btn-container {
   margin-top: 0rem !important;
+  display: inline-block;
+}
+
+[class*="pct-2cols-img"] .btn-container:not(:first-of-type) {
+  margin-left: 0.5rem;
 }
 
 @media only screen and (max-width: 959px) {
@@ -211,6 +216,11 @@ header .menu-item-button a:hover {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
   }
+
+  [class*="pct-2cols-img"] .btn-container:not(:first-of-type) {
+    margin-left: 0;
+  }
+
   [class*="pct-2cols-img"] .btn-container a {
     margin-top: 0rem !important;
     margin: auto !important;
@@ -511,4 +521,24 @@ ul.pct-tic-list li:before {
   content: "\f00c";
   font-family: var(--pictauicons);
   margin-right: 6px;
+}
+
+i.fa.fa-download {
+  font-size: 1em;
+  font-style: normal;
+  top: inherit !important;
+  font-weight: 400;
+}
+
+i.fa.fa-download:before {
+  font-family: var(--pictauicons);
+  content: "\f019";
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            DOTS ONE PAGE NAVIGATION
+\*------------------------------------------------------------------------------------------------------*/
+
+.onepage-pagination .one-dot-link .cd-label {
+  text-transform: uppercase;
 }

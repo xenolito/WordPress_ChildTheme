@@ -1,0 +1,20 @@
+/*------------------------------------------------------------------------------------------------------*
+                        COOKIE NOTICE STYLES
+\*------------------------------------------------------------------------------------------------------*/
+
+#cookie-notice #cn-notice-text H3 {
+  margin-top: 0;
+}
+
+#cookie-notice .legal-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#cookie-notice #cn-accept-cookie {
+  background-color: var(--main-color) !important;
+}
+
+#cn-close-notice {
+  display: none;
+}
