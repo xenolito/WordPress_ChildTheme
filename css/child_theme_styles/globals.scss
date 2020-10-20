@@ -1,761 +1,96 @@
-@import url("../burst/style.css");
-
 :root {
-  --main-color: #f66826;
-  --cta-color: #ff0000;
+  --def-border-radius: 6px;
+  --main-color: #2597ab;
+  --primary-color-darker: #3a6765;
+  --cta-color: #fb2051;
+  --woo-cta-color: #41c389;
+  --def-font-family: Quicksand, Helvetica, Arial, sans-serif;
+  --def-txt-color: #7b7b7b;
+  --fontawesome: "Font Awesome 5 Free";
+  --light-grey-color: #ddd;
+  --light-light-grey-color: #f7f7f7;
+  --button-small-border-radius: 15px;
+  --button-small-padding: 3px 10px;
 }
-/*------------------------------------------------------------------------------------------------------*\
 
-						GLOBAL
+html,
+body {
+  font-size: 16px !important;
+  color: var(--def-txt-color) !important;
+  line-height: 1.4 !important;
+}
 
-\*------------------------------------------------------------------------------------------------------*/
+small {
+  font-size: 50%;
+}
+
+a:focus {
+  outline: none;
+}
+
+.pct-ib {
+  display: inline-block;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: inline-block;
+}
+
+h1.centered,
+h2.centered,
+h3.centered {
+  display: block;
+  margin: auto;
+}
+
 h2 {
-  font-weight: 700 !important;
-}
-
-.text-row p {
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  color: #151515;
-}
-
-.pct-font-istok {
-  font-family: Istok Web !important;
-}
-
-.pct-claim {
-  font-family: Istok Web;
-  color: #9c9c9c;
-  font-size: 3.7rem;
-  line-height: 3.7rem;
-}
-
-.pct-footer-txt {
-  font-size: 0.98rem;
-  font-family: Istok Web;
-  text-decoration: none;
-}
-
-a.pct-footer-txt {
-  line-height: 25px;
-}
-
-.footer a:hover {
-  color: #f86710;
-}
-
-ul.footer {
-  margin-top: 20px;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						VIDEO HOME SLIDER
-
-\*------------------------------------------------------------------------------------------------------*/
-/*body.home video.video {
-	height: auto !important;
-}
-
-body.home .video-wrap {
-	height: 100% !important;
-}
-*/
-/*------------------------------------------------------------------------------------------------------*\
-
-						LAYOUT
-
-\*------------------------------------------------------------------------------------------------------*/
-.footer_top ul#menu-navigation-footer {
-  margin-top: 20px;
-}
-
-.footer_top ul#menu-navigation-footer a {
-  line-height: 30px;
-}
-
-.footer_bottom_holder_inner .textwidget {
-  padding: 0px 20px;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						FOOTER
-
-\*------------------------------------------------------------------------------------------------------*/
-
-footer .four_columns > .column1,
-footer .four_columns > .column2,
-footer .four_columns > .column3,
-footer .four_columns > .column4 {
-  width: 25%;
-  float: left;
-}
-
-@media only screen and (max-width: 1330px) {
-  footer .four_columns > .column1,
-  footer .four_columns > .column2,
-  footer .four_columns > .column3,
-  footer .four_columns > .column4 {
-    width: 50%;
-    min-height: inherit !important;
-    margin-top: 2rem;
-  }
+  padding-bottom: calc(2.5vw);
+  padding-top: calc(2rem + 2.5vw);
 }
 
 @media only screen and (max-width: 768px) {
-  footer .four_columns > .column1,
-  footer .four_columns > .column2,
-  footer .four_columns > .column3,
-  footer .four_columns > .column4 {
-    width: 100%;
-    min-height: inherit !important;
-    margin-top: 2rem;
+  h2 {
+    font-size: calc(1rem + 2vw) !important;
   }
 }
 
-/*------------------------------------------------------------------------------------------------------*\
-
-						SIMILAR TAGS
-
-\*------------------------------------------------------------------------------------------------------*/
-.pct-similar-tags {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: auto !important;
-}
-
-@media only screen and (max-width: 999px) {
-  .pct-similar-tags {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: auto !important;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .pct-similar-tags {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: auto !important;
-  }
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						CONTACT FORM 7
-
-\*------------------------------------------------------------------------------------------------------*/
-.cf7_custom_style_1 input.wpcf7-form-control.wpcf7-text,
-.cf7_custom_style_1 input.wpcf7-form-control.wpcf7-number,
-.cf7_custom_style_1 input.wpcf7-form-control.wpcf7-date,
-.cf7_custom_style_1 textarea.wpcf7-form-control.wpcf7-textarea,
-.cf7_custom_style_1 select.wpcf7-form-control.wpcf7-select,
-.cf7_custom_style_1 input.wpcf7-form-control.wpcf7-quiz {
-  border-color: rgba(50, 50, 50, 1);
-  text-transform: none;
-}
-
-span.wpcf7-not-valid-tip {
-  font-family: Lato, Helvetica, Arial;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-							LANDING
-
-\*------------------------------------------------------------------------------------------------------*/
-.pct-v-form {
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
-  margin: auto;
-}
-
-.pct-v-form input,
-.pct-v-form textarea {
-  margin: 10px auto;
-  border-radius: 3px !important;
-  border: 1px solid #ab5918 !important;
-}
-
-.pct-v-form textarea {
-  height: 132px;
-}
-
-.pct-v-form span.wpcf7-not-valid-tip {
-  color: #ffef00 !important;
-}
-
-input.pct-land-bt {
-  border-radius: 200px !important;
-  box-shadow: rgba(0, 0, 0, 0.4) 2px 7px 6px;
-  background-image: none !important;
-  background-color: #000 !important;
-
-  font-size: 22px !important;
-  line-height: 1em !important;
-  text-transform: none !important;
-  font-weight: 400 !important;
-  letter-spacing: 1.5px !important;
-  text-shadow: none;
-
-  margin-left: 15px !important;
-  padding: 17px 15px !important;
-  box-sizing: border-box;
-  width: 210px !important;
-  max-width: 210px !important;
-  height: auto !important;
-  text-align: center !important;
-
-  border: none !important;
-  margin-top: 20px !important;
-}
-
-wpcf7-mail-sent-ok {
-  background-color: #128c3a !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						HOMEPAGE
-
-\*------------------------------------------------------------------------------------------------------*/
-
-.pct-cta-portfolio {
-  text-align: center;
-}
-
-.portfolio_main_holder .item_holder.image_text_zoom_hover .image_holder .image {
-  width: 100% !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						PORTFOLIO
-
-\*------------------------------------------------------------------------------------------------------*/
-.filter_outer.filter_portfolio {
-  margin-top: 40px;
-}
-
-/*.filter_holder, .filter_holder ul li {
-	text-align: center !important;
-}*/
-
-.pct_porftolio_similar-header {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-/* fix hack for flowplayer videoplayer*/
-/*[id^="flowplayer-video-"] .fp-waiting */
-.fp-player .fp-embed {
-  display: none !important;
-}
-
-/*@media only screen and (max-width: 768px) {*/
-body.single-portfolio_page .content .container_inner {
-  width: 100%;
-}
-
-body.single-portfolio_page .portfolio_top_holder {
-  width: 80%;
-  margin: auto;
-  margin-bottom: 40px;
-}
-
-.portfolio_single .portfolio_images img {
-  width: 100%;
-}
-
-/*}*/
-
-body.single-portfolio_page .portfolio_single.big-images .portfolio_container {
-  padding: 26px 30px;
-}
-
-.mkd_slider .slide_buttons_holder {
-  display: none !important;
-}
-
-.mkd_slider .pct-slider-link-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-}
-
-.mkd_slider .pct-slider-link-overlay a {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-					FLOWPLAYER
-\*------------------------------------------------------------------------------------------------------*/
-
-.functional .fp-progress,
-.functional .fp-volumelevel,
-.minimalist .fp-progress,
-.minimalist .fp-volumelevel {
-  background-color: #f86710 !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						SERVICES
-
-\*------------------------------------------------------------------------------------------------------*/
-.no-link-cursor .mkd_image_with_text_and_icon .box_image a {
-  cursor: pointer;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						CONTACT US
-
-\*------------------------------------------------------------------------------------------------------*/
-
-.contact-card,
-.contact-card a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  font-family: Lato, Helvetica, Arial;
+h4 {
+  font-size: calc(2rem + 0.5vw);
+  line-height: calc(2.2rem + 0.5vw);
   text-transform: uppercase;
-  color: #151515;
-  text-align: left;
-  max-width: 295px;
 }
 
-.contact-card a:hover {
-  color: #f86710;
+body:not(.single-post):not(.woocommerce-checkout) h2:not(.product_title):after {
+  content: "";
+  display: block;
+  width: 10%;
+  min-width: 120px;
+  height: 6px;
+  background-color: var(--main-color);
+  margin: auto;
+  margin-top: 0.4em;
 }
 
-.contact-card li {
-  list-style-type: none;
-  padding: 5px 0px;
-}
-
-.contact-card li i {
-  min-width: 20px;
-  margin-right: 5px;
-  text-align: center;
-}
-
-.contact-card .pct-sep {
-  border-width: 0px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #dadada;
-  margin-left: 20px;
-}
-
-.contact-card li span {
-  /*	border-bottom-style: solid;
-    border-bottom-width: 1px;
-    padding-bottom: 10px;
-    width: 260px;
-   */
-}
-
-/*
-header:not(.with_hover_bg_color) nav.main_menu>ul>li:hover>a, nav.main_menu>ul>li.active>a {
-	color: #FFF;
-}
-
-.main_menu.underline_follow .magic_follow {
-	background-color: #F86710;
-}
-
-nav.main_menu>ul>li>a {
-	color: #FFF;
-}
-
-
-
-.qbutton.fill_from_bottom {
-    background-color: #F86710;
-}
-
-.qbutton, .load_more a, .blog_load_more_button a, #submit_comment, input.wpcf7-form-control.wpcf7-submit, .post-password-form input[type='submit'] {
-	border: 1px solid #F86710;
-}
-
-.qbutton:not(.transparent).fill_from_bottom .a_overlay {
-	background-color: #000;
-}
-
-.title.title_size_small h1, .title h1 {
-	color: #FFF;
-}
-
-.side_menu_button>a, .mobile_menu_button span, .header_top .inner a.search_covers_header, .header_top .inner a.search_slides_from_header_bottom, .header_top .inner a.search_slides_from_window_top, .header_top .inner a.fullscreen_search {
-	color: #FFF;
-}
-
-*/
-/*------------------------------------------------------------------------------------------------------*\
-
-						HIDING PORTFOLIO SINGLE HEADER H1s
-
-\*------------------------------------------------------------------------------------------------------*/
-body.single-portfolio_page .title_subtitle_holder h1,
-body.single-portfolio_page .title_holder {
+body.woocommerce-cart h2:after {
   display: none !important;
 }
 
-body.single-portfolio_page
-  .title.title_size_small.position_center.has_background.standard_title {
-  height: 120px !important;
+h2.entry-title:after {
+  margin: 0 !important;
 }
 
-/*------------------------------------------------------------------------------------------------------*\
-
-						REVOLUTION SLIDER
-
-\*------------------------------------------------------------------------------------------------------*/
-[id*="rev_slider_"] h3 {
-  text-transform: none !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						@MEDIA QUERIES
-
-\*------------------------------------------------------------------------------------------------------*/
-
-@media only screen and (max-width: 1001px) {
-  .portfolio_pagination .pagination_text_holder {
-    display: none !important;
-  }
-
-  /*	body.home div.content {
-		margin-bottom: 283px !important;
-	}
-*/
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						SUBMIT BUTTON STYLES & ANIMATION
-
-\*------------------------------------------------------------------------------------------------------*/
-.wpcf7 button[id="submit"],
-.wpcf7 input[type="submit"] {
-  display: block;
-  margin: auto;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 0px;
-  will-change: transform;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  border: 4px solid #fff;
-  border-radius: 0px;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 1rem;
-  font-family: var(--base-font-family);
-  letter-spacing: 2px;
-  font-weight: 700;
-  line-height: 1rem;
-  text-transform: uppercase;
-  outline: none;
-  text-align: center;
-  padding: 10px 20px;
-  margin-top: 20px;
-  min-width: 180px;
-  transform: rotateZ(0);
-  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.wpcf7 button[id="submit"].main-color {
-  background: var(--main-color);
-  color: #fff;
-}
-
-.wpcf7 button[id="submit"].main-color:hover {
-  background: #343434;
-}
-
-/*
-.wpcf7 button[id="submit"].bg-light,
-.wpcf7 input[type="submit"].bg-light {
-	background: RGBA(58,164,228,1.00);
-}
-
-
-.wpcf7 button[id="submit"].bg-light:hover,
-.wpcf7 input[type="submit"].bg-light:hover {
-	background: RGBA(34,50,84,1.00);
-}
-*/
-
-.wpcf7 button[id="submit"] i {
-  display: none;
-}
-
-.wpcf7 button[id="submit"]:hover,
-.wpcf7 input[type="submit"]:hover {
-  background: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-}
-.wpcf7 button[id="submit"]:active,
-.wpcf7 input[type="submit"]:active {
-  font-size: 15px;
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
-}
-.wpcf7 button[id="submit"].active,
-.wpcf7 input[type="submit"].active {
-  font-size: 0;
-  border-radius: 25px;
-  width: 50px;
-  background: transparent;
-  min-width: inherit;
-  color: transparent;
-
-  animation-name: fadeContent;
-  animation-duration: 0.1s;
-  animation-timing-function: ease-in;
-  animation-delay: 0s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-
-  animation: fadeContent 0.1s linear 0s normal forwards,
-    roundIt 0.1s ease-in 0.1s normal forwards;
-}
-.wpcf7 button[id="submit"].loader,
-.wpcf7 input[type="submit"].loader {
-  border-right: 4px solid #000000 !important;
-  min-width: inherit;
-  font-size: 0;
-  border-radius: 50% !important;
-  width: 50px;
-  background: transparent;
-  animation: loader 0.4s linear 0s infinite normal forwards;
-}
-.wpcf7 button[id="submit"].success,
-.wpcf7 input[type="submit"].success {
-  background: #3dcb9a;
-  border-color: #fff;
-  min-width: 180px;
-}
-
-@keyframes loader {
-  0% {
-    transform: rotateZ(0);
-    /*	color: rgba(255,255,255,0);*/
-  }
-  100% {
-    transform: rotateZ(360deg);
-    /*	color: rgba(255,255,255,0);*/
-  }
-}
-
-@keyframes fadeContent {
-  to {
-    color: rgba(255, 255, 255, 0);
-  }
-}
-
-@keyframes roundIt {
-  to {
-    font-size: 0;
-    border-radius: 25px;
-    width: 50px;
-    background: transparent;
-    min-width: inherit;
-  }
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						CONTACT FORM 7 CHECKBOX LEGAL STYLES
-
-\*------------------------------------------------------------------------------------------------------*/
-.legal-content {
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-[id*="legalinput"] {
-  background-color: #ff0000;
-}
-
-[id*="legalinput"]:checked + label:after {
-  max-width: 25px;
-  opacity: 1;
-}
-
-[id*="legalinput"] + label {
-  display: inline-block;
-  position: relative;
-  padding-left: 20px;
-  cursor: pointer;
-  line-height: 18px;
-}
-
-[id*="legalinput"] + label:before,
-[id*="legalinput"] + label:after {
-  font-family: FontAwesome;
-  font-size: 18px;
-  /*absolutely positioned*/
-  position: absolute;
-  top: 2px;
-  left: 0;
-}
-[id*="legalinput"] + label:before {
-  content: "\f096"; /*unchecked*/
-}
-[id*="legalinput"] + label:after {
-  content: "\f046"; /*checked*/
-  /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
-  max-width: 0;
-  overflow: hidden;
-  opacity: 0.5;
-  /*CSS3 transitions for animated effect*/
-  transition: all 0.35s;
-}
-
-label[for^="legalinput-"] {
-  /* display: flex; */
-}
-
-.footer-newsletter-form label a {
-  line-height: inherit !important;
-}
-
-.footer-newsletter-form .pct-lk-privacidad {
-  margin-left: 0.5rem;
-}
-
-/*------------------------------------------------------------------------------------------------------*\
-
-						NEWSLETTER CONTACT FORM 7
-
-\*------------------------------------------------------------------------------------------------------*/
-div.wpcf7-response-output.wpcf7-validation-errors {
-  background-color: #f6682666;
-}
-
-.footer-newsletter-form {
-  padding-top: 1rem;
-  padding-right: 2rem;
-  max-width: 350px;
-}
-
-@media only screen and (max-width: 600px) {
-  .footer-newsletter-form {
-    padding-right: 0;
-    margin: auto;
-  }
-}
-
-.footer-newsletter-form .wpcf7 .wpcf7-form-control-wrap {
-  margin-bottom: 0.5rem;
-}
-
-.footer-newsletter-form .wpcf7 input[type="text"],
-.footer-newsletter-form .wpcf7 input[type="email"] {
-  padding: 0.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.footer-newsletter-form .wpcf7 input[type="text"],
-.footer-newsletter-form .wpcf7 input[type="email"],
-.footer-newsletter-form .wpcf7 button#submit {
-  -webkit-appearance: none;
-}
-
-textarea,
-input.text,
-input[type="text"],
-input[type="button"],
-input[type="submit"],
-input[type="email"],
-.input-checkbox {
-  -webkit-appearance: none !important;
-  border-radius: 0 !important;
-}
-
-[role="alert"].wpcf7-not-valid-tip {
-  color: var(--main-color) !important;
-}
-
-.footer-newsletter-form .wpcf7 span[role="alert"]:before {
-  content: "\f06a";
-  font-family: Fontawesome;
-  color: var(--cta-color);
-  text-indent: 0;
-  float: right;
-  width: 1.3rem;
-  height: 1.3rem;
-  font-size: 2rem;
-  line-height: 1.5rem;
-  background-color: #fff;
-  border-radius: 50%;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  letter-spacing: -1px;
-  opacity: 0;
-  animation: ico-fadein 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  box-shadow: 3px 2px 4px 4px rgba(0, 0, 0, 0.4);
-}
-
-.footer-newsletter-form .wpcf7-response-output.wpcf7-validation-errors:before {
-  display: inline-block;
-  content: "\f06a" !important;
-  font-family: Fontawesome;
-  color: var(--cta-color);
-  text-indent: 0;
-  width: 16px;
-  height: 16px;
-  font-size: 1.5rem;
-  line-height: 1rem;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 0;
-  margin: 0;
-  letter-spacing: -1px;
-  margin-right: 13px;
-}
-
-@keyframes ico-fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.footer-newsletter-form .wpcf7 .pct-legal span[role="alert"] {
-  top: -50%;
-}
-
-.footer-newsletter-form .wpcf7 .legal-check [role*="alert"] {
-  right: -3px;
-}
-
-.footer-newsletter-form .wpcf7 .pct-legal span[role="alert"]:before {
-  margin-right: -1.3rem;
-}
-
-.footer-newsletter-form .wpcf7 span[role="alert"] {
-  text-indent: -9999px;
-  display: block;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: -0.5rem;
-  margin-left: -1rem;
+.thumbnail-caption {
+  display: none !important;
 }

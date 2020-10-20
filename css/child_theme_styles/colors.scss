@@ -1,238 +1,129 @@
-:root {
-  --main-color: #0091ef;
-  --primary-color-darker: #343434;
-  --def-txt-color: #5d5e60;
-  --bg-deg-dark: radial-gradient(
-    circle at left top,
-    #0cb4ce 9%,
-    #006cff 48%,
-    #6442ff 91%
-  );
-
-  --bg-deg-light: radial-gradient(
-    circle at left top,
-    #fff 9%,
-    #fff 50%,
-    #e9f0fa 91%
-  );
-  --cta-color: #ff1743;
-  --cta-color2: #fcca3f;
-}
-
-.style-dark .link-hover,
-.style-dark.style-override .link-hover,
-.style-light .style-dark .link-hover,
-.style-dark a:not(.btn-text-skin):hover,
-.style-dark.style-override a:not(.btn-text-skin):hover,
-.style-light .style-dark a:not(.btn-text-skin):hover,
-.style-dark a:not(.btn-text-skin):focus,
-.style-dark.style-override a:not(.btn-text-skin):focus,
-.style-light .style-dark a:not(.btn-text-skin):focus,
-.style-dark a.active,
-.style-dark.style-override a.active,
-.style-light .style-dark a.active,
-.style-dark .tmb .t-entry-text .t-entry-title a:hover,
-.style-dark.style-override .tmb .t-entry-text .t-entry-title a:hover,
-.style-light .style-dark .tmb .t-entry-text .t-entry-title a:hover,
-.style-dark .tmb .t-entry-text .t-entry-title a:focus,
-.style-dark.style-override .tmb .t-entry-text .t-entry-title a:focus,
-.style-light .style-dark .tmb .t-entry-text .t-entry-title a:focus,
-.style-dark .tmb .t-entry p.t-entry-comments .extras a:hover i,
-.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a:hover i,
-.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a:hover i,
-.style-dark .tmb .t-entry p.t-entry-comments .extras a.active i,
-.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a.active i,
-.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a.active i,
-.style-dark .tmb .t-entry p.t-entry-comments .extras a:focus i,
-.style-dark.style-override .tmb .t-entry p.t-entry-comments .extras a:focus i,
-.style-light .style-dark .tmb .t-entry p.t-entry-comments .extras a:focus i,
-.style-dark .widget_nav_menu li.active > a,
-.style-dark.style-override .widget_nav_menu li.active > a,
-.style-light .style-dark .widget_nav_menu li.active > a,
-.style-dark div[class*="sharer-"].share-button label:hover,
-.style-dark.style-override div[class*="sharer-"].share-button label:hover,
-.style-light .style-dark div[class*="sharer-"].share-button label:hover,
-.style-dark div[class*="sharer-"].share-button label:focus,
-.style-dark.style-override div[class*="sharer-"].share-button label:focus,
-.style-light .style-dark div[class*="sharer-"].share-button label:focus {
-  color: var(--main-color) !important;
-}
-
-::selection,
-.style-accent-bg {
-  background-color: var(--main-color);
-  color: #fff !important;
-}
-
-.border-accent-color {
-  border-color: var(--main-color) !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*
-            LAYOUT MENU
-\*------------------------------------------------------------------------------------------------------*/
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .lines,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .lines:before,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .lines:after,
-.mobile-menu-button-light .lines,
-.mobile-menu-button-light .lines:before,
-.mobile-menu-button-light .lines:after {
-  background: var(--main-color);
-}
-
-body:not(.menu-force-opacity)
-  .style-dark-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li
-  > a {
-  color: #fff !important;
-  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1) !important;
-}
-
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li.active
-  > a,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li
-  a.active,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li.current-menu-parent
-  > a,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li.current-menu-ancestor
-  > a,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li.current-menu-item:not(.menu-item-type-custom)
-  > a,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li
-  > a:hover,
-body:not(.menu-force-opacity)
-  .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent
-  .menu-horizontal-inner
-  > .nav
-  > .menu-smart
-  > li
-  > a:focus,
-.menu-light .menu-smart a:hover,
-.menu-light .menu-smart a:focus {
-  color: #343434 !important;
-}
-/*
-body:not(.menu-force-opacity) .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent .menu-horizontal-inner > .nav > .menu-smart > li > a:hover, body:not(.menu-force-opacity) .style-light-override:not(.is_stuck):not(.is_mobile_open).menu-transparent .menu-horizontal-inner > .nav > .menu-smart > li > a:focus {
-    color: #343434 !important;
-}
-*/
-/*------------------------------------------------------------------------------------------------------*
-            BOTONES
-\*------------------------------------------------------------------------------------------------------*/
-.btn-accent:not(.btn-hover-nobg):not(.icon-animated):hover,
-.btn-accent:not(.btn-hover-nobg):not(.icon-animated):focus,
-.btn-accent:active {
-  background-color: #0000 !important; /*trasnparent*/
-  border-color: var(--main-color) !important;
-}
-
-.btn-accent:not(.btn-flat):not(.btn-hover-nobg):not(.icon-animated):not(.btn-text-skin):hover,
-.btn-accent:not(.btn-flat):not(.btn-hover-nobg):not(.icon-animated):not(.btn-text-skin):focus,
-.btn-accent:active {
-  color: var(--main-color) !important;
-}
-
-.btn-accent {
-  color: #fff !important;
-  background-color: var(--main-color) !important;
-  border-color: var(--main-color) !important;
-}
-
-.style-dark button {
-  color: var(--main-color) !important;
-  background-color: #fff !important;
-}
-
-.style-dark button:hover {
-  color: #fff !important;
-  background-color: var(--primary-color-darker) !important;
-}
-
-.style-dark button:hover i {
-  color: #fff !important;
-}
-
-/*------------------------------------------------------------------------------------------------------*
-            COLORS BY BACKGROUND
-\*------------------------------------------------------------------------------------------------------*/
-
-.style-dark p,
-.style-dark h1,
-.style-dark h2,
-.style-dark h3,
-.style-dark .wpcf7 [id*="legalinput"] + label,
-.style-dark .wpcf7 [id*="legalinput"] + label a {
+#top-bar-social li a {
   color: #fff;
 }
 
-.style-light h1 {
+#top-bar-login a:hover,
+.topbar-content .pct-top-tel:hover {
+  background-color: #fff;
+}
+
+#top-bar-wrap {
+  border: 0;
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+#searchform-header-replace input {
   color: var(--main-color);
 }
 
-.style-light h2,
-.style-light h3,
-.style-light p {
-  color: var(--def-txt-color);
+/*------------------------------------------------------------------------------------------------------*
+                        BOTONES
+\*------------------------------------------------------------------------------------------------------*/
+.button,
+.button.add_to_cart_button.ajax_add_to_cart,
+.button.add_to_cart_button,
+.woocommerce ul.products li.product .button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 0;
+}
+
+.woocommerce ul.products li.product .product-inner .added_to_cart {
+  background-color: var(--light-grey-color);
+  color: #343434;
+  border: 0;
 }
 
 /*------------------------------------------------------------------------------------------------------*
-            CONTACT FORM 7
+                        FOOTER
 \*------------------------------------------------------------------------------------------------------*/
 
-.style-dark .wpcf7-response-output,
-.style-dark .wpcf7 .pct-msg-sent-ok p {
-  color: #fff !important;
+#footer-bottom {
+  color: #fff;
 }
 
 /*------------------------------------------------------------------------------------------------------*
-          SECTIONS
+                        WOOCOMMERCE
 \*------------------------------------------------------------------------------------------------------*/
 
-.pct-bg-dark .block-bg-overlay {
-  background: var(--bg-deg-dark) !important;
-  opacity: 1 !important;
+.amount {
+  color: var(--main-color) !important;
 }
 
-.pct-bg-light .block-bg-overlay {
-  background: var(--bg-deg-light) !important;
-  opacity: 1 !important;
+.woocommerce ul.products li.product li.title a,
+.woocommerce .products.grid .title a {
+  font-size: 1.2em;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        TABLES
+\*------------------------------------------------------------------------------------------------------*/
+
+.woocommerce table.shop_table,
+.woocommerce table.shop_table td,
+.woocommerce-cart .cart-collaterals .cart_totals tr td,
+.woocommerce-cart .cart-collaterals .cart_totals tr th,
+.woocommerce table.shop_table tth,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th,
+.woocommerce .order_details,
+.woocommerce .shop_table.order_details tfoot th,
+.woocommerce .shop_table.customer_details th,
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cross-sells,
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals,
+.woocommerce .cart-collaterals h2,
+.woocommerce .cart-collaterals h2,
+.woocommerce .cart-collaterals h2,
+.woocommerce-cart .cart-collaterals .cart_totals .order-total th,
+.woocommerce-cart .cart-collaterals .cart_totals .order-total td,
+.woocommerce ul.order_details,
+.woocommerce .shop_table.order_details tfoot th,
+.woocommerce .shop_table.customer_details th,
+.woocommerce .woocommerce-checkout #customer_details h3,
+.woocommerce .woocommerce-checkout h3#order_review_heading,
+.woocommerce-checkout #payment ul.payment_methods,
+.woocommerce-checkout form.login,
+.woocommerce-checkout form.checkout_coupon,
+.woocommerce-checkout-review-order-table tfoot th,
+.woocommerce-checkout #payment,
+.woocommerce ul.order_details,
+.woocommerce #customer_login > div,
+.woocommerce .col-1.address,
+.woocommerce .col-2.address,
+.woocommerce-checkout .woocommerce-info,
+.woocommerce div.product form.cart,
+.product_meta,
+.woocommerce div.product .woocommerce-tabs ul.tabs,
+.woocommerce #reviews #comments ol.commentlist li .comment_container,
+p.stars span a,
+.woocommerce ul.product_list_widget li,
+.woocommerce .widget_shopping_cart .cart_list li,
+.woocommerce.widget_shopping_cart .cart_list li,
+.woocommerce ul.product_list_widget li:first-child,
+.woocommerce .widget_shopping_cart .cart_list li:first-child,
+.woocommerce.widget_shopping_cart .cart_list li:first-child,
+.widget_product_categories li a,
+.woocommerce .oceanwp-toolbar,
+.woocommerce .products.list .product,
+table th,
+table td,
+hr {
+  border-color: var(--light-grey-color) !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            NOTICE OFERTA
+\*------------------------------------------------------------------------------------------------------*/
+
+.free-shipping-notice,
+.widget_shopping_cart_content .free-shipping-notice {
+  background-color: #343434;
+  color: #fff;
+}
+
+.woocommerce div.product div.summary .price del {
+  color: var(--main-color);
 }

@@ -20,3 +20,5 @@ configSetup.json
 #sftp extension and vscode stuff
 *.code-workspace
 .vscode
+modified_core_files.md
+
