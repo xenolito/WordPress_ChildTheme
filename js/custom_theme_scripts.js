@@ -1,5 +1,9 @@
 (function ($) {
-  ("use strict");
+  "use strict";
+
+  /** Global vars defined by functions.php with 'wp_localize_script' @ script enqueue   **/
+  var global = pct_globalVars;
+
 
   /*------------------------------------------------------------------------------------------------------*\
 
@@ -7,9 +11,31 @@
 
 	\*------------------------------------------------------------------------------------------------------*/
 
-  $(window).on("load", function () {});
-
+  $(window).on("load", function () {
+    console.log("TODO OK PINK PANTHER");
+  });
   /**----------------------- END ONLOAD SECTION ----------------------------------------------------------*/
+
+
+
+  /**
+   *  AVIF BACKGROUND IMAGES BY CLASS SELECTOR
+   *  if not AVIF capabilities, then use a .jpg instead
+   * AVIF capabilities checked by avif-webp.js, adding a webp/avif class to <html> tag.
+   */
+
+   [].slice
+    .call(document.querySelectorAll('[class*="pct-avif-bg-"]'))
+    .forEach(function (el) {
+      var $el = $(el);
+      var fileName = $el.attr('class').match(/pct-avif-bg-(.*)+/)[0].split('pct-avif-bg-')[1];
+      var filePath = global.mediaURL + '/' + fileName + '.' + (($('html').hasClass('avif')) ? 'avif' : 'jpg');
+      $el.css({
+        'background-image': 'url('+ filePath +')',
+      })
+    });
+
+
 
   /*------------------------------------------------------------------------------------------------------*\
 
