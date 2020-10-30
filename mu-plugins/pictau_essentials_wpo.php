@@ -103,7 +103,7 @@ function rememberme_checked() {
 
 //Shortcode API images
 function myImageLink() {
-	return get_option('home') . '/xen_media/';
+	return wp_upload_dir()['baseurl'];
 }
 add_shortcode('myPics', 'myImageLink');
 // end shortcode images
@@ -169,6 +169,28 @@ function pictau_custom_icon($atts, $content) {
 
 add_shortcode( 'pct_icon', 'pictau_custom_icon' );
 
+// ! AVIF IMAGES WITH fallback to choose (svg, png, jpg)
+/*
+@param fallback [jpg,png,svg,webp]
+*/
+function mediaFallback($atts) {
+    extract(shortcode_atts(array(
+	"filename" 		=> '',
+	"fallback"		=> 'jpg',
+	), $atts));
+
+	$media = '<picture>
+<source type="image/avif" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.avif">';
+	$media .= ($fallback == 'webp') ? '<source type="image/webp" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.webp">;' : '';
+	$media .= ($fallback == 'svg') ? '<source type="image/svg+xml" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.svg">;' : '';
+	$media .= ($fallback == 'png') ? '<source type="image/png" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.png">;' : '';
+	$media .= '<img src="'. wp_upload_dir()['baseurl'] . '/' .$filename . '.jpg">';
+	$media .= '</picture>';
+
+	return $media;
+}
+
+add_shortcode( 'pct_avif_img', 'mediaFallback' );
 
 
 /*------------------------------------------------------------------------------------------------------*\

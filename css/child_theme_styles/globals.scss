@@ -1,10 +1,19 @@
 :root {
   --def-border-radius: 6px;
-  --main-color: #2597ab;
+  --main-color: #0091d8;
+  --main-grad: linear-gradient(
+    108deg,
+    rgba(23, 147, 214, 1) 44%,
+    rgba(0, 86, 173, 1) 100%
+  );
+
+  //--main-grad: linear-gradient(108deg, rgba(23, 147, 214, 1) 44%, #0279b2);
+
   --primary-color-darker: #3a6765;
   --cta-color: #fb2051;
   --woo-cta-color: #41c389;
-  --def-font-family: Quicksand, Helvetica, Arial, sans-serif;
+  --def-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  --def-heading-font-family: Exo, Helvetica, Arial, sans-serif;
   --def-txt-color: #7b7b7b;
   --fontawesome: "Font Awesome 5 Free";
   --light-grey-color: #ddd;
@@ -17,5 +26,27 @@ html,
 body {
   font-size: 16px !important;
   color: var(--def-txt-color) !important;
-  line-height: 1.4 !important;
+  line-height: 1.5 !important;
+  font-family: var(--def-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--def-heading-font-family);
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+}
+
+a:focus {
+  outline: none;
+}
+
+.secondary a *,
+.site-footer a *,
+.site-header a *,
+a {
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }

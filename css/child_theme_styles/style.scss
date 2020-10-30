@@ -7,3 +7,87 @@ html.avif #mkt-header {
   background-image: url("http://localhost/urbacontrol/xen_media/hero-free-img.avif");
 }
 */
+
+.footer-adv .widget-title,
+.footer-adv .widget-title a.rsswidget,
+.ast-no-widget-row .widget-title {
+  font-family: var(--def-heading-font-family);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            MAIN MENU HOVER EFFECTS
+\*------------------------------------------------------------------------------------------------------*/
+
+body:not(.ast-header-break-point)
+  .site-header
+  #site-navigation
+  li.menu-item.current-menu-item
+  > .menu-link {
+  color: #fff;
+  pointer-events: none;
+  cursor: none;
+}
+body:not(.ast-header-break-point)
+  header#ast-fixed-header
+  #site-navigation
+  li.menu-item.current-menu-item:before {
+  top: -0.5em;
+  height: calc(100% + 28px + 0.5em);
+}
+
+body:not(.ast-header-break-point) header {
+  &.site-header li.menu-item:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    background-color: #28292a;
+    position: absolute;
+    z-index: -1 !important;
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &#ast-fixed-header li.menu-item {
+    &:before {
+      top: -0.5em;
+    }
+
+    &:hover:before {
+      height: calc(100% + 28px + 0.5em);
+
+      a {
+        color: #fff;
+      }
+    }
+    //height: calc(100% + 28px + 0.5em);
+  }
+
+  &.site-header li.menu-item.current-menu-item:before {
+    //background: var(--main-grad);
+    background: var(--main-color);
+    height: calc(100% + 20px);
+  }
+
+  &.site-header li.menu-item {
+    &:hover:not(.current-menu-item) {
+      &:before {
+        height: calc(100% + 20px);
+      }
+      a {
+        color: #fff !important;
+      }
+      &.current-menu-item {
+        height: 0;
+      }
+    }
+  }
+}
+
+// ! Hide current menu item background when hovering the whole <ul>
+body:not(.ast-header-break-point)
+  .site-header
+  #site-navigation
+  ul:hover
+  li.menu-item.current-menu-item:before {
+  height: 0 !important;
+}

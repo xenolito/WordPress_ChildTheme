@@ -72,3 +72,35 @@
     font-size: 0.8em;
   }
 }
+
+#mkt-slider h1,
+#mkt-slider p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+[class*="pct-avif-bg-"].pct-bg-kenburns .pct-bgimg {
+  animation-name: kenBurns2;
+  animation-duration: 40s;
+  //animation-timing-function: ease;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+[class*="pct-avif-bg-"].pct-bg-align-right .pct-bgimg {
+  background-position: center right;
+}
+
+[class*="pct-avif-bg-"].pct-bg-align-left .pct-bgimg {
+  background-position: center left;
+}
+
+@keyframes kenBurns2 {
+  to {
+    transform: scale3d(1.5, 1.5, 1);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    opacity: 1;
+  }
+}

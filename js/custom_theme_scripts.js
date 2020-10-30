@@ -4,7 +4,6 @@
   /** Global vars defined by functions.php with 'wp_localize_script' @ script enqueue   **/
   var global = pct_globalVars;
 
-
   /*------------------------------------------------------------------------------------------------------*\
 
 							ONLOAD
@@ -16,26 +15,40 @@
   });
   /**----------------------- END ONLOAD SECTION ----------------------------------------------------------*/
 
-
-
   /**
    *  AVIF BACKGROUND IMAGES BY CLASS SELECTOR
    *  if not AVIF capabilities, then use a .jpg instead
    * AVIF capabilities checked by avif-webp.js, adding a webp/avif class to <html> tag.
    */
 
-   [].slice
+  [].slice
     .call(document.querySelectorAll('[class*="pct-avif-bg-"]'))
     .forEach(function (el) {
       var $el = $(el);
-      var fileName = $el.attr('class').match(/pct-avif-bg-(.*)+/)[0].split('pct-avif-bg-')[1];
-      var filePath = global.mediaURL + '/' + fileName + '.' + (($('html').hasClass('avif')) ? 'avif' : 'jpg');
-      $el.css({
-        'background-image': 'url('+ filePath +')',
-      })
+      var fileName = $el
+        .attr("class")
+        .match(/pct-avif-bg-(.*)+/)[0]
+        .split(" ")[0]
+        .split("pct-avif-bg-")[1];
+      var filePath =
+        global.mediaURL +
+        "/" +
+        fileName +
+        "." +
+        ($("html").hasClass("avif") ? "avif" : "jpg");
+
+      $el.prepend('<div class="pct-bgimg"></div>');
+      var $bg = $el.find(".pct-bgimg");
+      $bg.css({
+        "background-image": "url(" + filePath + ")",
+        "background-size": "cover",
+        "position": "absolute",
+        "top": "0",
+        "left": "0",
+        "width": "100%",
+        "height": "100%",
+      });
     });
-
-
 
   /*------------------------------------------------------------------------------------------------------*\
 

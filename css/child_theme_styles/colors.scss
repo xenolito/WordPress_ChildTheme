@@ -1,0 +1,26 @@
+.pct-bgcolor-main,
+.pct-bgcolor-main [class*="__overlay"] {
+  //background: var(--main-grad) !important;
+  background: var(--main-color) !important;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.uagb-post__cta {
+  background-color: transparent !important;
+
+  & a {
+    background-color: var(--main-color);
+  }
+}
+
+.uagb-heading-text {
+  color: var(--main-color) !important;
+}
+
+.ast-header-break-point .ast-mobile-menu-buttons-minimal.menu-toggle {
+  color: var(--main-color);
+}
