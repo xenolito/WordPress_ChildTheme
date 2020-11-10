@@ -49,45 +49,9 @@
     });
 
   /*------------------------------------------------------------------------------------------------------*
-            SCROLLSPY: INTERSECTION OBSERVER FOR MENU
-\*------------------------------------------------------------------------------------------------------*/
-  /*
-(() => {
-    let options = {
-      //rootMargin: "-10%",
-      threshold: 0.2, // !launch when 20% of element is intersecting screen.
-    };
+            SCROLLSPY: INTERSECTION OBSERVER FOR MENU active node satatus ==> add "active" class to li menu nodes
+  \*------------------------------------------------------------------------------------------------------*/
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute("id");
-
-        if (document.querySelector(`li.menu-item a[href="#${id}"]`)) {
-          if (entry.isIntersecting) {
-            if (entry.intersectionRatio > 0) {
-              document
-                .querySelector(`li.menu-item a[href="#${id}"]`)
-                .parentElement.classList.add("active");
-              console.log("añadimos active a id= " + id);
-            } else {
-              document
-                .querySelector(`li.menu-item a[href="#${id}"]`)
-                .parentElement.classList.remove("active");
-              console.log("eliminamos active de id= " + id);
-            }
-          } else {
-            console.log("hay que quitar marca menú");
-          }
-        }
-      });
-    }, options);
-
-    // Track all sections that have an `id` applied
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
-    });
-  })();
-*/
   class hoverMenuManager {
     constructor(defNodesSelector, IoOptions) {
       this.markHashLinksonMenu(
