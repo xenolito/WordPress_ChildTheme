@@ -61,5 +61,4 @@
 
   testFormat("webp", webpImage, addClass);
   testFormat("avif", avifImage, addClass);
-  console.log("TESTING AVIF + WEBP capabilities");
 })(document);
