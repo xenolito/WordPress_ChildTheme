@@ -10,9 +10,7 @@
 
 	\*------------------------------------------------------------------------------------------------------*/
 
-  $(window).on("load", function () {
-    console.log("TODO OK PINK PANTHER");
-  });
+  $(window).on("load", function () {});
   /**----------------------- END ONLOAD SECTION ----------------------------------------------------------*/
 
   /**
@@ -53,10 +51,11 @@
   /*------------------------------------------------------------------------------------------------------*
             SCROLLSPY: INTERSECTION OBSERVER FOR MENU
 \*------------------------------------------------------------------------------------------------------*/
-  (() => {
+  /*
+(() => {
     let options = {
       //rootMargin: "-10%",
-      threshold: 0.2,
+      threshold: 0.2, // !launch when 20% of element is intersecting screen.
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -88,6 +87,88 @@
       observer.observe(section);
     });
   })();
+*/
+  class hoverMenuManager {
+    constructor(defNodesSelector, IoOptions) {
+      this.markHashLinksonMenu(
+        document.querySelectorAll('li.current_page_item a[href*="#"]')
+      );
+
+      this.defNodes = document.querySelectorAll("li.current_page_item a");
+      this.setActiveNode(this.defNodes);
+      this._iooptions = IoOptions || { threshold: 0.2 };
+      this.observer = this.initObserver();
+    }
+
+    initObserver(queryToWatch, queryToTarget) {
+      // queryToWatch => query selector for elements being watched
+      // queryToTarget => query selector for elements being affected (menu nodes);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          let id = entry.target.getAttribute("id");
+          let targetList = document.querySelectorAll(
+            `li.menu-item a[href*="#${id}"]`
+          );
+          targetList = Array.from(targetList).length > 0 ? targetList : null;
+          if (targetList) {
+            if (entry.isIntersecting) {
+              if (entry.intersectionRatio > 0) {
+                this.setActiveNode(targetList);
+              }
+            } else {
+              if (this._activeNodes) {
+                this.setActiveNode(this.defNodes);
+              }
+            }
+          }
+        });
+      }, this._iooptions);
+
+      document.querySelectorAll("section[id]").forEach((section) => {
+        observer.observe(section);
+      });
+
+      return observer;
+    }
+
+    getDefNode() {
+      return this.defNode;
+    }
+
+    getActiveNode() {
+      // ! must review for returning an array in case multiple matchs
+      return document.querySelectorAll("header li.active")[0] instanceof Element
+        ? document.querySelectorAll("header li.active")[0]
+        : null;
+    }
+
+    setActiveNode(nList) {
+      this.removeActiveNode();
+      nList.forEach((n) => {
+        n.parentElement.classList.add("active");
+      });
+      this._activeNodes = nList;
+    }
+
+    removeActiveNode() {
+      if (this._activeNodes) {
+        this._activeNodes.forEach((n) => {
+          n.parentElement.classList.remove("active");
+        });
+      }
+    }
+
+    markHashLinksonMenu(nList) {
+      nList.forEach((el) => {
+        el.parentElement.classList.add("linkhashed");
+        el.parentElement.classList.remove("current_page_item");
+        el.parentElement.classList.remove("current-menu-item");
+      });
+    }
+  }
+
+  let mManager = new hoverMenuManager(null, { threshold: 0.5 });
 
   /*------------------------------------------------------------------------------------------------------*\
 
