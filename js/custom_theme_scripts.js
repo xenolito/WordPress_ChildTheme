@@ -61,7 +61,7 @@
       this.markHashLinksonMenu(
         document.querySelectorAll('li.current_page_item a[href*="#"]')
       );
-
+      this.makePageNodeHashed(); // avoid page reloading for node menu corresponding for currentpage (replace link href content with #)
       this.markupHover();
       this.currentlyIntArr = new Array();
       this.defNodes = document.querySelectorAll("li.current_page_item a");
@@ -203,6 +203,14 @@
         el.parentElement.classList.remove("current_page_item");
         el.parentElement.classList.remove("current-menu-item");
       });
+    }
+
+    makePageNodeHashed() {
+      document
+        .querySelectorAll("header li.current_page_item a")
+        .forEach((el) => {
+          el.href = "#";
+        });
     }
   }
 
