@@ -75,10 +75,6 @@
       // queryToTarget => query selector for elements being affected (menu nodes);
 
       const observer = new IntersectionObserver((entries) => {
-        /*entries.forEach((entrie) => {
-          console.log("entries= " + entrie.target.getAttribute("id"));
-        });*/
-
         entries.forEach((entry) => {
           let id = entry.target.getAttribute("id");
           let targetList = document.querySelectorAll(
@@ -108,18 +104,9 @@
     }
 
     addIntersectedElement(el) {
-      ///////////////////////////
       const seen = new Set();
       const arr = this.currentlyIntArr;
       arr.push(el);
-
-      /*console.log(
-        "before checking duplicate= " +
-          arr.length +
-          " elements,  ¿es array? => " +
-          Array.isArray(arr)
-      );*/
-
       const filteredArr = arr.filter((el) => {
         const duplicate = seen.has(el.id);
         seen.add(el.id);
@@ -127,41 +114,16 @@
       });
 
       this.currentlyIntArr = filteredArr;
-
-      //console.table(this.currentlyIntArr);
-
-      //////////////////////////////
     }
 
     removeIntersectedElement(el) {
       const seen = new Set(this.currentlyIntArr);
       const arr = this.currentlyIntArr;
       const elToRemove = el;
-      /*
-      console.log("before removing element= " + this.currentlyIntArr.length);
-      console.table(this.currentlyIntArr);
-      */
       const filteredArr = this.currentlyIntArr.filter((el) => {
         return el.id != elToRemove.id;
       });
-
-      /*const filteredArr = arr.filter((e) => {
-        const duplicate = seen.has(elToRemove.id);
-        console.log(
-          "duplicated, to remove =>" +
-            elToRemove.id +
-            " duplicate= " +
-            duplicate
-        );
-        seen.add(e.id);
-        return !duplicate;
-      });
-      */
-
       this.currentlyIntArr = filteredArr;
-
-      /*console.log("AFTER removing element= " + this.currentlyIntArr.length);
-      console.table(this.currentlyIntArr);*/
     }
 
     markupHover() {
@@ -409,7 +371,7 @@
       btsubmit.removeClass("active");
       btsubmit.find("i").removeClass("showIcon");
       //btsubmit.text("Enviar de nuevo");
-      console.log("ERROR DE VALIDACION: " + event.detail.contactFormLocale);
+      //console.log("ERROR DE VALIDACION: " + event.detail.contactFormLocale);
     },
     false
   );
@@ -425,9 +387,7 @@
       btsubmit.find("i").removeClass("showIcon");
 
       btsubmit.text("Volver a enviar");
-      console.log(
-        "NO SE HA PODIDO ENVIAR EL MAIL: " + event.detail.contactFormLocale
-      );
+      /*console.log("NO SE HA PODIDO ENVIAR EL MAIL: " + event.detail.contactFormLocale);*/
     },
     false
   );
@@ -459,7 +419,7 @@
       btsubmit.find("i").removeClass("showIcon");
 
       //btsubmit.text("Volver a enviar");
-      console.log("SPAM ACTIVITY: " + event.detail.contactFormLocale);
+      //console.log("SPAM ACTIVITY: " + event.detail.contactFormLocale);
     },
     false
   );
