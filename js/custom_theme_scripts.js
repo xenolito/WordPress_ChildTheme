@@ -1,5 +1,5 @@
 (function ($) {
-  "use strict";
+  ("use strict");
 
   /** Global vars defined by functions.php with 'wp_localize_script' @ script enqueue   **/
   var global = pct_globalVars;
@@ -51,6 +51,10 @@
   /*------------------------------------------------------------------------------------------------------*
             SCROLLSPY: INTERSECTION OBSERVER FOR MENU active node satatus ==> add "active" class to li menu nodes
   \*------------------------------------------------------------------------------------------------------*/
+  //!Needed to use/include the smooth-scroll.min.js lib an initialize it, in order to work properly for iOS and Safari.
+  window.scroll = new SmoothScroll('a[href*="#"]', {
+    easing: "easeOutCubic",
+  });
 
   class hoverMenuManager {
     constructor(defNodesSelector, IoOptions) {
@@ -58,9 +62,11 @@
         document.querySelectorAll('li.current_page_item a[href*="#"]')
       );
 
+      this.markupHover();
+      this.currentlyIntArr = new Array();
       this.defNodes = document.querySelectorAll("li.current_page_item a");
       this.setActiveNode(this.defNodes);
-      this._iooptions = IoOptions || { threshold: 0.2 };
+      this._iooptions = IoOptions || null;
       this.observer = this.initObserver();
     }
 
@@ -69,6 +75,10 @@
       // queryToTarget => query selector for elements being affected (menu nodes);
 
       const observer = new IntersectionObserver((entries) => {
+        /*entries.forEach((entrie) => {
+          console.log("entries= " + entrie.target.getAttribute("id"));
+        });*/
+
         entries.forEach((entry) => {
           let id = entry.target.getAttribute("id");
           let targetList = document.querySelectorAll(
@@ -76,13 +86,14 @@
           );
           targetList = Array.from(targetList).length > 0 ? targetList : null;
           if (targetList) {
-            if (entry.isIntersecting) {
-              if (entry.intersectionRatio > 0) {
-                this.setActiveNode(targetList);
-              }
+            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+              this.addIntersectedElement(entry.target);
+              this.setActiveNode(targetList);
             } else {
+              this.removeIntersectedElement(entry.target);
               if (this._activeNodes) {
-                this.setActiveNode(this.defNodes);
+                //this.setActiveNode(this.defNodes);
+                this.setActiveNode();
               }
             }
           }
@@ -96,6 +107,77 @@
       return observer;
     }
 
+    addIntersectedElement(el) {
+      ///////////////////////////
+      const seen = new Set();
+      const arr = this.currentlyIntArr;
+      arr.push(el);
+
+      /*console.log(
+        "before checking duplicate= " +
+          arr.length +
+          " elements,  ¿es array? => " +
+          Array.isArray(arr)
+      );*/
+
+      const filteredArr = arr.filter((el) => {
+        const duplicate = seen.has(el.id);
+        seen.add(el.id);
+        return !duplicate;
+      });
+
+      this.currentlyIntArr = filteredArr;
+
+      //console.table(this.currentlyIntArr);
+
+      //////////////////////////////
+    }
+
+    removeIntersectedElement(el) {
+      const seen = new Set(this.currentlyIntArr);
+      const arr = this.currentlyIntArr;
+      const elToRemove = el;
+      /*
+      console.log("before removing element= " + this.currentlyIntArr.length);
+      console.table(this.currentlyIntArr);
+      */
+      const filteredArr = this.currentlyIntArr.filter((el) => {
+        return el.id != elToRemove.id;
+      });
+
+      /*const filteredArr = arr.filter((e) => {
+        const duplicate = seen.has(elToRemove.id);
+        console.log(
+          "duplicated, to remove =>" +
+            elToRemove.id +
+            " duplicate= " +
+            duplicate
+        );
+        seen.add(e.id);
+        return !duplicate;
+      });
+      */
+
+      this.currentlyIntArr = filteredArr;
+
+      /*console.log("AFTER removing element= " + this.currentlyIntArr.length);
+      console.table(this.currentlyIntArr);*/
+    }
+
+    markupHover() {
+      document.querySelectorAll("header li.menu-item").forEach((node) => {
+        node.addEventListener("mouseover", (event) => {
+          node.classList.add("hovered");
+        });
+        node.addEventListener("mouseout", (event) => {
+          node.classList.remove("hovered");
+        });
+        node.addEventListener("click", (event) => {
+          node.classList.remove("hovered");
+        });
+      });
+    }
+
     getDefNode() {
       return this.defNode;
     }
@@ -107,12 +189,42 @@
         : null;
     }
 
-    setActiveNode(nList) {
+    setActiveNode(targetList) {
       this.removeActiveNode();
-      nList.forEach((n) => {
-        n.parentElement.classList.add("active");
-      });
-      this._activeNodes = nList;
+
+      if (targetList) {
+        // element intersected screen, need to mark target menu nodes
+        if (this.currentlyIntArr.length) {
+          // sections intersecting screen
+          let lastEntered = this.currentlyIntArr[
+            this.currentlyIntArr.length - 1
+          ].id;
+        }
+        targetList.forEach((n) => {
+          n.parentElement.classList.add("active");
+        });
+        this._activeNodes = targetList;
+      } else {
+        // element out of intersection with screen, need to remove active class from target menu nodes and mark DEFAULT PAGE node
+        if (this.currentlyIntArr.length) {
+          this.setActiveNode(
+            this.getMenuNodesFromSection(
+              this.currentlyIntArr[this.currentlyIntArr.length - 1]
+            )
+          );
+        } else {
+          this.setActiveNode(this.defNodes);
+        }
+      }
+    }
+
+    getMenuNodesFromSection(section) {
+      let sectionID = section.id;
+      let targetList = document.querySelectorAll(
+        `li.menu-item a[href*="#${sectionID}"]`
+      );
+      targetList = Array.from(targetList).length > 0 ? targetList : null;
+      return targetList;
     }
 
     removeActiveNode() {
@@ -132,7 +244,43 @@
     }
   }
 
-  let mManager = new hoverMenuManager(null, { threshold: 0.5 });
+  let mManager = new hoverMenuManager(null, {
+    threshold: 0.2,
+  });
+
+  /*------------------------------------------------------------------------------------------------------*
+              ASTRA THEME SPECIFIC FIXES (Mobile: Main and Sticky header won't collapse on scroll or after scroll)
+  \*------------------------------------------------------------------------------------------------------*/
+  document.onscroll = (e) => {
+    collapseMobileMenu();
+  };
+
+  function collapseMobileMenu() {
+    // check if mobile menu is opened
+    let navOpened = document.querySelector(
+      "body.ast-header-break-point.ast-main-header-nav-open"
+    );
+    if (navOpened) {
+      window.requestAnimationFrame(() => {
+        document
+          .querySelectorAll("header .main-header-bar-navigation")
+          .forEach((e) => {
+            e.classList.remove("toggle-on");
+            e.style.display = "none";
+          });
+        navOpened.classList.remove("ast-main-header-nav-open");
+        document
+          .querySelectorAll(
+            "header .ast-mobile-menu-buttons button.menu-toggle"
+          )
+          .forEach((e) => {
+            e.classList.remove("toggled");
+          });
+      });
+    }
+
+    return true;
+  }
 
   /*------------------------------------------------------------------------------------------------------*\
 
