@@ -49,7 +49,7 @@
     });
 
   /*------------------------------------------------------------------------------------------------------*
-            SCROLLSPY: INTERSECTION OBSERVER FOR MENU active node satatus ==> add "active" class to li menu nodes
+            SCROLLSPY: INTERSECTION OBSERVER FOR MENU active node status ==> add "active" class to li menu nodes
   \*------------------------------------------------------------------------------------------------------*/
   //!Needed to use/include the smooth-scroll.min.js lib an initialize it, in order to work properly for iOS and Safari.
   window.scroll = new SmoothScroll('a[href*="#"]', {
@@ -138,10 +138,6 @@
           node.classList.remove("hovered");
         });
       });
-    }
-
-    getDefNode() {
-      return this.defNode;
     }
 
     getActiveNode() {
