@@ -62,7 +62,7 @@ function pictau_option_active_plugins ( $plugin_list ){
 /* PÁGINA DE LOGIN: CORREJIMOS LOGO Y LINKS */
 
 function custom_login_logo() {
-	echo '<style type="text/css">h1 a { background: url(' . myImageLink() . '/login-logo-excess.svg) 50% 50% no-repeat !important; width:100% !important; }</style>';
+	echo '<style type="text/css">h1 a { background: url(' . myImageLink() . '/login-logo.svg) 50% 50% no-repeat !important; width:100% !important; }</style>';
 }
 add_action('login_head', 'custom_login_logo');
 
@@ -296,6 +296,8 @@ add_shortcode('pct_wdgt_custom_archives', 'wpb_limit_archives');
 
 // Enable shortcode execution in text widget
 add_filter('widget_text', 'do_shortcode');
+
+
 
 
 

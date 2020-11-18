@@ -1,7 +1,7 @@
 .pct-bgcolor-main,
-.pct-bgcolor-main [class*="__overlay"] {
+.pct-bgcolor-main > [class*="__overlay"] {
   //background: var(--main-grad) !important;
-  background: var(--main-color) !important;
+  background: var(--main-grad) !important;
 }
 
 ::selection {
@@ -17,10 +17,33 @@
   }
 }
 
-.uagb-heading-text {
+.uagb-heading-text,
+.pct-main-color {
   color: var(--main-color) !important;
 }
 
 .ast-header-break-point .ast-mobile-menu-buttons-minimal.menu-toggle {
+  color: var(--main-color);
+}
+
+// Menu main color
+header .main-header-menu a.menu-link,
+#ast-fixed-header .main-header-menu > .menu-item > .menu-link,
+.main-header-menu .menu-item:hover > .menu-link,
+#ast-fixed-header .main-header-menu .menu-link:hover,
+#ast-fixed-header .main-header-menu .menu-item:hover > .menu-link,
+#ast-fixed-header .main-header-menu .menu-item.focus > .menu-link,
+#ast-fixed-header
+  .main-header-menu
+  > .menu-item.current-menu-item
+  > .menu-link {
+  color: var(--menu-def-color);
+}
+
+body.ast-header-break-point
+  #ast-fixed-header
+  .main-header-menu
+  .menu-item.active
+  > .menu-link {
   color: var(--main-color);
 }

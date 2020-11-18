@@ -1,6 +1,8 @@
 const fs = require("fs");
 const { prompt } = require("enquirer");
 const { src, dest, watch, series, parallel } = require("gulp");
+const webpack = require("webpack-stream");
+
 const replace = require("gulp-replace"); // replaces strings in files
 const breplace = require("gulp-html-replace"); // replaces <!-- bulid: <name<--> <!-- endbuild --> format for html, php, etc. files.
 const sourcemaps = require("gulp-sourcemaps");
@@ -8,13 +10,18 @@ const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
 const babel = require("gulp-babel");
 const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
+//const uglify = require("gulp-uglify");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const bsync = require("browser-sync").create(); // create a browser-sync instance...
 const jeditor = require("gulp-json-editor");
 const file = require("gulp-file"); // create an writes a file...
+
+const webpackConfig =
+  process.env.NODE_ENV === "development"
+    ? "./webpack.config.js"
+    : "./webpack.config.prod.js";
 
 const setupOBJ = {
   wp_folder: "",
@@ -271,13 +278,21 @@ function scssTask() {
     .pipe(dest(configData.destChildTheme)); // put final CSS in dist folder
 }
 
-// JS task: concatenates and uglifies JS files to script.js
-function jsTask() {
+//! JS task (WITHOUT WEBPACK, you might need to install npm "gulp-uglify"): concatenates and uglifies JS files to script.js
+/*
+function compileJS() {
   return src(jsSourceOrder)
     .pipe(customPlumber())
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(concat("custom_theme_scripts.min.js"))
     .pipe(uglify())
+    .pipe(dest(configData.destChildTheme + "js/"));
+}
+*/
+
+function compileJS() {
+  return src("./js/custom_theme_scripts.js")
+    .pipe(webpack(require(webpackConfig)))
     .pipe(dest(configData.destChildTheme + "js/"));
 }
 
@@ -309,7 +324,8 @@ exports.directories = directories;
 exports.sourcePaths = sourcePaths;
 exports.setupOBJ = setupOBJ;
 exports.scssTask = scssTask;
-exports.jsTask = jsTask;
+//exports.jsTask = jsTask;
+exports.jsTask = compileJS;
 exports.phpTask = phpTask;
 exports.browSync = browSync;
 exports.bsync = bsync;

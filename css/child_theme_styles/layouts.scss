@@ -1,13 +1,121 @@
+/*------------------------------------------------------------------------------------------------------*
+            GRID SYSTEMS
+\*------------------------------------------------------------------------------------------------------*/
+.pct-2cols > .uagb-columns__inner-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+
+  & > div {
+    padding: 2rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 545px) {
+  .pct-2cols > .uagb-columns__inner-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pct-grid-3cols > .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+
+  & .pct-tile {
+    padding: 3rem;
+    margin: auto;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .pct-grid-3cols > .wp-block-group__inner-container {
+    & .pct-tile {
+      padding: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .pct-grid-3cols > .wp-block-group__inner-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .pct-grid-3cols > .wp-block-group__inner-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
+
+    & .pct-tile {
+      max-width: 380px;
+    }
+  }
+}
+
 .main-header-bar {
   padding: 0;
 }
 
+/*------------------------------------------------------------------------------------------------------*
+            FLEX GRID SYSTEMS
+\*------------------------------------------------------------------------------------------------------*/
+.pct-valores {
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 445px) and (min-width: 391px) {
+  .pct-valores {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 925px) and (min-width: 768px) {
+  .pct-valores {
+    font-size: 1em;
+  }
+}
+
+.pct-valores > div {
+  display: grid !important;
+  grid-template-columns: repeat(2, min-content);
+  grid-gap: 1.8rem;
+  justify-content: center !important;
+  margin: 3rem auto;
+}
+
+@media only screen and (max-width: 390px) {
+  .pct-valores > div {
+    grid-template-columns: min-content;
+  }
+}
+
+.pct-valores .uagb-icon-list__source-icon svg {
+  //height: 24px !important;
+  height: 30px !important;
+  width: auto !important;
+  fill: var(--main-color) !important;
+}
+
+.pct-valores .uagb-icon-list__wrapper {
+  margin-bottom: 0 !important;
+}
+
+.pct-valores .uagb-icon-list__label {
+  font-family: var(--def-heading-font-family) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--def-txt-color) !important;
+}
 /*------------------------------------------------------------------------------------------------------*
             BOTONES
 \*------------------------------------------------------------------------------------------------------*/
 .uagb-ifb-button-wrapper,
 .uagb-post__cta {
   padding-bottom: 1rem;
+  display: inline-block;
 }
 
 .uagb-ifb-button-wrapper > a,
@@ -17,6 +125,12 @@
   text-align: center;
   padding: 14px 25px !important;
   transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+
   //transform: scale3d(1, 1, 1);
 
   &:hover {
@@ -54,6 +168,54 @@ footer.site-footer {
 }
 
 /*------------------------------------------------------------------------------------------------------*
+            PRE-FOOTER
+\*------------------------------------------------------------------------------------------------------*/
+.pct-pre-footer {
+  max-width: 800px;
+  margin: auto;
+
+  & .wp-block-uagb-column {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+#menu-footer_menu {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#menu-footer_menu > li {
+  display: inline-block;
+  & a {
+    display: block;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.07);
+    margin: 4px 4px 4px;
+    text-transform: uppercase;
+    transition: color 1 cubic-bezier(0.2, 1, 0.3, 1);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.footer-adv-overlay {
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  footer [class*="footer-adv-"] .widget:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.pct-logo-footer img {
+  height: 30px;
+  width: auto;
+  margin-top: 1rem;
+}
+/*------------------------------------------------------------------------------------------------------*
             FOOTER
 \*------------------------------------------------------------------------------------------------------*/
 .ast-small-footer {
@@ -72,4 +234,130 @@ footer.site-footer {
 
 .ast-small-footer a:hover {
   color: var(--main-color);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            SERVICES TILES
+\*------------------------------------------------------------------------------------------------------*/
+.pct-tile picture {
+  margin-bottom: 2rem;
+}
+
+.pct-tile picture .pct-ico-service {
+  max-height: 180px;
+  width: auto;
+}
+
+.pct-tile h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 1300px) {
+  .pct-tile h2 {
+    font-size: calc(1rem + 1.3vw);
+    line-height: 1.4 !important;
+  }
+}
+
+@media only screen and (max-width: 917px) {
+  .pct-tile h2 {
+    font-size: calc(1rem + 1.2vw);
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .pct-tile * {
+    text-align: center;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            SECTION HOME / QUIENES SOMOS
+\*------------------------------------------------------------------------------------------------------*/
+.pct-pasti-whiter {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: calc(2rem + 1.5vw);
+  margin-bottom: calc(2rem + 1.5vw);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            PAGE HEADER 2 COLS
+\*------------------------------------------------------------------------------------------------------*/
+.pct-page-header section {
+  padding-bottom: 0 !important;
+}
+
+.pct-page-header [class*="__columns-2"] > div {
+  padding: 0 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .pct-page-header [class*="__columns-2"] {
+    flex-wrap: wrap;
+  }
+  .pct-page-header [class*="__columns-2"] > div {
+    width: 100% !important;
+  }
+}
+
+.pct-page-header [class*="__columns-2"] > div:first-of-type {
+  padding: 2rem !important;
+}
+
+@media only screen and (max-width: 550px) {
+  .pct-page-header [class*="__columns-2"] > div:first-of-type {
+    padding: 2rem 1rem !important;
+  }
+}
+
+.pct-page-header .pct-coldcha-img-bottom > div:last-of-type {
+  padding: 0 !important;
+}
+
+.pct-page-header .pct-coldcha-img-bottom {
+  padding: 0;
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  justify-content: center;
+}
+.pct-page-header .pct-coldcha-img-bottom picture {
+  //position: absolute;
+}
+
+.pct-bgdark {
+  & h1,
+  h2,
+  p {
+    color: #fff !important;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            PÁG. SERVICIOS: SECCIONES SERVICIOS
+\*------------------------------------------------------------------------------------------------------*/
+body.page-id-22 {
+  background-color: var(--light-light-grey-color);
+}
+
+.pct-section-service {
+  background-color: #fff;
+  max-width: 900px;
+  margin: calc(2rem + 4vw) auto;
+  padding: 2.5rem !important;
+  width: 90%;
+  padding-bottom: 3.2rem !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .pct-section-service.pct-img-right [class*="uagb-columns__columns-2"] {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+}
+.pct-section-service h2 {
+  margin-top: 1.2rem;
 }

@@ -17,77 +17,78 @@ html.avif #mkt-header {
 /*------------------------------------------------------------------------------------------------------*
             MAIN MENU HOVER EFFECTS
 \*------------------------------------------------------------------------------------------------------*/
-
-body:not(.ast-header-break-point)
-  .site-header
-  #site-navigation
-  li.menu-item.current-menu-item
-  > .menu-link {
-  color: #fff;
-  pointer-events: none;
-  cursor: none;
+.main-header-menu .menu-item.focus > .menu-link {
+  color: var(--menu-def-color);
 }
+
 body:not(.ast-header-break-point)
   header#ast-fixed-header
   #site-navigation
-  li.menu-item.current-menu-item:before {
+  li.menu-item.active:before {
   top: -0.5em;
   height: calc(100% + 28px + 0.5em);
 }
 
 body:not(.ast-header-break-point) header {
+  &.site-header #site-navigation li.menu-item {
+    &.current-menu-item > .menu-link {
+      color: var(--menu-def-color);
+    }
+    &.active > .menu-link {
+      color: #fff;
+      pointer-events: none;
+      cursor: none;
+    }
+  }
+
   &.site-header li.menu-item:before {
     content: "";
     display: block;
     width: 100%;
     height: 0;
     background-color: #28292a;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
     position: absolute;
     z-index: -1 !important;
-    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: height 0.3s cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &#ast-fixed-header li.menu-item {
     &:before {
       top: -0.5em;
     }
-
-    &:hover:before {
+    &.hovered:not(.active):before {
       height: calc(100% + 28px + 0.5em);
-
-      a {
-        color: #fff;
-      }
     }
-    //height: calc(100% + 28px + 0.5em);
+
+    /*&:not(.active):hover:before {
+      height: calc(100% + 28px + 0.5em);
+    }*/
   }
 
-  &.site-header li.menu-item.current-menu-item:before {
+  &.site-header li.menu-item.active:before {
     //background: var(--main-grad);
-    background: var(--main-color);
+    background: var(--main-grad);
     height: calc(100% + 20px);
   }
 
   &.site-header li.menu-item {
-    &:hover:not(.current-menu-item) {
-      &:before {
-        height: calc(100% + 20px);
-      }
+    &.hovered {
       a {
         color: #fff !important;
       }
-      &.current-menu-item {
-        height: 0;
+    }
+    &.hovered:not(.active) {
+      &:before {
+        height: calc(100% + 20px);
       }
     }
   }
 }
 
-// ! Hide current menu item background when hovering the whole <ul>
-body:not(.ast-header-break-point)
-  .site-header
-  #site-navigation
-  ul:hover
-  li.menu-item.current-menu-item:before {
-  height: 0 !important;
+/*------------------------------------------------------------------------------------------------------*
+            COOKIE NOTICE PLUGIN
+\*------------------------------------------------------------------------------------------------------*/
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container {
+  padding: 40px 20px !important;
 }

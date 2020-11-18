@@ -1,25 +1,29 @@
 :root {
   --def-border-radius: 6px;
-  --main-color: #0091d8;
+  //--main-color: #0091d8;
+  --main-color: #1377df;
   --main-grad: linear-gradient(
     108deg,
     rgba(23, 147, 214, 1) 44%,
     rgba(0, 86, 173, 1) 100%
   );
 
+  --menu-def-color: #000;
+  --main-grad: linear-gradient(to top, #0091d8 0%, #005bea 100%);
+
   //--main-grad: linear-gradient(108deg, rgba(23, 147, 214, 1) 44%, #0279b2);
 
-  --primary-color-darker: #3a6765;
   --cta-color: #fb2051;
-  --woo-cta-color: #41c389;
   --def-font-family: "Open Sans", Helvetica, Arial, sans-serif;
   --def-heading-font-family: Exo, Helvetica, Arial, sans-serif;
   --def-txt-color: #7b7b7b;
   --fontawesome: "Font Awesome 5 Free";
   --light-grey-color: #ddd;
-  --light-light-grey-color: #f7f7f7;
-  --button-small-border-radius: 15px;
-  --button-small-padding: 3px 10px;
+  --light-light-grey-color: #f5f5f5;
+}
+
+html {
+  //scroll-behavior: smooth;
 }
 
 html,
@@ -32,16 +36,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+picture {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1,
 h2,
 h3 {
   font-family: var(--def-heading-font-family);
   line-height: 1.2 !important;
   font-weight: 600 !important;
+  word-wrap: normal !important;
 }
 
-a:focus {
-  outline: none;
+.entry-content h1 {
+  font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 544px) {
+  h1,
+  h2 {
+    font-size: calc(1rem + 3.5vw) !important;
+  }
 }
 
 .secondary a *,
@@ -49,4 +73,26 @@ a:focus {
 .site-header a *,
 a {
   transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+h1,
+h2 {
+  font-size: 40px;
+}
+
+.entry-content ul {
+  list-style: none;
+}
+
+.entry-content li {
+  display: flex;
+  padding-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.entry-content li:before {
+  font-family: "pictauicons";
+  content: "\f058";
+  margin-right: 5px;
+  font-size: 1.2rem;
 }

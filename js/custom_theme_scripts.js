@@ -1,9 +1,23 @@
+//import { Car } from "./mod/oreyClass";
+import "./mod/avif-webp";
+
 (function ($) {
   ("use strict");
 
   /** Global vars defined by functions.php with 'wp_localize_script' @ script enqueue   **/
   var global = pct_globalVars;
 
+  /*  let Micoche = new Car("Toyota", "RAV4");
+  Micoche.ponMarcha("D");
+  console.log(
+    "Marcha: " +
+      Micoche.userGear +
+      " \nMarca: " +
+      Micoche.marca +
+      " \nModelo: " +
+      Micoche.modelo
+  );
+*/
   /*------------------------------------------------------------------------------------------------------*\
 
 							ONLOAD
@@ -51,20 +65,26 @@
   /*------------------------------------------------------------------------------------------------------*
             SCROLLSPY: INTERSECTION OBSERVER FOR MENU active node status ==> add "active" class to li menu nodes
   \*------------------------------------------------------------------------------------------------------*/
-  //!Needed to use/include the smooth-scroll.min.js lib an initialize it, in order to work properly for iOS and Safari.
+
+  /*//!Needed to use/include the smooth-scroll.min.js lib an initialize it, in order to work properly for iOS and Safari.*/
   window.scroll = new SmoothScroll('a[href*="#"]', {
     easing: "easeOutCubic",
+    speed: 600,
+    speedAsDuration: true,
+    header: "#ast-fixed-header",
   });
 
   class hoverMenuManager {
     constructor(defNodesSelector, IoOptions) {
       this.markHashLinksonMenu(
-        document.querySelectorAll('li.current_page_item a[href*="#"]')
+        document.querySelectorAll('header li.current_page_item a[href*="#"]')
       );
       this.makePageNodeHashed(); // avoid page reloading for node menu corresponding for currentpage (replace link href content with #)
       this.markupHover();
       this.currentlyIntArr = new Array();
-      this.defNodes = document.querySelectorAll("li.current_page_item a");
+      this.defNodes = document.querySelectorAll(
+        "header li.current_page_item a"
+      );
       this.setActiveNode(this.defNodes);
       this._iooptions = IoOptions || null;
       this.observer = this.initObserver();
@@ -78,7 +98,7 @@
         entries.forEach((entry) => {
           let id = entry.target.getAttribute("id");
           let targetList = document.querySelectorAll(
-            `li.menu-item a[href*="#${id}"]`
+            `header li.menu-item a[href*="#${id}"]`
           );
           targetList = Array.from(targetList).length > 0 ? targetList : null;
           if (targetList) {
@@ -179,7 +199,7 @@
     getMenuNodesFromSection(section) {
       let sectionID = section.id;
       let targetList = document.querySelectorAll(
-        `li.menu-item a[href*="#${sectionID}"]`
+        `header li.menu-item a[href*="#${sectionID}"]`
       );
       targetList = Array.from(targetList).length > 0 ? targetList : null;
       return targetList;
