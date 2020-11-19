@@ -155,6 +155,9 @@
 /*------------------------------------------------------------------------------------------------------*
             HEADER
 \*------------------------------------------------------------------------------------------------------*/
+header.site-header:not(#ast-fixed-header) .main-header-bar {
+  padding: 0 !important;
+}
 
 .ast-header-break-point .main-navigation ul .menu-item .menu-link,
 .main-header-menu .menu-link,
@@ -170,6 +173,14 @@ footer.site-footer {
 /*------------------------------------------------------------------------------------------------------*
             PRE-FOOTER
 \*------------------------------------------------------------------------------------------------------*/
+.footer-adv .ast-row > div:not(:first-of-type) {
+  display: none !important;
+}
+
+.footer-adv .ast-row > div:first-of-type {
+  width: 100% !important;
+}
+
 .pct-pre-footer {
   max-width: 800px;
   margin: auto;

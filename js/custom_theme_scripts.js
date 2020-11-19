@@ -1,4 +1,4 @@
-//import { Car } from "./mod/oreyClass";
+import { Car } from "./mod/oreyClass";
 import "./mod/avif-webp";
 
 (function ($) {
@@ -7,7 +7,7 @@ import "./mod/avif-webp";
   /** Global vars defined by functions.php with 'wp_localize_script' @ script enqueue   **/
   var global = pct_globalVars;
 
-  /*  let Micoche = new Car("Toyota", "RAV4");
+  let Micoche = new Car("Toyota", "RAV4");
   Micoche.ponMarcha("D");
   console.log(
     "Marcha: " +
@@ -17,7 +17,7 @@ import "./mod/avif-webp";
       " \nModelo: " +
       Micoche.modelo
   );
-*/
+
   /*------------------------------------------------------------------------------------------------------*\
 
 							ONLOAD
