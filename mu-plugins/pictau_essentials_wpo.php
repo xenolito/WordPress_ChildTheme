@@ -13,7 +13,7 @@ License: GPLv2 o posterior
 /*------------------------------------------------------------------------------------------------------*
 						CONDITIONAL PLUGIN LOAD
 \*------------------------------------------------------------------------------------------------------*/
-
+/*
 if(!is_admin())
 	add_filter( 'option_active_plugins', 'pictau_option_active_plugins', 1);
 
@@ -37,22 +37,11 @@ function pictau_option_active_plugins ( $plugin_list ){
 
 
 
-	//THRIVE ARCHITECT SELECTOR
-	/*
-	$is_tve_needed = (strpos($request_uri,'/landing')!== false);
-	if (!$is_tve_needed){
-	    unset( $plugin_list[array_search( 'thrive-visual-editor/thrive-visual-editor.php', $plugin_list)]);
-		unset($plugin_list[array_search('thrive-product-manager/thrive-product-manager.php', $plugin_list)]);
-		unset($plugin_list[array_search('thrive-leads/thrive-leads.php', $plugin_list)]);
-
-	}
-	*/
-
    //Y aquí devolvemos a WordPress el listado de plugins que queremos cargar
    return $plugin_list;
 }
 
-
+*/
 
 /*------------------------------------------------------------------------------------------------------*
 						LOGIN PAGE CUSTOMIZATION
