@@ -118,6 +118,13 @@
   display: inline-block;
 }
 
+.wp-block-button .wp-block-button__link {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  //text-transform: uppercase;
+  font-size: 1rem;
+}
+
 .uagb-ifb-button-wrapper > a,
 .uagb-post__cta > a {
   font-family: var(--def-font-family) !important;
