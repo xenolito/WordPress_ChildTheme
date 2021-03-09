@@ -1,46 +1,43 @@
 {
-  "name": "webgl_scaffolding",
-  "version": "1.0.0",
-  "description": "Learning webGL",
-  "author": "Oscar Rey Tajes",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.8.0",
-    "babel-loader": "^8.2.1",
-    "browser-sync": "^2.26.10",
-    "console-signature": "^1.2.1",
-    "cssnano": "^4.1.10",
-    "enquirer": "^2.3.6",
-    "eslint": "^6.6.0",
-    "fs": "0.0.1-security",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-file": "^0.4.0",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-json-editor": "^2.5.4",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "http-proxy": "^1.18.1",
-    "terser-webpack-plugin": "^5.0.3",
-    "webpack-stream": "^6.1.1",
-    "yargs": "^15.4.1",
-    "yargs-parser": "^18.1.3"
-  },
-  "dependencies": {},
-  "resolutions": {
-    "yargs-parser": "^18.1.3",
-    "http-proxy": "^1.18.1"
-  },
-  "scripts": {
-    "preinstall": "npx npm-force-resolutions",
-    "setup": "gulp --setup"
-  }
+    "name": "webgl_scaffolding",
+    "version": "1.0.0",
+    "description": "Learning webGL",
+    "author": "Oscar Rey Tajes",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+        "@babel/preset-env": "^7.9.6",
+        "autoprefixer": "^9.8.0",
+        "babel-loader": "^8.2.1",
+        "browser-sync": "^2.26.10",
+        "console-signature": "^1.2.1",
+        "cssnano": "^4.1.10",
+        "enquirer": "^2.3.6",
+        "eslint": "^6.6.0",
+        "fs": "0.0.1-security",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-file": "^0.4.0",
+        "gulp-html-replace": "^1.6.2",
+        "gulp-json-editor": "^2.5.4",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "terser-webpack-plugin": "^5.0.3",
+        "webpack-stream": "^6.1.1",
+        "yargs": "^15.4.1",
+        "yargs-parser": "^18.1.3"
+    },
+    "resolutions": {
+        "yargs-parser": "^18.1.3"
+    },
+    "scripts": {
+        "preinstall": "npx npm-force-resolutions",
+        "setup": "gulp --setup"
+    }
 }
