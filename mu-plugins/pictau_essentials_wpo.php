@@ -338,6 +338,3 @@ function addUserRole_BodyClass( $classes ) {
 
 add_filter( 'auto_update_translation', '__return_false' );
 add_filter( 'async_update_translation', '__return_false' );
-
-?>
-
