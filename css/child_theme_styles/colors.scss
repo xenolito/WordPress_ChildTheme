@@ -1,29 +1,29 @@
 .pct-bgcolor-main,
-.pct-bgcolor-main > [class*="__overlay"] {
-  //background: var(--main-grad) !important;
-  background: var(--main-grad) !important;
+.pct-bgcolor-main > [class*='__overlay'] {
+    //background: var(--main-grad) !important;
+    background: var(--main-grad) !important;
 }
 
 ::selection {
-  background-color: var(--main-color);
-  color: #fff;
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 .uagb-post__cta {
-  background-color: transparent !important;
+    background-color: transparent !important;
 
-  & a {
-    background-color: var(--main-color);
-  }
+    & a {
+        background-color: var(--main-color);
+    }
 }
 
 .uagb-heading-text,
 .pct-main-color {
-  color: var(--main-color) !important;
+    color: var(--main-color) !important;
 }
 
 .ast-header-break-point .ast-mobile-menu-buttons-minimal.menu-toggle {
-  color: var(--main-color);
+    color: var(--main-color);
 }
 
 // Menu main color
@@ -33,17 +33,23 @@ header .main-header-menu a.menu-link,
 #ast-fixed-header .main-header-menu .menu-link:hover,
 #ast-fixed-header .main-header-menu .menu-item:hover > .menu-link,
 #ast-fixed-header .main-header-menu .menu-item.focus > .menu-link,
-#ast-fixed-header
-  .main-header-menu
-  > .menu-item.current-menu-item
-  > .menu-link {
-  color: var(--menu-def-color);
+#ast-fixed-header .main-header-menu > .menu-item.current-menu-item > .menu-link {
+    color: var(--menu-def-color);
 }
 
-body.ast-header-break-point
-  #ast-fixed-header
-  .main-header-menu
-  .menu-item.active
-  > .menu-link {
-  color: var(--main-color);
+body.ast-header-break-point #ast-fixed-header .main-header-menu .menu-item.active > .menu-link {
+    color: var(--main-color);
+}
+
+/// CONTACT FORM 7
+
+.wpcf7 .pct-msg-sent-ok {
+    box-shadow: var(--default-box-shadow);
+    background-color: var(--cta-color) !important;
+
+    h3 {
+        font-size: 2.5rem;
+        color: #fff;
+        font-family: var(--heading-font-family);
+    }
 }

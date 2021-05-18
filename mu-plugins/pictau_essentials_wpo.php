@@ -159,6 +159,26 @@ function pictau_custom_icon($atts, $content) {
 add_shortcode( 'pct_icon', 'pictau_custom_icon' );
 
 
+
+/*------------------------------------------------------------------------------------------------------*
+						FAVICON + DARK MODE
+\*------------------------------------------------------------------------------------------------------*/
+
+function favicon_theme(){
+	$media_url = wp_upload_dir()['baseurl'];
+
+?>
+<link rel="icon" href="<?php echo $media_url; ?>/favicon-mld.svg">
+<link rel="mask-icon" href="<?php echo $media_url; ?>/favicon-mld.svg" color="#000000">
+<link rel="apple-touch-icon" href="<?php echo $media_url; ?>/favicon512.png">
+<link rel="manifest" href="<?php echo $media_url; ?>/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<?php
+}
+
+add_action('wp_head','favicon_theme');
+
+
 // ! AVIF IMAGES WITH fallback to choose (svg, png, jpg)
 /*
 @param fallback [jpg,png,svg,webp]
@@ -168,6 +188,7 @@ function mediaFallback($atts) {
 	"filename" 		=> '',
 	"fallback"		=> 'jpg',
 	"class"			=> false,
+	"alt"			=> false
 	), $atts));
 
 	$clss = ($class) ? ' class="' . $class . '"' : '';
@@ -177,7 +198,7 @@ function mediaFallback($atts) {
 	$media .= ($fallback == 'webp') ? '<source type="image/webp" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.webp">' : '';
 	$media .= ($fallback == 'svg') ? '<source type="image/svg+xml" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.svg">' : '';
 	$media .= ($fallback == 'png') ? '<source type="image/png" srcset="'. wp_upload_dir()['baseurl'] . '/' . $filename .'.png">' : '';
-	$media .= '<img src="'. wp_upload_dir()['baseurl'] . '/' .$filename . '.jpg"' . $clss . '>';
+	$media .= '<img src="'. wp_upload_dir()['baseurl'] . '/' .$filename . '.jpg"' . $clss . ' alt="'. $alt .'">';
 	$media .= '</picture>';
 
 	return $media;
@@ -194,7 +215,7 @@ add_shortcode( 'pct_avif_img', 'mediaFallback' );
 
 function pct_remove_update_notifications($value) {
     if ( isset( $value ) && is_object( $value ) ) {
-        unset($value->response[ 'revslider/revslider.php' ]);
+        unset($value->response[ 'contact-form-7/wp-contact-form-7.php' ]);
     }
     return $value;
 }

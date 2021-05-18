@@ -1,0 +1,862 @@
+/*------------------------------------------------------------------------------------------------------*
+            RESET THEME FORM SETTINGS
+\*------------------------------------------------------------------------------------------------------*/
+#opl-login-form .input-wrap .input-lg {
+    font-size: 1rem !important;
+}
+
+form {
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='reset'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='url'],
+    select,
+    textarea {
+        border-color: #646464;
+        border-width: 2px;
+    }
+}
+
+.wpcf7 input:not([type='submit']):focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus {
+    border-color: var(--cta-color);
+    outline: 0;
+}
+
+form input:focus:invalid,
+form textarea:focus:invalid,
+form select:focus:invalid {
+    color: unset;
+    border-color: var(--cta-color);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        //! ICONS NEEDED
+\*------------------------------------------------------------------------------------------------------*/
+[class*='fa-'] {
+    &:before {
+        font-family: 'pictauicons';
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        // font-size: 1rem;
+    }
+}
+
+.fa-cog:before {
+    content: '\f013';
+}
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						CONTACT FORM 7 STYLES & FORMULARIOS GENERAL
+
+\*------------------------------------------------------------------------------------------------------*/
+.wpcf7 label {
+    text-align: left;
+}
+
+.wpcf7-form {
+    margin-top: 0 !important;
+}
+
+@media only screen and (max-width: 845px) {
+    .wpcf7 .two_columns_50_50 > .column1 > .column_inner,
+    .wpcf7 .two_columns_50_50 > .column2 > .column_inner {
+        padding: 0;
+    }
+}
+
+.wpcf7-form-control-wrap.cv_file + label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1.2rem !important;
+    padding: 1rem;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.wpcf7-form-control-wrap.cv_file + label.file_ready {
+    pointer-events: none;
+}
+
+.wpcf7-form-control-wrap.cv_file + label span {
+    color: inherit !important;
+}
+
+.wpcf7-form-control-wrap.cv_file + label:before,
+.wpcf7-form-control-wrap.cv_file + label + .bt_remove_file:before {
+    font-family: fontAwesome;
+    color: var(--default-text-color);
+}
+
+.wpcf7-form-control-wrap.cv_file + label:before {
+    content: '\f093';
+    margin-right: 0.5rem;
+}
+
+.wpcf7-form-control-wrap.cv_file + label + .bt_remove_file {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    align-items: center;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1) 1s;
+    z-index: -2;
+}
+
+.wpcf7-form-control-wrap.cv_file + label.file_ready:before {
+    content: '\f15c';
+}
+
+.wpcf7-form-control-wrap.cv_file + label.file_ready + .bt_remove_file {
+    /*display: flex;*/
+    z-index: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.wpcf7-form-control-wrap.cv_file + label.file_ready + .bt_remove_file:hover:before {
+    transform: scale3d(1.3, 1.3, 1);
+}
+
+.wpcf7-form-control-wrap.cv_file + label + .bt_remove_file:before {
+    content: '\f00d';
+    transform: scale3d(0, 0, 1);
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.wpcf7-form-control-wrap.cv_file + label.file_ready + .bt_remove_file:before {
+    transform: scale3d(1, 1, 1);
+}
+
+.wpcf7-form-control-wrap.cv_file + label:hover {
+    background-color: var(--default-text-color);
+    color: #fff;
+}
+
+.wpcf7-form-control-wrap.cv_file + label:hover:before {
+    color: #fff;
+}
+
+.wpcf7-form-control-wrap.cv_file {
+    position: absolute;
+    z-index: 2;
+    margin: 0 !important;
+}
+
+.wpcf7-form-control-wrap [type='file'] {
+    display: none !important;
+}
+
+.wpcf7 input:not([type='submit']),
+.wpcf7 textarea {
+    font-family: var(--base-font-family);
+    font-size: 1rem;
+}
+
+.modal .wpcf7 input:not([type='submit']),
+.modal .wpcf7 textarea {
+    font-family: var(--base-font-family);
+    font-size: 1rem;
+    border: 2px solid var(--main-color);
+}
+
+.pct-form-container {
+    /*	background-image: var(--secondary-grad) !important;*/
+    padding: 2rem 3rem;
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: auto !important;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 480px) {
+    .lead-form-container,
+    .pct-form-container,
+    body.single-seguro .cta-microsite {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+}
+
+.pct-form-container h5 {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.pct-form-container h3 {
+    padding-top: 1rem;
+}
+
+.screen-reader-response {
+    display: none !important;
+}
+
+input:not([type='checkbox']),
+textarea {
+    -webkit-appearance: none !important;
+}
+
+.wpcf7 form.wpcf7-form p {
+    text-align: center;
+}
+
+span.wpcf7-list-item {
+    margin: auto;
+}
+
+.wpcf7 a.pct-lk-privacidad {
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+.wpcf7 a.pct-lk-privacidad:hover {
+    color: var(--third-color) !important;
+}
+
+.wpcf7 a.pct-lk-privacidad:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none !important;
+}
+
+.pct-form-element {
+    padding-bottom: 1rem;
+}
+
+.input,
+.textarea,
+.pct-form-element {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.textarea,
+.pct-form-element.pct-legal,
+div.wpcf7-response-output {
+    width: 100%;
+    display: block;
+}
+
+.wpcf7 .legal-content {
+    background-color: rgba(255, 255, 255, 0.45);
+    margin-top: 0.5rem;
+}
+
+div.wpcf7-response-output {
+    margin: auto;
+    box-sizing: border-box;
+    margin: 30px auto;
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 100%;
+    padding: 1.5rem !important;
+}
+
+.pct-legal,
+.pct-legal a {
+    font-size: 14px;
+    line-height: 14px;
+    box-sizing: border-box;
+    color: #343434;
+}
+
+.wpcf7-form-control-wrap,
+label[for='cv_file'] {
+    width: 100%;
+    position: relative;
+    margin: 0.5em auto !important;
+}
+
+.wpcf7-form-control-wrap {
+    display: inline-block !important;
+}
+
+.wpcf7 *:not(input):not(textarea):not(img):not(i):empty {
+    display: none;
+}
+
+.wpcf7 textarea {
+    height: 100px;
+    min-height: unset !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						FORM USE PLACEHOLDER AS DYNAMIC PERSISTENT LABEL (GOOGLE MATERIAL LIKE)
+
+\*------------------------------------------------------------------------------------------------------*/
+
+form.placeholder_as_label label.persist-label {
+    position: absolute;
+    color: #b4b4b4;
+    font-weight: 500 !important;
+    touch-action: manipulation;
+    cursor: text;
+    top: 1em;
+    left: 1em;
+    transform: scale3d(1, 1, 1);
+    transform-origin: left bottom;
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    width: calc(100% - 2em);
+}
+
+form.placeholder_as_label input[type='text'].placeholder-to-label,
+form.placeholder_as_label input[type='email'].placeholder-to-label,
+form.placeholder_as_label input[type='url'].placeholder-to-label,
+form.placeholder_as_label textarea.placeholder-to-label {
+    margin-bottom: 0.8rem !important;
+    padding-top: 1.5em !important;
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.placeholder_as_label .persist-label.show-as-label {
+    transform: scale3d(0.75, 0.75, 1) translate3d(0.3em, 0px, 0px);
+    top: 0.1rem;
+}
+
+.bg-main-gradient .placeholder_as_label .persist-label.show-as-label,
+.bg-second-gradient .placeholder_as_label .persist-label.show-as-label,
+.bg-third-gradient .placeholder_as_label .persist-label.show-as-label {
+    color: #fff !important;
+}
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						CONTACT FORM 7 CHECKBOX LEGAL STYLES
+
+\*------------------------------------------------------------------------------------------------------*/
+[id*='legalinput'] {
+    background-color: #ff0000;
+}
+
+[id*='legalinput'] + label:before,
+[id*='legalinput'] + label:after {
+    font-family: 'pictauicons';
+    font-size: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+    /*absolutely positioned*/
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+[id*='legalinput'] + label:before {
+    content: '\f111'; /*unchecked*/
+
+    font-weight: 900;
+    border-radius: 50%;
+    color: #fff;
+}
+[id*='legalinput'] + label:after {
+    /*content: "\f00c";*/ /*checked*/
+    content: '\f058';
+    /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
+    /*max-width: 0;*/
+    transform: scale3d(0, 0, 1);
+    opacity: 1;
+    font-weight: 900;
+    /*CSS3 transitions for animated effect*/
+    transition: all 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+    color: var(--primary-color-darker);
+}
+
+[id*='legalinput']:checked + label:after {
+    /*max-width: 25px;*/
+    /*opacity: 1;*/
+    transform: scale3d(1, 1, 1);
+}
+
+.wpcf7 .placeholder_as_label input[type='email'],
+.wpcf7 .placeholder_as_label input[type='text'],
+.wpcf7 .placeholder_as_label input[type='url'],
+.wpcf7 .placeholder_as_label textarea {
+    border-radius: var(--box-border-radius);
+}
+
+.wpcf7 .legal-content {
+    background-color: transparent;
+    margin-top: 0;
+}
+
+.pct-footer-layout .wpcf7 .pct-legal {
+    padding: 0;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            SUBMIT ON EMAIL FORM (for justs email form : newsletters)
+\*------------------------------------------------------------------------------------------------------*/
+.wpcf7 .submit_on_email .pct-form-pasti {
+    // background-color: #ff0000;
+    position: relative;
+    z-index: 5;
+    padding: 0 15px;
+}
+
+#footer .wpcf7 .submit_on_email .pct-form-pasti {
+    padding: 0;
+}
+
+.pct-form-pasti {
+    max-width: 400px;
+    margin: auto;
+
+    @media only screen and (max-width: 475px) {
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+    }
+}
+
+.pct-form-standalone .pct-form-pasti {
+    margin: unset;
+}
+
+.wpcf7 input[type='text'],
+.wpcf7 input[type='email'],
+.wpcf7 input[type='number'],
+.wpcf7 input[type='phone'],
+.wpcf7 input[type='url'],
+.wpcf7 textarea,
+form textarea {
+    font-size: 16px !important;
+    border-radius: 30px !important;
+    background-color: #fff !important;
+}
+
+.wpcf7 textarea,
+form textarea {
+    padding: 15px 20px;
+}
+
+.wpcf7 button,
+.wpcf7 input[type='submit'] {
+    position: relative;
+    border: 0;
+    /*padding: 9px 12px !important;*/
+    min-width: 160px;
+    min-height: 44px;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.wpcf7 .submit_on_email button,
+.wpcf7 .submit_on_email input[type='submit'] {
+    position: absolute;
+    border: 0;
+    right: 4.5px;
+    min-width: unset;
+    padding: 9px 0px !important;
+    padding-top: 11px !important;
+    transform: translate3d(0, -50%, 0);
+    top: 50%;
+    min-width: 140px;
+    min-height: 34px;
+    z-index: 1;
+    margin-top: 0;
+}
+
+.wpcf7 button[id='submit'] i {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    font-size: 1em;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    animation: form-submit-cog 2s linear infinite;
+    transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.wpcf7 button[id='submit']:hover,
+.wpcf7 input[type='submit']:hover {
+    background: #161616;
+    border-color: #161616;
+}
+.wpcf7 button[id='submit']:active,
+.wpcf7 input[type='submit']:active {
+    font-size: 15px;
+    /*-webkit-transform: translateY(1px);
+  transform: translateY(1px);*/
+}
+
+.wpcf7 button[id='submit'].active span,
+.wpcf7 input[type='submit'].active span {
+    display: none;
+}
+
+.wpcf7 button[id='submit'].active i.showIcon,
+.wpcf7 input[type='submit'].active i.showIcon {
+    opacity: 1;
+}
+
+.wpcf7 button[id='submit'].active,
+.wpcf7 input[type='submit'].active {
+    /*background: transparent;*/
+    min-width: inherit;
+    padding: 0 !important;
+
+    /*animation-name: roundIt;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  */
+    animation: roundIt 0.3s cubic-bezier(0.2, 1, 0.3, 1) 0.3s normal forwards;
+}
+.wpcf7 button[id='submit'].loader,
+.wpcf7 input[type='submit'].loader {
+    border-right: 4px solid #fff !important;
+    min-width: inherit;
+    font-size: 0;
+    border-radius: 50% !important;
+    width: 50px;
+    background: transparent;
+    animation: loader 0.4s linear 0s infinite normal forwards;
+}
+.wpcf7 button[id='submit'].success,
+.wpcf7 input[type='submit'].success {
+    background: #3dcb9a;
+    border-color: #fff;
+    min-width: 180px;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotateZ(0);
+        /*	color: rgba(255,255,255,0);*/
+    }
+    100% {
+        transform: rotateZ(360deg);
+        /*	color: rgba(255,255,255,0);*/
+    }
+}
+
+@keyframes roundIt {
+    to {
+        /*font-size: 0 !important;*/
+        width: 44px;
+        min-width: inherit;
+    }
+}
+
+.wpcf7 .wpcf7-response-output {
+    margin: 0;
+    margin-top: 2rem;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    border-radius: var(--box-border-radius);
+    box-shadow: var(--default-box-shadow);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0 !important;
+}
+
+.wpcf7 .wpcf7-response-output {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.wpcf7 .pct-msg-sent-ok {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0 !important;
+    border-radius: var(--box-border-radius);
+    margin-bottom: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    padding: 0;
+    text-align: center;
+    opacity: 0;
+    z-index: 1;
+    transform: scale3d(0.8, 0.8, 1);
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+    max-height: 0;
+}
+
+.wpcf7 .wpcf7-response-output.wpcf7-mail-sent-ok {
+    display: none !important;
+}
+
+.wpcf7 .submit_on_email.sent .pct-msg-sent-ok,
+.wpcf7 .sent .pct-msg-sent-ok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    animation: msg-sent-ok 0.3s cubic-bezier(0.2, 1, 0.3, 1) 0.9s, msg-sent-show 0.3s ease 1.2s;
+    animation-fill-mode: forwards;
+}
+
+.wpcf7 .pct-msg-sent-ok h3 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.wpcf7 .pct-form-pasti {
+    display: block;
+    opacity: 1;
+    /*overflow: hidden;*/
+    max-height: 500px;
+    /*transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1), max-height 0.3s ease;*/
+}
+
+.wpcf7 .sent .pct-form-pasti {
+    /*
+  opacity: 0;
+  display: none;
+  */
+    pointer-events: none;
+    animation: form-all-ok 0.3s cubic-bezier(0.2, 1, 0.3, 1), form-hide 0.3s ease 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes form-submit-cog {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(1turn);
+    }
+}
+
+@keyframes msg-sent-ok {
+    to {
+        max-height: 500px;
+        padding: 2rem;
+    }
+}
+
+@keyframes msg-sent-show {
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes form-all-ok {
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes form-hide {
+    to {
+        max-height: 0;
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            ALERTS CAMPOS OBLIGATORIOS CTA
+\*------------------------------------------------------------------------------------------------------*/
+.wpcf7 input:not([type='submit']),
+.wpcf7 textarea {
+    position: relative;
+    z-index: 5;
+}
+
+.wpcf7 .submit_on_email button,
+.wpcf7 .submit_on_email input[type='submit'] {
+    z-index: 8;
+}
+
+.wpcf7 .pct-legal span.wpcf7-not-valid-tip:before {
+    margin-right: -1.3rem;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip {
+    /*text-indent: -9999px;*/
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0px);
+    animation: ico-fadein 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    font-size: 0;
+}
+
+/*.wpcf7 input[type="text"]:not(:placeholder-shown) + span.wpcf7-not-valid-tip {
+  transform: translate3d(-26px, -50%, 0px);
+  animation: ico-fadeout 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}*/
+
+.wpcf7 span.wpcf7-not-valid-tip:after,
+.wpcf7-response-output:after {
+    display: inline-block;
+    content: '\f06a';
+    font-weight: 600;
+    font-family: 'pictauicons';
+    color: #fff;
+    text-indent: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip:after,
+.wpcf7 span.wpcf7-not-valid-tip:before {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 19px;
+    position: relative;
+    opacity: 1;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip:before,
+.wpcf7-response-output:after {
+    height: 30px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 15px;
+}
+
+.wpcf7-response-output:after {
+    height: 20px;
+    border-radius: 15px;
+    width: 20px !important;
+    line-height: 19px !important;
+    text-indent: 27px !important;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip:before {
+    font-size: 0;
+    line-height: 0;
+    content: '';
+    width: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.wpcf7-response-output:after {
+    width: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 0.5em;
+    letter-spacing: 24px;
+    text-indent: 23px;
+}
+
+.wpcf7 .pct-legal {
+    padding: 0;
+}
+.wpcf7 .pct-legal-acceptance {
+    z-index: 5;
+    position: relative;
+}
+
+[id*='legalinput'] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    margin-left: 5px;
+}
+
+[id*='legalinput'] + label:after,
+[id*='legalinput'] + label:before {
+    font-size: 24px;
+    line-height: 0px;
+    border-radius: 50%;
+}
+
+[id*='legalinput'] + label:after {
+    position: absolute;
+    top: 0;
+    transform: translate3d(0px, 16px, 0) scale3d(0, 0, 1) !important;
+}
+
+[id*='legalinput']:checked + label:after {
+    transform: translate3d(-0.5px, 16px, 0) scale3d(1.1, 1.1, 1) !important;
+}
+
+.wpcf7 .pct-legal span.wpcf7-not-valid-tip:before {
+    background-color: transparent;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip:after {
+    position: absolute;
+    left: 0;
+    margin-left: 6px;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 0 1px;
+    top: 50%;
+    transform-origin: center center;
+    transform: translate3d(0px, -50%, 0px);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+.wpcf7-response-output:before {
+    position: absolute;
+    margin-left: 3px;
+    background-color: #0009;
+    border-radius: 50%;
+    display: flex;
+    align-content: baseline;
+}
+
+.wpcf7 .submit_on_email .pct-legal span.wpcf7-not-valid-tip {
+    top: 16px;
+}
+
+[id*='legalinput'] + label {
+    margin-bottom: 0;
+}
+
+[id*='legalinput'] + label:before {
+    content: '\f1db';
+    // content: '\f10c';
+    font-weight: 600;
+    border-radius: 50%;
+    color: #646464;
+    position: absolute;
+    top: 0;
+    padding: 1px;
+    transform: translate3d(0, 16px, 0);
+}
+
+@keyframes ico-fadein {
+    to {
+        transform: translate3d(-36px, -50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes ico-fadeout {
+    to {
+        transform: translate3d(0, -50%, 0);
+        opacity: 0;
+    }
+}

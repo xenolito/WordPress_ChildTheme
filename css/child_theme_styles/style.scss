@@ -1,94 +1,88 @@
-/*
-html:not(.avif) #mkt-header {
-  background-image: url("http://localhost/urbacontrol/xen_media/hero-free-img.jpg");
-}
-
-html.avif #mkt-header {
-  background-image: url("http://localhost/urbacontrol/xen_media/hero-free-img.avif");
-}
-*/
-
-.footer-adv .widget-title,
-.footer-adv .widget-title a.rsswidget,
-.ast-no-widget-row .widget-title {
-  font-family: var(--def-heading-font-family);
-}
-
 /*------------------------------------------------------------------------------------------------------*
-            MAIN MENU HOVER EFFECTS
+                        ASTRA THEME OVERRIDE
 \*------------------------------------------------------------------------------------------------------*/
-.main-header-menu .menu-item.focus > .menu-link {
-  color: var(--menu-def-color);
+.ast-single-post .entry-title,
+.page-title h1.entry-title {
+    font-family: var(--heading-font-family);
 }
 
-body:not(.ast-header-break-point)
-  header#ast-fixed-header
-  #site-navigation
-  li.menu-item.active:before {
-  top: -0.5em;
-  height: calc(100% + 28px + 0.5em);
-}
-
-body:not(.ast-header-break-point) header {
-  &.site-header #site-navigation li.menu-item {
-    &.current-menu-item > .menu-link {
-      color: var(--menu-def-color);
-    }
-    &.active > .menu-link {
-      color: #fff;
-      pointer-events: none;
-      cursor: none;
-    }
-  }
-
-  &.site-header li.menu-item:before {
-    content: "";
-    display: block;
+.slider-logos {
     width: 100%;
-    height: 0;
-    background-color: #28292a;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
-    position: absolute;
-    z-index: -1 !important;
-    transition: height 0.3s cubic-bezier(0.2, 1, 0.3, 1);
-  }
+    height: 200px;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
 
-  &#ast-fixed-header li.menu-item {
-    &:before {
-      top: -0.5em;
-    }
-    &.hovered:not(.active):before {
-      height: calc(100% + 28px + 0.5em);
+    .swiper-wrapper {
+        transition: all 0.3s ease;
     }
 
-    /*&:not(.active):hover:before {
-      height: calc(100% + 28px + 0.5em);
-    }*/
-  }
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        img {
+            height: 200px;
+            width: 100%;
+            // max-width: 350px;
+            object-fit: contain;
 
-  &.site-header li.menu-item.active:before {
-    //background: var(--main-grad);
-    background: var(--main-grad);
-    height: calc(100% + 20px);
-  }
+            @media only screen and (max-width: 700px) {
+                // width: 80%;
+                height: auto;
+            }
+        }
+    }
 
-  &.site-header li.menu-item {
-    &.hovered {
-      a {
-        color: #fff !important;
-      }
+    .swiper-button-prev,
+    .swiper-button-next {
+        &:after {
+            color: #fff;
+        }
     }
-    &.hovered:not(.active) {
-      &:before {
-        height: calc(100% + 20px);
-      }
+}
+
+.external-map {
+    width: 100%;
+    margin-bottom: -55px;
+
+    iframe {
+        width: 100%;
+        height: 600px;
+        filter: grayscale(1);
+        pointer-events: none;
+
+        &.clicked {
+            pointer-events: auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            height: 350px;
+            pointer-events: auto;
+        }
+        // filter: hue-rotate(334deg) grayscale(0.4);
     }
-  }
 }
 
 /*------------------------------------------------------------------------------------------------------*
-            COOKIE NOTICE PLUGIN
+            COOKIE GDPR
 \*------------------------------------------------------------------------------------------------------*/
-#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container {
-  padding: 40px 20px !important;
+#moove_gdpr_cookie_modal {
+    font-family: var(--def-font-family) !important;
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--def-font-family) !important;
+    }
+}
+
+.moove-gdpr-branding-cnt {
+    display: none;
 }

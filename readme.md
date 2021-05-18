@@ -6,9 +6,9 @@
 
 Before running the setup process, you'll need the following already installed/running
 
-- A working WordPress installation on a local server (httpdocs folder will be required).
-- A Parent Theme installed on `themes` folder.
-- A Child Theme folder created on `themes`folder.
+-   A working WordPress installation on a local server (httpdocs folder will be required).
+-   A Parent Theme installed on `themes` folder.
+-   A Child Theme folder created on `themes`folder.
 
 ## HOW TO SETUP:
 
@@ -16,11 +16,11 @@ Before running the setup process, you'll need the following already installed/ru
 
 You'll be propmted for the following configuration values:
 
-- The folder containing the _WordPress CMS_
-- The _child theme_ folder name
-- The childtheme's _name_
-- The default WP MAIL FROM `name`
-- The default WP MAIL FROM `email`
+-   The folder containing the _WordPress CMS_
+-   The _child theme_ folder name
+-   The childtheme's _name_
+-   The default WP MAIL FROM `name`
+-   The default WP MAIL FROM `email`
 
 This wil create al needed folders and childtheme files on target WordPress folder.
 
@@ -31,4 +31,4 @@ Since then, only `gulp` is needed to launch a local server with watch files.
 
 ### 4) TO DO
 
-- Setup process: Add some critical plugins and folders (like "wp maintenance mode").
+-   Setup process: Add some critical plugins and folders (like "wp maintenance mode").

@@ -9,13 +9,24 @@
 
     //--main-grad: linear-gradient(108deg, rgba(23, 147, 214, 1) 44%, #0279b2);
 
-    --cta-color: #fb2051;
-    --def-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    --def-heading-font-family: Exo, Helvetica, Arial, sans-serif;
-    --def-txt-color: #7b7b7b;
-    --fontawesome: 'Font Awesome 5 Free';
+    // --cta-color: #efa38f8f;
+    --cta-color: #e38e748f;
+    --def-font-family: 'AktivGrotesk', Helvetica, Arial, sans-serif;
+    --heading-font-family: 'Garamond Premiere Pro', Helvetica, Arial, sans-serif;
+    --font-family-2: 'AktivGrotesk', Helvetica, Arial, sans-serif;
+
+    --def-txt-color: #000;
     --light-grey-color: #ddd;
     --light-light-grey-color: #f5f5f5;
+    --footer-color: #eeeeee;
+
+    --header-height-desktop: 150px;
+    --header-height-mobile: 70px;
+
+    --box-border-radius: 16px;
+
+    // Enviroment safe area for mobile devices
+    --mobile-safe-bottom: calc(env(safe-area-inset-bottom) + 20px);
 }
 
 html,
@@ -26,6 +37,24 @@ body {
     font-family: var(--def-font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.no-padding {
+    padding: 0 !important;
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.no-margin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.va-middle {
+    display: flex;
+    align-self: center;
 }
 
 a:focus,
@@ -40,23 +69,30 @@ picture {
     align-items: center;
 }
 
+// img {
+//     width: auto;
+// }
+
 h1,
 h2,
 h3 {
-    font-family: var(--def-heading-font-family);
-    line-height: 1.2 !important;
+    font-family: var(--heading-font-family) !important;
+    line-height: 1 !important;
     font-weight: 600 !important;
     word-wrap: normal !important;
 }
 
-.entry-content h1 {
-    font-size: 2.5rem;
+h1,
+h1.entry-title,
+.ast-single-post .entry-title {
+    font-size: calc(1rem + 2vw);
+    margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 544px) {
     h1,
     h2 {
-        font-size: calc(1rem + 3.5vw) !important;
+        font-size: calc(2rem + 2.5vw) !important;
     }
 }
 
@@ -87,4 +123,11 @@ h2 {
     content: '\f058';
     margin-right: 5px;
     font-size: 1.2rem;
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        VIDEO PLAYER ARVE
+\*------------------------------------------------------------------------------------------------------*/
+.arve {
+    max-width: unset !important;
 }
