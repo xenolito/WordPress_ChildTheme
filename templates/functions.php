@@ -13,6 +13,14 @@ function child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 
+function pct_scripts() {
+	wp_register_script('pictau', get_stylesheet_directory_uri() . '/js/custom_theme_scripts.min.js',false,'1.0',true);
+	wp_localize_script('pictau', 'pct_globalVars', array('homeURL' => esc_url( home_url() ), 'mediaURL' => wp_upload_dir()['baseurl'] ) );
+	wp_enqueue_script('pictau');
+}
+
+add_action('wp_enqueue_scripts', 'pct_scripts',90);
+
 
 /*------------------------------------------------------------------------------------------------------*\
 
