@@ -2,11 +2,11 @@
 
 /*** CHILD THEME STUFF FROM THEME AUTHOR -- LOAD CHILD THEME STYLES / LANGUAGE / ETC.  ***/
 
-define( 'CHILD_THEME_URBACONTROL_VERSION', '1.0.0' );
+define( 'CHILD_THEME_PICTAU_VERSION', '1.0.0' );
 
 function child_enqueue_styles() {
 
-	wp_enqueue_style( 'urbacontrol-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_URBACONTROL_VERSION, 'all' );
+	wp_enqueue_style( 'mld-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_PICTAU_VERSION, 'all' );
 
 }
 

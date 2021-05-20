@@ -232,6 +232,7 @@ function wpconfigSetup(match) {
     str += "define('WP_DEBUG_DISPLAY', false);\n\n"
     str += "define('WP_DEBUG_LOG', false);\n\n"
     str += "define('DISALLOW_FILE_EDIT', true);\n\n"
+    str += "define('WP_POST_REVISIONS', 10);\n\n"
     str += '/* END AUTOMATIC ADDED BY GULP TASK @xenolito */\n\n'
     str += "\n\ndefine('AUTOMATIC_UPDATER_DISABLED', true);"
 
