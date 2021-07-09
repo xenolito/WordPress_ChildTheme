@@ -1,45 +1,90 @@
-.wp-block-buttons {
-    .wp-block-button {
-        &.bt-full-width {
-            width: 100%;
-            .wp-block-button__link {
-                width: 100%;
-                max-width: 360px;
-            }
-        }
+.wp-block-button {
+    margin-right: auto;
+    margin-bottom: 0;
 
+    &.bt-full-width {
+        width: 100%;
         .wp-block-button__link {
-            background-color: var(--cta-color);
-            color: #000;
-            font-family: var(--heading-font-family);
-            font-size: calc(1.3rem + 0.5vw);
-            border-radius: 60px;
-            padding: 0.7rem 2rem;
-            padding-top: calc(0.7rem + 2px);
-            transform: scale3d(1, 1, 1);
-            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 360px;
+        }
+    }
 
-            &:hover {
-                background-color: #000;
-                color: #fff;
-                transform: scale3d(1.05, 1.05, 1);
-            }
+    .wp-block-button__link {
+        background-color: var(--cta-color);
+        color: #000;
+        // font-family: var(--heading-font-family);
+        font-family: var(--def-font-family);
+        font-weight: bold;
+        // font-size: calc(1rem + 0.5vw);
+        font-size: calc(1rem);
+        border-radius: 60px;
+        padding: 0.9rem 2rem;
+        // padding-top: calc(0.7rem + 2px);
+        transform: scale3d(1, 1, 1);
+        transition: transform 0.3s ease;
+
+        // @media only screen and (min-width: 954px) {
+        //     font-size: 1.4rem;
+        // }
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            transform: scale3d(1.05, 1.05, 1);
         }
     }
 }
 
-button#submit {
+button#submit,
+.nav-next a,
+.nav-previous a,
+a.ast-button,
+.tribe-events-back a {
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
     font-family: var(--def-font-family);
     font-size: 16px;
+    font-weight: 600;
     border-radius: 60px;
     padding: 0.7rem 6rem;
     padding-top: calc(0.7rem + 2px);
+    height: unset;
+    margin: 0;
+    margin-top: 1rem;
     transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
 
     &:hover {
         background-color: var(--cta-color);
-        color: #000;
+        color: #000 !important;
     }
 }
+
+.nav-next a,
+.nav-previous a,
+a.ast-button,
+.tribe-events-back a {
+    padding-top: 0;
+    padding: 0.4rem 1.5rem;
+    background-color: var(--cta-color);
+    color: var(--def-txt-color) !important;
+
+    &:hover {
+        background-color: #000;
+        color: #fff !important;
+    }
+
+    &:after {
+        display: none !important;
+    }
+}
+
+.read-more {
+    a.ast-button {
+        padding: 0.9rem 3rem;
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        POST NAVIGATION
+\*------------------------------------------------------------------------------------------------------*/

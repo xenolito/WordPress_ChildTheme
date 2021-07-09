@@ -1,14 +1,10 @@
-/*------------------------------------------------------------------------------------------------------*
-                        ASTRA THEME OVERRIDE
-\*------------------------------------------------------------------------------------------------------*/
-.ast-single-post .entry-title,
-.page-title h1.entry-title {
-    font-family: var(--heading-font-family);
+.single-asociado .entry-header {
+    overflow: hidden;
 }
 
 .slider-logos {
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-color: #000;
     position: relative;
     overflow: hidden;
@@ -29,7 +25,7 @@
         }
         img {
             height: 200px;
-            width: 100%;
+            width: auto;
             // max-width: 350px;
             object-fit: contain;
 
@@ -45,6 +41,46 @@
         &:after {
             color: #fff;
         }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        NEWSLETTER FORM CTA
+\*------------------------------------------------------------------------------------------------------*/
+body:not(.page-template-landing-page) .cta-news {
+    background-color: var(--cta-color-2);
+    margin-bottom: calc(2rem + 1vw);
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .pct-2cols {
+        grid-gap: 1rem;
+        > * {
+            padding: 3rem;
+        }
+
+        @media only screen and (max-width: 696px) {
+            padding: 0 !important;
+
+            > *:first-of-type {
+                padding-bottom: 0;
+            }
+            > *:last-of-type {
+                padding-top: 1rem;
+            }
+        }
+        // padding: 0 calc(var(--content-padding-desktop) + 2vw);
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        PAGE TITLES
+\*------------------------------------------------------------------------------------------------------*/
+
+.pct-page-title {
+    &.title-2cols {
     }
 }
 
@@ -71,7 +107,336 @@
 }
 
 /*------------------------------------------------------------------------------------------------------*
-            COOKIE GDPR
+                        ASOCIADOS GRID
+\*------------------------------------------------------------------------------------------------------*/
+.asociados-grid {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2.25rem;
+
+        @media only screen and (max-width: 666px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    card {
+        display: flex;
+        border: 1px solid var(--grey-color);
+        overflow: hidden;
+
+        a {
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            padding-top: 100%;
+
+            &:hover {
+                .card-cta .bt-card {
+                    color: #fff;
+                    &:before {
+                        transform: translate3d(0, 0, 0);
+                        transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+                    }
+                }
+            }
+        }
+
+        figure {
+            position: absolute;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            padding: 2.75rem;
+            img {
+                filter: brightness(0);
+            }
+        }
+
+        .card-cta {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            .bt-card {
+                position: relative;
+                width: 100%;
+                padding: 1rem;
+                text-align: right;
+                color: #000;
+                font-weight: 600;
+
+                span {
+                    position: relative;
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 1);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+                    transform: translate3d(0, 100%, 0);
+                }
+            }
+        }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        MAPA ASOCIADOS GOOGLE MAPS
+\*------------------------------------------------------------------------------------------------------*/
+
+.mapaAsociados {
+    padding: calc(2rem + 2vw) 0;
+
+    #aMap {
+        min-height: calc(450px + 6vw);
+        @media only screen and (min-width: 981px) {
+            min-height: calc(450px + 6vw);
+        }
+
+        [role='dialog'] {
+            > div {
+                padding: 1rem;
+            }
+
+            > button {
+                top: 0 !important;
+                right: 0 !important;
+            }
+
+            .info-cont {
+                max-width: 150px;
+                display: flex;
+                justify-content: center;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    filter: brightness(0);
+                    max-width: 170px;
+                    padding-bottom: 1rem;
+                }
+                .desc {
+                    text-align: center;
+                }
+                a {
+                    display: inline-block;
+                    margin-top: 1em;
+                    font-size: 14px;
+                    color: #000;
+                    background-color: var(--cta-color);
+                    border-radius: 10px;
+                    padding: 4px 12px;
+                    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            .gmap-header {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        FICHA DATOS TRANSPORTE (PÁG. CONTACTO)
+\*------------------------------------------------------------------------------------------------------*/
+.pct-transport-card {
+    > * {
+        padding: 0 !important;
+    }
+
+    > figure {
+        margin: unset !important;
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: 700px;
+            object-fit: cover;
+        }
+    }
+
+    .transport-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: unset !important;
+        > * {
+            width: 100%;
+        }
+
+        padding-right: 2rem !important;
+    }
+
+    [class*='header-icon-'] {
+        > div:before {
+            font-family: pictauicons;
+            font-size: calc(2rem + 1vw) !important;
+            line-height: initial;
+        }
+    }
+
+    .header-icon-metro {
+        > div:before {
+            content: '\e901';
+        }
+    }
+    .header-icon-bus {
+        > div:before {
+            content: '\e900';
+        }
+    }
+    .header-icon-auto {
+        > div:before {
+            content: '\e902';
+        }
+    }
+
+    @media only screen and (max-width: 1060px) {
+        grid-template-columns: 1fr;
+
+        .transport-content {
+            padding-left: 2rem !important;
+        }
+
+        figure {
+            img {
+                max-height: 450px;
+            }
+        }
+    }
+}
+
+.pct-icon-title-desc {
+    padding-bottom: 2rem !important;
+    > div {
+        display: grid;
+        grid-template-columns: min-content auto;
+        grid-gap: 1rem;
+        > *:last-child {
+            grid-column: 2/-1;
+        }
+
+        &:before,
+        h2 {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        h2 {
+            margin-bottom: 0;
+        }
+
+        li:not(:last-of-type) {
+            padding-bottom: 0.3rem;
+        }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        ASOCIADOS LOGOS GRID
+\*------------------------------------------------------------------------------------------------------*/
+.logos-asoc-grid {
+    // margin-top: calc(2rem + 2vw) !important;
+    margin-bottom: calc(2rem + 2vw) !important;
+    padding-top: calc(3rem + 4vw) !important;
+    padding-bottom: calc(3rem + 4vw) !important;
+    background-color: var(--cta-color);
+
+    @media only screen and (max-width: 981px) {
+        padding-top: calc(4rem + 5vw) !important;
+        padding-bottom: calc(4rem + 5vw) !important;
+    }
+
+    .grid-logos-auto {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6rem;
+        row-gap: 3rem;
+        // max-width: unset !important;
+
+        a {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                img {
+                    transform: scale3d(1.2, 1.2, 1.2);
+                    transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+                }
+            }
+        }
+    }
+
+    .logo-asociado {
+        figure {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            // max-height: 75px;
+            max-width: 200px;
+            img {
+                filter: brightness(0);
+                object-fit: scale-down;
+                transition: transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+                // padding: 2rem;
+            }
+        }
+    }
+}
+
+.pct-parallax {
+    height: 30vw;
+    max-height: 600px;
+    min-height: 300px;
+}
+
+.pct-section.pct-parallax {
+    margin-top: calc(2rem + 2vw) !important;
+    margin-bottom: calc(2rem + 2vw) !important;
+}
+
+.is-parallax {
+    &.is-header {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        flex-direction: column;
+
+        h1,
+        h2 {
+            margin-bottom: 0;
+            font-weight: 500;
+            font-size: calc(2rem + 2vw) !important;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+    }
+}
+
+.pct-welcome {
+    h1 {
+        padding-bottom: calc(1rem + 2vw);
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+            COOKIE GDPR PLUGIN
 \*------------------------------------------------------------------------------------------------------*/
 #moove_gdpr_cookie_modal {
     font-family: var(--def-font-family) !important;
@@ -85,4 +450,473 @@
 
 .moove-gdpr-branding-cnt {
     display: none;
+}
+
+/// logos filter
+
+img.filter-to-black {
+    filter: brightness(0);
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        INSTAGRAM PLUGIN
+\*------------------------------------------------------------------------------------------------------*/
+#sb_instagram {
+    .sbi_follow_btn {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.1rem;
+            background-color: var(--cta-color);
+            color: #000;
+            border-radius: 60px;
+            padding: 0.5rem 2rem;
+            &:hover {
+                background-color: #000;
+                color: #fff;
+                box-shadow: none;
+            }
+            svg {
+                height: 1.1rem !important;
+            }
+        }
+
+        a:after {
+            display: none !important;
+        }
+    }
+
+    #sbi_images {
+        width: calc(100% + 32px);
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        margin-left: -16px;
+        margin-right: -16px;
+        margin-top: -16px;
+
+        @media only screen and (max-width: 480px) {
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .sbi_item {
+            padding: 16px !important;
+
+            @media only screen and (max-width: 480px) {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        a:after {
+            display: none !important;
+        }
+    }
+    .sb_instagram_header {
+        display: none;
+    }
+}
+
+.uagb-post-grid {
+    .is-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3.65rem;
+
+        > article {
+            width: 100%;
+            padding: 0 !important;
+            margin-bottom: 0;
+
+            > * {
+                background-color: #fff;
+            }
+
+            .uagb-post__image {
+                a {
+                    overflow: hidden;
+
+                    &:hover {
+                        img {
+                            transform: scale3d(1.1, 1.1, 1.1);
+                            transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+                        }
+                    }
+                }
+
+                img {
+                    height: calc(30vw);
+                    max-height: 450px;
+                    transition: all 3.4s cubic-bezier(0.2, 1, 0.3, 1);
+                    transform: scale3d(1, 1, 1);
+                    transform-origin: center center;
+                    object-fit: cover;
+                    transition: all 3.4s cubic-bezier(0.2, 1, 0.3, 1);
+
+                    @media only screen and (max-width: 600px) {
+                        height: calc(60vw);
+                    }
+                }
+            }
+
+            h3 {
+                padding-top: 1.5rem !important;
+            }
+
+            a:after {
+                display: none !important;
+            }
+        }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        THE EVENTS CALENDAR PLUGIN
+\*------------------------------------------------------------------------------------------------------*/
+.tribe-events-widget .tribe-events-widget-events-list .tribe-events-c-messages__message {
+    display: block !important;
+}
+
+.tribe-events-view--widget-events-list {
+    .tribe-common-g-row {
+        display: grid !important;
+        grid-template-columns: 120px auto auto;
+        grid-gap: calc(2rem + 1.5vw);
+
+        &:not(:last-of-type) {
+            padding-bottom: calc(2rem + 4vw);
+        }
+
+        > [class*='__event-date-tag'] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            background-color: var(--cta-color-2);
+            // aspect-ratio: 1 / 1;
+            width: 120px !important;
+            height: 120px !important;
+            // aspect-ratio: 1 / 1;
+            time {
+                flex-direction: column-reverse;
+                justify-content: center;
+                padding: 20px;
+                padding-bottom: 30px;
+
+                [class*='__event-date-tag-month'] {
+                    text-transform: capitalize;
+                }
+                [class*='__event-date-tag-daynum'] {
+                    font-size: 4rem;
+                    line-height: 1;
+                    font-family: var(--heading-font-family);
+                }
+            }
+        }
+
+        > [class*='__event-wrapper'] {
+            header {
+                display: flex;
+                flex-wrap: wrap;
+
+                h3 {
+                    text-align: left;
+                    padding-bottom: 1rem;
+                    padding-top: 0.7rem;
+                    a {
+                        font-size: calc(2rem + 1vw) !important;
+                        line-height: 1;
+                        // text-align: left;
+                        color: #000;
+                    }
+                }
+
+                .top-info {
+                    display: flex;
+                    width: 100%;
+                    gap: 10px;
+                    text-align: left;
+
+                    > *:first-of-type {
+                        flex-shrink: 0;
+                    }
+                }
+            }
+
+            .read-more {
+                margin-top: 2rem;
+            }
+
+            p {
+                font-size: inherit !important;
+            }
+        }
+
+        .event-img-container {
+            z-index: 1;
+            .tribe-events-event-image {
+                a {
+                    &:after {
+                        display: none !important;
+                    }
+                }
+                // aspect-ratio: 1 / 1;
+            }
+
+            .tribe-events-event-image,
+            a {
+                overflow: hidden;
+                display: block !important;
+                width: 100%;
+                // height: 100%;
+                &:hover {
+                    img {
+                        transform: scale3d(1.2, 1.2, 1.2);
+                        transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+                    }
+                }
+            }
+            img {
+                width: 270px;
+                height: 270px;
+                object-fit: cover;
+                max-width: unset;
+                min-width: 270px;
+                transform: translate3d(1, 1, 1);
+                transition: transform 1.3s cubic-bezier(0.2, 1, 0.3, 1);
+            }
+        }
+
+        // @media only screen and (max-width: 420px) {
+        @media only screen and (max-width: 1300px) {
+            grid-template-columns: 1fr;
+            grid-column-gap: 0;
+
+            .event-img-container {
+                grid-column-start: 1;
+                grid-row-start: 1;
+
+                .tribe-events-event-image {
+                    // aspect-ratio: 1 / 0.5;
+                    overflow: hidden;
+
+                    img {
+                        min-width: unset;
+                        width: 100%;
+                        height: calc(270px + 10vw);
+                    }
+                }
+            }
+
+            > [class*='__event-date-tag'] {
+                grid-column-start: 1;
+                grid-row-start: 1;
+                width: 120px !important;
+            }
+
+            > [class*='__event-wrapper'] {
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+        }
+    }
+
+    .tribe-events-widget-events-list__view-more {
+        display: none;
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------*
+                        THE EVENTS CALENDAR: SINGLE-EVENT
+\*------------------------------------------------------------------------------------------------------*/
+
+body.single-tribe_events {
+    .ast-container {
+        justify-content: center;
+    }
+
+    .pct-page-title {
+        padding-bottom: calc(1rem + 3vw);
+        @media only screen and (min-width: 981px) {
+            padding-bottom: calc(1rem + 2vw) !important;
+        }
+    }
+
+    #tribe-events-content {
+        [id*='post-'] {
+            p:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .tribe-events-schedule {
+            margin-bottom: calc(1rem +2vw);
+
+            h2 {
+                display: flex;
+                background-color: var(--cta-color-2);
+                padding: 2rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-family: var(--font-family-2);
+                    font-size: calc(2rem);
+                    font-weight: 400;
+
+                    &.tribe-events-schedule__date {
+                        font-size: 1.2em;
+                    }
+                }
+
+                .pct-fecha,
+                .pct-horas {
+                    > * {
+                        color: #000 !important;
+                    }
+                }
+
+                .pct-horas {
+                    display: flex;
+                }
+
+                .separador-intervalo {
+                    display: block;
+                    width: 2px;
+                    height: 60px;
+                    background-color: #000;
+                    margin: 1rem auto;
+                }
+
+                .pct-intervalo-fechas {
+                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+
+        .tribe-block__organizer__details {
+            display: none;
+        }
+
+        .tribe-block__venue {
+            margin: calc(2rem + 2vw) auto;
+            margin-bottom: 1rem;
+
+            > * {
+                width: 50%;
+                flex-basis: 50%;
+            }
+
+            @media only screen and (max-width: 660px) {
+                flex-wrap: wrap;
+
+                > * {
+                    width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+
+            .tribe-block__venue__meta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 3rem;
+                background-color: #000;
+                * {
+                    color: #fff !important;
+                }
+
+                .tribe-block__venue__address {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                a.tribe-events-gmap {
+                    display: inline-block;
+                    margin-top: 1rem;
+                    background-color: #fff;
+                    color: #000 !important;
+                    padding: 2px 18px;
+                    border-radius: 18px;
+                    transform: scale3d(1, 1, 1);
+                    transition: all 1.3s cubic-bezier(0.2, 1, 0.3, 1);
+                    &:after {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: var(--cta-color-2);
+                        color: #000 !important;
+                        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+                        transform: scale3d(1.1, 1.1, 1.1);
+                    }
+                }
+
+                .tribe-block__venue__website {
+                    display: none;
+                }
+            }
+
+            .tribe-block__venue__map {
+                a {
+                    font-size: unset;
+                }
+                .gm-style {
+                    [aria-label='Map'] {
+                        > div {
+                            > :nth-child(5) {
+                                // display: none;
+                                filter: grayscale(1);
+                            }
+                            // display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tribe-block__events-link {
+            .tribe-block__btn--link {
+                a {
+                    display: flex;
+                    align-items: center;
+                    border-color: #000;
+                    color: #000;
+                    img {
+                        filter: brightness(0);
+                    }
+
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+
+                        img {
+                            filter: grayscale(1) brightness(1);
+                            // filter: brightness(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .tribe-events-notices {
+            display: none;
+        }
+    }
+}
+
+.tribe-block__btn--link a:after {
+    display: none !important;
+}
+
+.tribe-events-back {
+    margin-top: 2rem;
 }

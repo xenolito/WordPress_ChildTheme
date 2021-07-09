@@ -1,0 +1,29 @@
+article:not(.ast-related-post) header.entry-header {
+    @media only screen and (max-width: 980px) {
+        margin-left: 50%;
+        width: 100vw;
+        transform: translate3d(-50%, 0, 0);
+    }
+
+    .pct-header-slider {
+        max-height: var(--page-header-max-height);
+        overflow: hidden;
+
+        .swiper-wrapper {
+            max-height: var(--page-header-max-height);
+
+            .swiper-slide {
+                img {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 980px) {
+        }
+    }
+}
+
+[class*='nextend-smartslider3'] {
+    overflow-y: clip;
+}

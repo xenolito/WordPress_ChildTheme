@@ -5,6 +5,11 @@
     font-size: 1rem !important;
 }
 
+.wpcf7 form > div,
+.wpcf7 form > p {
+    margin-bottom: 0;
+}
+
 form {
     input[type='email'],
     input[type='number'],
@@ -175,10 +180,10 @@ form select:focus:invalid {
 
 .pct-form-container {
     /*	background-image: var(--secondary-grad) !important;*/
-    padding: 2rem 3rem;
-    padding-right: 2rem !important;
-    padding-left: 2rem !important;
-    background-color: rgba(255, 255, 255, 0.3);
+    padding: 3rem;
+    // padding-right: 2rem !important;
+    // padding-left: 2rem !important;
+    // background-color: rgba(255, 255, 255, 0.3);
     margin: auto !important;
     max-width: 500px;
 }
@@ -219,7 +224,7 @@ span.wpcf7-list-item {
 }
 
 .wpcf7 a.pct-lk-privacidad {
-    display: inline;
+    display: inline-block;
     transition: all 0.3s ease;
 }
 
@@ -271,7 +276,7 @@ div.wpcf7-response-output {
 
 .pct-legal,
 .pct-legal a {
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 14px;
     box-sizing: border-box;
     color: #343434;
@@ -342,45 +347,87 @@ form.placeholder_as_label textarea.placeholder-to-label {
 						CONTACT FORM 7 CHECKBOX LEGAL STYLES
 
 \*------------------------------------------------------------------------------------------------------*/
-[id*='legalinput'] {
-    background-color: #ff0000;
+
+// !new legal icon checked + unchecked
+[id*='legalinput'] + label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 0.8rem;
+    // padding-left: 40px;
+    cursor: pointer;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    margin-left: 5px;
+    margin-bottom: 0;
+
+    > div:first-of-type {
+        display: block;
+        position: relative;
+        // height: 1rem;
+    }
+
+    p {
+        display: none;
+    }
+
+    .ico-unchecked,
+    .ico-checked {
+        font-style: normal;
+        &:before {
+            content: '';
+            font-family: 'pictauicons';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // position: absolute;
+            top: 0px;
+            left: 0;
+            font-size: 24px;
+            line-height: 1rem;
+            border-radius: 50%;
+            font-style: normal !important;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .ico-checked {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .ico-unchecked:before {
+        color: #fff;
+        content: '\f1db';
+        font-weight: 600;
+        border-radius: 50%;
+        color: #646464;
+        background-color: #fff;
+        top: 0;
+        padding: 0px;
+        // line-height: 1rem;
+        // transform: translate3d(0, 16px, 0);
+    }
+
+    .ico-checked:before {
+        content: '\f058';
+        transform: scale3d(0, 0, 1);
+        opacity: 1;
+        font-weight: 900;
+        transition: all 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+        color: var(--primary-color-darker);
+        top: 0;
+        transform: translate3d(0px, 0px, 0) scale3d(0, 0, 1) !important;
+    }
 }
 
-[id*='legalinput'] + label:before,
-[id*='legalinput'] + label:after {
-    font-family: 'pictauicons';
-    font-size: 20px;
-    line-height: 20px;
-    border-radius: 3px;
-    /*absolutely positioned*/
-    position: absolute;
-    top: 0px;
-    left: 0;
-}
-[id*='legalinput'] + label:before {
-    content: '\f111'; /*unchecked*/
-
-    font-weight: 900;
-    border-radius: 50%;
-    color: #fff;
-}
-[id*='legalinput'] + label:after {
-    /*content: "\f00c";*/ /*checked*/
-    content: '\f058';
-    /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
-    /*max-width: 0;*/
-    transform: scale3d(0, 0, 1);
-    opacity: 1;
-    font-weight: 900;
-    /*CSS3 transitions for animated effect*/
-    transition: all 0.35s cubic-bezier(0.2, 1, 0.3, 1);
-    color: var(--primary-color-darker);
-}
-
-[id*='legalinput']:checked + label:after {
-    /*max-width: 25px;*/
-    /*opacity: 1;*/
-    transform: scale3d(1, 1, 1);
+[id*='legalinput']:checked + label {
+    .ico-checked:before {
+        transform: scale3d(1, 1, 1);
+        transform: translate3d(-0.5px, 0px, 0) scale3d(1.1, 1.1, 1) !important;
+    }
 }
 
 .wpcf7 .placeholder_as_label input[type='email'],
@@ -773,33 +820,6 @@ form textarea {
     position: relative;
 }
 
-[id*='legalinput'] + label {
-    display: inline-block;
-    position: relative;
-    padding-left: 40px;
-    cursor: pointer;
-    line-height: 18px;
-    letter-spacing: 0.5px;
-    margin-left: 5px;
-}
-
-[id*='legalinput'] + label:after,
-[id*='legalinput'] + label:before {
-    font-size: 24px;
-    line-height: 0px;
-    border-radius: 50%;
-}
-
-[id*='legalinput'] + label:after {
-    position: absolute;
-    top: 0;
-    transform: translate3d(0px, 16px, 0) scale3d(0, 0, 1) !important;
-}
-
-[id*='legalinput']:checked + label:after {
-    transform: translate3d(-0.5px, 16px, 0) scale3d(1.1, 1.1, 1) !important;
-}
-
 .wpcf7 .pct-legal span.wpcf7-not-valid-tip:before {
     background-color: transparent;
 }
@@ -829,22 +849,6 @@ form textarea {
 
 .wpcf7 .submit_on_email .pct-legal span.wpcf7-not-valid-tip {
     top: 16px;
-}
-
-[id*='legalinput'] + label {
-    margin-bottom: 0;
-}
-
-[id*='legalinput'] + label:before {
-    content: '\f1db';
-    // content: '\f10c';
-    font-weight: 600;
-    border-radius: 50%;
-    color: #646464;
-    position: absolute;
-    top: 0;
-    padding: 1px;
-    transform: translate3d(0, 16px, 0);
 }
 
 @keyframes ico-fadein {

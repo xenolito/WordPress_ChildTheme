@@ -1,35 +1,39 @@
+/* EB Garamond Regular  */
 @font-face {
-    font-family: 'AktivGrotesk';
-    src: local('Custom Font'), url('fonts/aktivgrotesk-medium.woff2') format('woff2'),
-        url('fonts/aktivgrotesk-medium.woff') format('woff');
-    font-weight: bold;
+    font-family: 'EB Garamond';
     font-style: normal;
-    font-display: swap;
+    font-weight: 400;
+    src: local(''), url('fonts/EBGaramond-Regular.woff2') format('woff2'),
+        url('fonts/EBGaramond-Regular.woff') format('woff');
 }
-
+/* EB Garamond Regular italic  */
 @font-face {
-    font-family: 'AktivGrotesk';
-    src: local('Custom Font'), url('fonts/AktivGrotesk-Regular.woff2') format('woff2'),
-        url('fonts/AktivGrotesk-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Garamond Premiere Pro';
-    src: local('Custom Font'), url('fonts/GaramondPremrPro-Disp.woff2') format('woff2'),
-        url('fonts/GaramondPremrPro-Disp.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Garamond Premiere Pro';
-    src: local('Custom Font'), url('fonts/GaramondPremrPro-ItDisp.woff2') format('woff2'),
-        url('fonts/GaramondPremrPro-ItDisp.woff') format('woff');
-    font-weight: normal;
+    font-family: 'EB Garamond';
     font-style: italic;
+    font-weight: 400;
     font-display: swap;
+
+    src: local(''), url('fonts/EBGaramond-Italic.woff2') format('woff2'),
+        url('fonts/EBGaramond-Italic.woff') format('woff');
+}
+
+/* Roboto Light  */
+@font-face {
+    font-family: 'RobotoMLD';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+
+    src: local(''), url('fonts/Roboto-Light.woff2') format('woff2'), url('fonts/Roboto-Light.woff') format('woff');
+}
+
+/* Roboto Light italic*/
+@font-face {
+    font-family: 'RobotoMLD';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+
+    src: local(''), url('fonts/Roboto-LightItalic.woff2') format('woff2'),
+        url('fonts/Roboto-LightItalic.woff') format('woff');
 }

@@ -1,4 +1,16 @@
 body.landing-page {
+    header {
+        .ast-button-wrap,
+        .ast-builder-menu {
+            display: none;
+        }
+
+        #polylang-3,
+        .pct-social {
+            display: none;
+        }
+    }
+
     article {
         padding-top: 0;
 
@@ -95,7 +107,7 @@ body.landing-page {
                 position: relative;
                 width: 100%;
                 padding-top: 100%;
-                clip-path: circle(50% at center);
+                clip-path: circle(46% at center);
 
                 > *:first-child {
                     position: absolute;
@@ -156,6 +168,11 @@ body.landing-page {
             @media only screen and (max-width: 620px) {
                 p {
                     font-size: 6vw;
+                }
+            }
+            @media only screen and (min-width: 1800px) {
+                p {
+                    font-size: 3.23rem;
                 }
             }
         }
@@ -224,6 +241,10 @@ body.landing-page {
             font-size: calc(1rem + 3vw);
             margin-top: 0;
             margin-bottom: 0;
+
+            @media only screen and (min-width: 1800px) {
+                font-size: 4.43rem;
+            }
         }
 
         .pct-address {
